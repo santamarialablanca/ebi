@@ -450,9 +450,14 @@ ul {
 }
 
 .nav__logo i {
-  color: #970036;
+  color: #fafaf7;
   font-size: 1rem;
   flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+.nav--scrolled .nav__logo i {
+  color: #970036;
 }
 
 .nav__logo:hover {
@@ -1167,8 +1172,9 @@ ul {
 
 .stage-links {
   position: relative;
-  margin-top: 40px;
-  padding-top: 32px;
+  margin-top: 28px;
+  margin-bottom: 28px;
+  padding-top: 20px;
   border-top: none;
   max-width: 1200px;
   margin-left: auto;
@@ -1184,16 +1190,6 @@ ul {
   width: calc(100% + 45vw);
   height: 1px;
   background: rgba(148, 163, 184, 0.25);
-}
-
-.stage-links__label {
-  display: block;
-  font-size: 0.9rem;
-  opacity: 0.9;
-  margin-bottom: 16px;
-  font-weight: 500;
-  text-transform: none;
-  letter-spacing: normal;
 }
 
 .stage-links__buttons {
@@ -3106,13 +3102,8 @@ body.etapa-fp .section--light .card--usecase {
   }
 
   .stage-links {
-    margin-top: 32px;
-    padding-top: 24px;
-  }
-
-  .stage-links__label {
-    font-size: 0.85rem;
-    margin-bottom: 12px;
+    margin-top: 24px;
+    padding-top: 16px;
   }
 
   .stage-links__buttons {
