@@ -152,6 +152,14 @@
     margin-bottom: var(--space-2xl);
     scroll-margin-top: 1.5rem;
   }
+  /* Línea horizontal roja entre secciones (fiel a la infografía) */
+  .main .section {
+    border-top: 3px solid var(--ebi-red);
+    padding-top: var(--space-xl);
+  }
+  .main .section:first-of-type {
+    margin-top: 0;
+  }
   .section-title {
     font-size: clamp(1.25rem, 3vw, 1.5rem);
     color: var(--text);
@@ -554,7 +562,7 @@
   }
   .card-competence:hover .competence-desc,
   .card-competence.is-open .competence-desc {
-    max-height: 80px;
+    max-height: 180px;
     opacity: 1;
     margin-top: var(--space-xs);
   }
