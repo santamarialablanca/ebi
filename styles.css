@@ -1155,6 +1155,9 @@ ul {
   margin-top: 40px;
   padding-top: 32px;
   border-top: 1px solid rgba(148, 163, 184, 0.25);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .stage-links__label {
@@ -1171,6 +1174,7 @@ ul {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .chip {
