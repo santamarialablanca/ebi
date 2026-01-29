@@ -335,6 +335,29 @@ ul {
   margin-top: auto;
 }
 
+.stage-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #970036;
+  transition: opacity 0.2s ease;
+}
+
+.stage-card-link:hover {
+  opacity: 0.9;
+}
+
+.stage-card-link i {
+  font-size: 0.8rem;
+}
+
+.section--light .stage-card-link {
+  color: #970036;
+}
+
 .card--usecase > div[role="region"] {
   margin-top: 12px;
   padding-top: 12px;
