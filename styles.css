@@ -2848,6 +2848,22 @@ body.etapa-fp .section--light .card--usecase {
   color: #E3C34A;
 }
 
+#etapas .card--usecase:nth-child(3) .stage-card-link {
+  color: #6E8FAF;
+}
+
+#etapas .card--usecase:nth-child(4) .stage-card-link {
+  color: #E17A55;
+}
+
+#etapas .card--usecase:nth-child(5) .stage-card-link {
+  color: #E17A55;
+}
+
+#etapas .card--usecase:nth-child(6) .stage-card-link {
+  color: #8C7CB8;
+}
+
 #etapas .card--usecase:nth-child(3) .btn--ghost:hover {
   border-color: #6E8FAF;
   color: #6E8FAF;
