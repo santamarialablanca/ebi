@@ -164,17 +164,29 @@ html {
   border: 0;
 }
 
-/* Main */
+/* Main: grid desktop más ancho */
 .main {
   max-width: 1100px;
   margin: 0 auto;
   padding: var(--space-page) var(--section-pad-x) clamp(3rem, 6vw, 5rem);
+}
+@media (min-width: 1024px) {
+  .main {
+    max-width: 1280px;
+    padding-left: clamp(1.5rem, 5vw, 2.5rem);
+    padding-right: clamp(1.5rem, 5vw, 2.5rem);
+  }
 }
 
 /* Contenedor interno de sección (grid y ancho) */
 .section__inner {
   max-width: 1100px;
   margin: 0 auto;
+}
+@media (min-width: 1024px) {
+  .section__inner {
+    max-width: 1280px;
+  }
 }
 
 /* Secciones: alternar oscuro / claro, responsive */
@@ -251,11 +263,73 @@ html {
   color: var(--ebi-dark);
 }
 
-/* Visión general: gráfico + tabla */
-.section-vision .section__inner {
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
+/* Visión general: contadores + grid chart | tabla en desktop */
+.section-vision .section__inner--vision {
+  max-width: 1100px;
+}
+@media (min-width: 1024px) {
+  .section-vision .section__inner--vision {
+    max-width: 1280px;
+  }
+}
+
+/* Contadores animados */
+.vision-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.vision-stat {
+  text-align: center;
+  padding: 1rem 0.75rem;
+  background: var(--ebi-light);
+  border: 1px solid rgba(30, 40, 56, 0.12);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.vision-stat:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--ebi-accent);
+}
+.vision-stat-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--ebi-accent);
+  line-height: 1.2;
+}
+.vision-stat-label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--ebi-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-top: 0.25rem;
+}
+@media (max-width: 600px) {
+  .vision-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .vision-stat-value { font-size: 1.5rem; }
+}
+
+/* Grid: chart + tabla (2 cols en desktop) */
+.vision-grid {
+  display: block;
+}
+@media (min-width: 1024px) {
+  .vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
 }
 .vision-chart-wrap {
   margin: 0 auto 1.5rem;
@@ -264,11 +338,20 @@ html {
   border: 1px solid rgba(30, 40, 56, 0.18);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-card);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.vision-chart-wrap:hover {
+  box-shadow: var(--shadow-card-hover);
 }
 .vision-chart-wrap canvas {
   display: block;
   max-width: 100%;
   height: auto;
+}
+@media (min-width: 1024px) {
+  .vision-grid .vision-chart-wrap {
+    margin: 0 0 0 auto;
+  }
 }
 .vision-table-wrap {
   overflow-x: auto;
@@ -290,14 +373,22 @@ html {
   padding: 0.5rem 0.75rem;
   text-align: left;
   border-bottom: 1px solid rgba(30, 40, 56, 0.15);
+  transition: background 0.2s ease;
 }
 .vision-table th {
   font-weight: 600;
   color: var(--ebi-dark);
   background: rgba(30, 40, 56, 0.06);
 }
+.vision-table tbody tr {
+  cursor: default;
+}
 .vision-table tbody tr:hover {
   background: var(--ebi-accent-soft-bg);
+}
+.vision-table tbody tr.is-highlight {
+  background: var(--ebi-accent-soft-bg);
+  border-left: 3px solid var(--ebi-accent);
 }
 
 /* Nav superior: una sola fila, fija en la parte superior */
@@ -552,7 +643,7 @@ html {
   font-size: clamp(1.1rem, 2vw, 1.35rem);
 }
 
-/* Principios: flex responsive, 4 → 2 → 1 columnas visuales */
+/* Principios: grid 4 columnas en desktop, flex en móvil */
 .principles-flow {
   display: flex;
   flex-wrap: wrap;
@@ -561,12 +652,40 @@ html {
   gap: clamp(0.75rem, 2vw, 1.25rem);
   margin: 0 auto;
 }
+@media (min-width: 1024px) {
+  .principles-flow {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .principles-flow .flow-arrow {
+    display: none;
+  }
+}
 .card-principle {
   flex: 1 1 min(100%, 220px);
   min-width: 0;
   max-width: 260px;
   position: relative;
   border-top: 3px solid var(--ebi-accent);
+}
+@media (min-width: 1024px) {
+  .card-principle {
+    max-width: none;
+    min-width: 0;
+  }
+}
+@media (max-width: 1023px) and (min-width: 901px) {
+  .principles-flow {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .principles-flow .flow-arrow {
+    display: none;
+  }
 }
 @media (max-width: 900px) {
   .card-principle { max-width: 320px; }
@@ -725,7 +844,46 @@ html {
   display: none;
 }
 
-/* Competencias: grid 3 → 2 → 1 por breakpoint */
+/* Competencias: layout chart + grid en desktop */
+.competences-layout {
+  display: block;
+}
+@media (min-width: 1024px) {
+  .competences-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2rem;
+    align-items: start;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.competences-chart-wrap {
+  margin: 0 auto 1.5rem;
+  padding: 1rem;
+  background: var(--ebi-light);
+  border: 1px solid rgba(30, 40, 56, 0.15);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  max-width: 260px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.competences-chart-wrap:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+.competences-chart-wrap canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+@media (min-width: 1024px) {
+  .competences-chart-wrap {
+    margin: 0;
+    position: sticky;
+    top: 4rem;
+  }
+}
 .competences-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -733,9 +891,6 @@ html {
   list-style: none;
   margin: 0;
   padding: 0;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
 }
 @media (max-width: 768px) {
   .competences-grid {
@@ -891,4 +1046,47 @@ html {
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Revelado escalonado de hijos (desktop y tablet) */
+@media (prefers-reduced-motion: no-preference) {
+  .section.reveal .vision-stat,
+  .section.reveal .criteria-grid > article,
+  .section.reveal .card-principle,
+  .section.reveal .stage-item,
+  .section.reveal .competences-grid .card-competence {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  .section.reveal.is-visible .vision-stat,
+  .section.reveal.is-visible .criteria-grid > article,
+  .section.reveal.is-visible .card-principle,
+  .section.reveal.is-visible .stage-item,
+  .section.reveal.is-visible .competences-grid .card-competence {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .section.reveal.is-visible .vision-stat:nth-child(1) { transition-delay: 0.05s; }
+  .section.reveal.is-visible .vision-stat:nth-child(2) { transition-delay: 0.12s; }
+  .section.reveal.is-visible .vision-stat:nth-child(3) { transition-delay: 0.19s; }
+  .section.reveal.is-visible .vision-stat:nth-child(4) { transition-delay: 0.26s; }
+  .section.reveal.is-visible .criteria-grid > article:nth-child(1) { transition-delay: 0.08s; }
+  .section.reveal.is-visible .criteria-grid > article:nth-child(3) { transition-delay: 0.2s; }
+  .section.reveal.is-visible .card-principle:nth-child(1) { transition-delay: 0.05s; }
+  .section.reveal.is-visible .card-principle:nth-child(3) { transition-delay: 0.12s; }
+  .section.reveal.is-visible .card-principle:nth-child(5) { transition-delay: 0.19s; }
+  .section.reveal.is-visible .card-principle:nth-child(7) { transition-delay: 0.26s; }
+  .section.reveal.is-visible .stage-item:nth-child(1) { transition-delay: 0.03s; }
+  .section.reveal.is-visible .stage-item:nth-child(2) { transition-delay: 0.08s; }
+  .section.reveal.is-visible .stage-item:nth-child(3) { transition-delay: 0.13s; }
+  .section.reveal.is-visible .stage-item:nth-child(4) { transition-delay: 0.18s; }
+  .section.reveal.is-visible .stage-item:nth-child(5) { transition-delay: 0.23s; }
+  .section.reveal.is-visible .stage-item:nth-child(6) { transition-delay: 0.28s; }
+  .section.reveal.is-visible .competences-grid .card-competence:nth-child(1) { transition-delay: 0.04s; }
+  .section.reveal.is-visible .competences-grid .card-competence:nth-child(2) { transition-delay: 0.09s; }
+  .section.reveal.is-visible .competences-grid .card-competence:nth-child(3) { transition-delay: 0.14s; }
+  .section.reveal.is-visible .competences-grid .card-competence:nth-child(4) { transition-delay: 0.19s; }
+  .section.reveal.is-visible .competences-grid .card-competence:nth-child(5) { transition-delay: 0.24s; }
+  .section.reveal.is-visible .competences-grid .card-competence:nth-child(6) { transition-delay: 0.29s; }
 }

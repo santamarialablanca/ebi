@@ -110,6 +110,62 @@
 
   document.documentElement.style.scrollPaddingTop = '1rem';
 
+  // --- Contadores animados (visión general) ---
+  var visionSection = document.getElementById('vision-general');
+  var stats = visionSection ? visionSection.querySelectorAll('.vision-stat') : [];
+  var counted = false;
+
+  function animateCount(el, target) {
+    var duration = 800;
+    var start = 0;
+    var startTime = null;
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      var progress = Math.min((timestamp - startTime) / duration, 1);
+      var easeOut = 1 - Math.pow(1 - progress, 2);
+      var current = Math.round(start + (target - start) * easeOut);
+      el.textContent = current;
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target;
+    }
+    requestAnimationFrame(step);
+  }
+
+  if (visionSection && stats.length && !prefersReducedMotion) {
+    var obsStats = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting || counted) return;
+          counted = true;
+          stats.forEach(function (stat) {
+            var valueEl = stat.querySelector('.vision-stat-value');
+            var target = parseInt(stat.getAttribute('data-count'), 10);
+            if (valueEl && !isNaN(target)) animateCount(valueEl, target);
+          });
+        });
+      },
+      { threshold: 0.3 }
+    );
+    obsStats.observe(visionSection);
+  } else if (visionSection && stats.length) {
+    stats.forEach(function (stat) {
+      var valueEl = stat.querySelector('.vision-stat-value');
+      var target = stat.getAttribute('data-count');
+      if (valueEl && target) valueEl.textContent = target;
+    });
+  }
+
+  // --- Tabla visión: resaltar fila al clic ---
+  var visionTable = document.querySelector('.vision-table tbody');
+  if (visionTable) {
+    visionTable.querySelectorAll('tr').forEach(function (row) {
+      row.addEventListener('click', function () {
+        visionTable.querySelectorAll('tr').forEach(function (r) { r.classList.remove('is-highlight'); });
+        row.classList.add('is-highlight');
+      });
+    });
+  }
+
   // --- Gráfico estructura EBI (Chart.js) ---
   var chartCanvas = document.getElementById('ebi-structure-chart');
   if (chartCanvas && typeof Chart !== 'undefined') {
@@ -162,6 +218,52 @@
             ticks: { color: '#1e2838', font: { size: 13 } }
           }
         }
+      }
+    });
+  }
+
+  // --- Gráfico circular competencias (Chart.js) ---
+  var competencesCanvas = document.getElementById('ebi-competences-chart');
+  if (competencesCanvas && typeof Chart !== 'undefined') {
+    var ctxComp = competencesCanvas.getContext('2d');
+    var colorsComp = [
+      'rgba(151, 0, 54, 0.9)',
+      'rgba(30, 40, 56, 0.85)',
+      'rgba(196, 77, 108, 0.9)',
+      'rgba(151, 0, 54, 0.7)',
+      'rgba(30, 40, 56, 0.7)',
+      'rgba(196, 77, 108, 0.75)'
+    ];
+    var borderComp = ['#970036', '#1e2838', '#c44d6c', '#970036', '#1e2838', '#c44d6c'];
+    new Chart(ctxComp, {
+      type: 'doughnut',
+      data: {
+        labels: ['Personal y social', 'Iniciativa y autonomía', 'Digital', 'Comunicativa', 'Artística', 'Científica'],
+        datasets: [{
+          data: [1, 1, 1, 1, 1, 1],
+          backgroundColor: colorsComp,
+          borderColor: borderComp,
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 1,
+        animation: !prefersReducedMotion,
+        plugins: {
+          legend: {
+            display: false
+          },
+          tooltip: {
+            callbacks: {
+              label: function (context) {
+                return context.label + ': 1 de 6 competencias';
+              }
+            }
+          }
+        },
+        cutout: '58%'
       }
     });
   }

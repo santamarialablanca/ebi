@@ -39,30 +39,51 @@
   </header>
 
   <main id="main" class="main" role="main">
-    <!-- Visión general: gráfico + tabla accesible -->
+    <!-- Visión general: gráfico + tabla + contadores -->
     <section id="vision-general" class="section section-vision section-bg-alt" aria-labelledby="vision-heading">
-      <div class="section__inner">
+      <div class="section__inner section__inner--vision">
         <h2 id="vision-heading" class="section-title">Estructura del Sistema EBI</h2>
         <p class="section-desc">Resumen visual de los cuatro pilares que componen la propuesta.</p>
-        <div class="vision-chart-wrap" role="img" aria-label="Gráfico: 2 criterios, 4 principios, 6 etapas, 6 competencias">
-          <canvas id="ebi-structure-chart" width="400" height="280"></canvas>
+        <!-- Contadores animados -->
+        <div class="vision-stats" aria-live="polite">
+          <div class="vision-stat" data-count="2">
+            <span class="vision-stat-value" id="stat-criterios">0</span>
+            <span class="vision-stat-label">Criterios</span>
+          </div>
+          <div class="vision-stat" data-count="4">
+            <span class="vision-stat-value" id="stat-principios">0</span>
+            <span class="vision-stat-label">Principios</span>
+          </div>
+          <div class="vision-stat" data-count="6">
+            <span class="vision-stat-value" id="stat-etapas">0</span>
+            <span class="vision-stat-label">Etapas</span>
+          </div>
+          <div class="vision-stat" data-count="6">
+            <span class="vision-stat-value" id="stat-competencias">0</span>
+            <span class="vision-stat-label">Competencias</span>
+          </div>
         </div>
-        <div class="vision-table-wrap">
-          <table class="vision-table">
-            <caption class="vision-table-caption">Datos en texto</caption>
-            <thead>
-              <tr>
-                <th scope="col">Pilar</th>
-                <th scope="col">Cantidad</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>Criterios</td><td>2</td></tr>
-              <tr><td>Principios</td><td>4</td></tr>
-              <tr><td>Etapas</td><td>6</td></tr>
-              <tr><td>Competencias</td><td>6</td></tr>
-            </tbody>
-          </table>
+        <div class="vision-grid">
+          <div class="vision-chart-wrap" role="img" aria-label="Gráfico de barras: 2 criterios, 4 principios, 6 etapas, 6 competencias">
+            <canvas id="ebi-structure-chart" width="400" height="280"></canvas>
+          </div>
+          <div class="vision-table-wrap">
+            <table class="vision-table">
+              <caption class="vision-table-caption">Datos en texto</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Pilar</th>
+                  <th scope="col">Cantidad</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Criterios</td><td>2</td></tr>
+                <tr><td>Principios</td><td>4</td></tr>
+                <tr><td>Etapas</td><td>6</td></tr>
+                <tr><td>Competencias</td><td>6</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>
@@ -182,12 +203,16 @@
       </div>
     </section>
 
-    <!-- Competencias (interactivas: hover/clic muestra descripción) -->
+    <!-- Competencias: gráfico circular + grid de tarjetas -->
     <section id="competencias" class="section section-competences section-bg-alt" aria-labelledby="competences-heading">
-      <div class="section__inner">
+      <div class="section__inner section__inner--competences">
         <h2 id="competences-heading" class="section-title">Con el fin de desarrollar <span class="highlight">seis competencias</span></h2>
         <p class="section-desc"><span class="hint">Pasa el cursor o toca cada tarjeta para ver su descripción.</span></p>
-        <ul class="competences-grid">
+        <div class="competences-layout">
+          <div class="competences-chart-wrap" role="img" aria-label="Gráfico circular: seis competencias en igual proporción">
+            <canvas id="ebi-competences-chart" width="260" height="260"></canvas>
+          </div>
+          <ul class="competences-grid">
         <li class="card card-competence" data-competence="personal">
           <i class="fa-solid fa-user competence-icon" aria-hidden="true"></i>
           <span class="competence-name">Personal y social</span>
@@ -219,6 +244,7 @@
           <p class="competence-desc">Pensamiento lógico, indagación y resolución de problemas.</p>
         </li>
         </ul>
+        </div>
       </div>
     </section>
 
