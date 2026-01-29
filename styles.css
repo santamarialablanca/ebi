@@ -2948,6 +2948,93 @@ body.etapa-fp .section--light .card--usecase {
   color: #8C7CB8;
 }
 
+/* Mismos colores y hover para el grid 3x2 en Horizonte de expectativas */
+#horizonte .card--usecase:nth-child(1) {
+  border-top-color: #5FAFA8;
+}
+#horizonte .card--usecase:nth-child(1):hover {
+  border-color: #5FAFA8;
+  background: radial-gradient(circle at top left, rgba(95, 175, 168, 0.2), #C8E4E2);
+}
+#horizonte .card--usecase:nth-child(2) {
+  border-top-color: #E3C34A;
+}
+#horizonte .card--usecase:nth-child(2):hover {
+  border-color: #E3C34A;
+  background: radial-gradient(circle at top left, rgba(227, 195, 74, 0.2), #F7E8B8);
+}
+#horizonte .card--usecase:nth-child(3) {
+  border-top-color: #6E8FAF;
+}
+#horizonte .card--usecase:nth-child(3):hover {
+  border-color: #6E8FAF;
+  background: radial-gradient(circle at top left, rgba(110, 143, 175, 0.2), #C7D6E2);
+}
+#horizonte .card--usecase:nth-child(4) {
+  border-top-color: #E17A55;
+}
+#horizonte .card--usecase:nth-child(4):hover {
+  border-color: #E17A55;
+  background: radial-gradient(circle at top left, rgba(225, 122, 85, 0.2), #F3C1AF);
+}
+#horizonte .card--usecase:nth-child(5) {
+  border-top-color: #E17A55;
+}
+#horizonte .card--usecase:nth-child(5):hover {
+  border-color: #E17A55;
+  background: radial-gradient(circle at top left, rgba(225, 122, 85, 0.2), #F3C1AF);
+}
+#horizonte .card--usecase:nth-child(6) {
+  border-top-color: #8C7CB8;
+}
+#horizonte .card--usecase:nth-child(6):hover {
+  border-color: #8C7CB8;
+  background: radial-gradient(circle at top left, rgba(140, 124, 184, 0.2), #D6CCE7);
+}
+#horizonte .card--usecase:hover h3 {
+  color: #151b26;
+}
+#horizonte .card--usecase:nth-child(1):hover h3 i { color: #5FAFA8; }
+#horizonte .card--usecase:nth-child(2):hover h3 i { color: #E3C34A; }
+#horizonte .card--usecase:nth-child(3):hover h3 i { color: #6E8FAF; }
+#horizonte .card--usecase:nth-child(4):hover h3 i { color: #E17A55; }
+#horizonte .card--usecase:nth-child(5):hover h3 i { color: #E17A55; }
+#horizonte .card--usecase:nth-child(6):hover h3 i { color: #8C7CB8; }
+#horizonte .card--usecase:hover > div[role="region"] {
+  color: #374151;
+  border-top-color: rgba(21, 27, 38, 0.12);
+}
+#horizonte .card--usecase:nth-child(1) .btn--ghost:hover {
+  border-color: #5FAFA8;
+  color: #5FAFA8;
+}
+#horizonte .card--usecase:nth-child(2) .btn--ghost:hover {
+  border-color: #E3C34A;
+  color: #151b26;
+}
+#horizonte .card--usecase:nth-child(3) .btn--ghost:hover {
+  border-color: #6E8FAF;
+  color: #6E8FAF;
+}
+#horizonte .card--usecase:nth-child(4) .btn--ghost:hover {
+  border-color: #E17A55;
+  color: #E17A55;
+}
+#horizonte .card--usecase:nth-child(5) .btn--ghost:hover {
+  border-color: #E17A55;
+  color: #E17A55;
+}
+#horizonte .card--usecase:nth-child(6) .btn--ghost:hover {
+  border-color: #8C7CB8;
+  color: #8C7CB8;
+}
+#horizonte .card--usecase:nth-child(1) .stage-card-link { color: #5FAFA8; }
+#horizonte .card--usecase:nth-child(2) .stage-card-link { color: #E3C34A; }
+#horizonte .card--usecase:nth-child(3) .stage-card-link { color: #6E8FAF; }
+#horizonte .card--usecase:nth-child(4) .stage-card-link { color: #E17A55; }
+#horizonte .card--usecase:nth-child(5) .stage-card-link { color: #E17A55; }
+#horizonte .card--usecase:nth-child(6) .stage-card-link { color: #8C7CB8; }
+
 /* Animaciones de entrada */
 
 .reveal-on-scroll {

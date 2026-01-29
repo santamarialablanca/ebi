@@ -44,7 +44,7 @@
 
   // --- Navegación activa según scroll ---
   const navLinks = document.querySelectorAll('.nav__links a[href^="#"]');
-  const sectionIds = ['criterios', 'principios', 'etapas', 'competencias', 'objetivo'];
+  const sectionIds = ['criterios', 'principios', 'etapas', 'horizonte', 'competencias', 'objetivo'];
 
   function updateActiveNav() {
     var current = '';
