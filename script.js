@@ -69,6 +69,23 @@
   });
   updateActiveNav();
 
+  // --- Botón volver arriba: mostrar al hacer scroll + bounce al clic ---
+  var backToTop = document.getElementById('back-to-top');
+  if (backToTop) {
+    function toggleBackToTop() {
+      var show = (window.scrollY || document.documentElement.scrollTop) > 400;
+      backToTop.classList.toggle('is-visible', show);
+    }
+    window.addEventListener('scroll', function () {
+      requestAnimationFrame(toggleBackToTop);
+    });
+    backToTop.addEventListener('click', function () {
+      backToTop.classList.add('is-press');
+      setTimeout(function () { backToTop.classList.remove('is-press'); }, 400);
+    });
+    toggleBackToTop();
+  }
+
   // --- Etapas: expandir/colapsar descripción al clic ---
   document.querySelectorAll('.stage-btn').forEach(function (btn) {
     var panelId = btn.getAttribute('aria-controls');
@@ -108,7 +125,76 @@
     });
   });
 
-  document.documentElement.style.scrollPaddingTop = '1rem';
+  document.documentElement.style.scrollPaddingTop = '56px';
+
+  // --- Modo claro/oscuro (localStorage) ---
+  var themeToggle = document.getElementById('theme-toggle');
+  var savedTheme = localStorage.getItem('ebi-theme');
+  if (savedTheme === 'light' || savedTheme === 'dark') {
+    document.body.setAttribute('data-theme', savedTheme);
+  }
+  if (themeToggle) {
+    function updateThemeLabel() {
+      var isLight = document.body.getAttribute('data-theme') === 'light';
+      themeToggle.setAttribute('aria-label', isLight ? 'Cambiar a modo oscuro' : 'Cambiar a modo claro');
+    }
+    updateThemeLabel();
+    themeToggle.addEventListener('click', function () {
+      var next = document.body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      document.body.setAttribute('data-theme', next);
+      localStorage.setItem('ebi-theme', next);
+      updateThemeLabel();
+    });
+  }
+
+  // --- Micro-interacciones: bounce/ripple al clic ---
+  document.querySelectorAll('.nav-link--ripple').forEach(function (link) {
+    link.addEventListener('click', function () {
+      link.classList.add('is-press');
+      setTimeout(function () { link.classList.remove('is-press'); }, 350);
+    });
+  });
+  // --- Barra de progreso de scroll ---
+  var scrollProgress = document.querySelector('.scroll-progress');
+  var scrollProgressBar = document.querySelector('.scroll-progress-bar');
+  if (scrollProgress && scrollProgressBar) {
+    function updateScrollProgress() {
+      var scrollTop = window.scrollY || document.documentElement.scrollTop;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      var pct = docHeight > 0 ? Math.min(100, (scrollTop / docHeight) * 100) : 0;
+      scrollProgressBar.style.width = pct + '%';
+      scrollProgress.setAttribute('aria-valuenow', Math.round(pct));
+    }
+    window.addEventListener('scroll', function () {
+      requestAnimationFrame(updateScrollProgress);
+    });
+    window.addEventListener('load', updateScrollProgress);
+    updateScrollProgress();
+  }
+
+  // --- Efecto 3D tilt en cards (WOW, respeta reduced-motion) ---
+  if (!prefersReducedMotion) {
+    var tiltCards = document.querySelectorAll('.section-bg .card, .section-bg-alt .card');
+    var tiltFactor = 8;
+    tiltCards.forEach(function (card) {
+      card.addEventListener('mouseenter', function () {
+        card.addEventListener('mousemove', onTiltMove);
+      });
+      card.addEventListener('mouseleave', function () {
+        card.removeEventListener('mousemove', onTiltMove);
+        card.style.transform = '';
+      });
+      function onTiltMove(e) {
+        var rect = card.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width - 0.5;
+        var y = (e.clientY - rect.top) / rect.height - 0.5;
+        var rotateY = x * tiltFactor;
+        var rotateX = -y * tiltFactor;
+        var lift = 6;
+        card.style.transform = 'perspective(1000px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-' + lift + 'px)';
+      }
+    });
+  }
 
   // --- Contadores animados (visión general) ---
   var visionSection = document.getElementById('vision-general');
@@ -165,6 +251,72 @@
       });
     });
   }
+
+  // --- Cursor personalizado (hero + CTA, solo desktop, sin reduced-motion) ---
+  if (!prefersReducedMotion && window.matchMedia('(hover: hover)').matches && window.matchMedia('(min-width: 1025px)').matches) {
+    var cursorDot = document.createElement('div');
+    cursorDot.className = 'cursor-dot';
+    cursorDot.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(cursorDot);
+    var heroEl = document.querySelector('.hero.cursor-custom');
+    var ctaEl = document.querySelector('.section-cta.cursor-custom');
+    document.addEventListener('mousemove', function (e) {
+      var inside = (heroEl && heroEl.contains(e.target)) || (ctaEl && ctaEl.contains(e.target));
+      if (inside) {
+        cursorDot.classList.add('is-visible');
+        cursorDot.style.left = e.clientX + 'px';
+        cursorDot.style.top = e.clientY + 'px';
+      } else {
+        cursorDot.classList.remove('is-visible', 'is-hover');
+      }
+    });
+  }
+
+  // --- Parallax suave en hero (respetando reduced-motion) ---
+  if (!prefersReducedMotion) {
+    var heroInner = document.querySelector('.hero-inner');
+    window.addEventListener('scroll', function () {
+      requestAnimationFrame(function () {
+        if (!heroInner) return;
+        var y = window.scrollY || document.documentElement.scrollTop;
+        var rate = Math.min(y * 0.06, 20);
+        heroInner.style.transform = 'translateY(' + rate + 'px)';
+      });
+    });
+  }
+
+  // --- Lazy load Chart.js: cargar solo cuando Visión general entra en viewport ---
+  var visionSectionForCharts = document.getElementById('vision-general');
+  var chartsInitialized = false;
+  var chartScriptLoading = false;
+
+  function loadChartJs(callback) {
+    if (typeof Chart !== 'undefined') {
+      callback();
+      return;
+    }
+    if (chartScriptLoading) {
+      var t = setInterval(function () {
+        if (typeof Chart !== 'undefined') {
+          clearInterval(t);
+          callback();
+        }
+      }, 50);
+      return;
+    }
+    chartScriptLoading = true;
+    var s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js';
+    s.crossOrigin = 'anonymous';
+    s.onload = function () { callback(); };
+    document.head.appendChild(s);
+  }
+
+  function initCharts() {
+    if (!visionSectionForCharts || chartsInitialized) return;
+    loadChartJs(function () {
+      if (chartsInitialized) return;
+      chartsInitialized = true;
 
   // --- Gráfico estructura EBI (Chart.js) ---
   var chartCanvas = document.getElementById('ebi-structure-chart');
@@ -266,5 +418,21 @@
         cutout: '58%'
       }
     });
+  }
+    });
+  }
+
+  if (visionSectionForCharts) {
+    var obsCharts = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            initCharts();
+          }
+        });
+      },
+      { rootMargin: '100px', threshold: 0 }
+    );
+    obsCharts.observe(visionSectionForCharts);
   }
 })();

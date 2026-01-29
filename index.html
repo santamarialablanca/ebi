@@ -9,31 +9,50 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-theme="dark">
   <a href="#main" class="skip-link">Ir al contenido principal</a>
 
-  <!-- Navegación fija en la parte superior, una sola fila -->
+  <!-- Barra de progreso de scroll (minimalista) -->
+  <div class="scroll-progress" role="progressbar" aria-label="Progreso de lectura" aria-valuemin="0" aria-valuemax="100">
+    <div class="scroll-progress-bar"></div>
+  </div>
+
+  <!-- Textura sutil (grain) para sensación premium -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Navegación fija: contenido + modo claro/oscuro -->
   <nav class="nav-sections nav-top" aria-label="Contenido del Sistema EBI">
     <span class="nav-sections-label">Contenido</span>
     <ul class="nav-sections-list">
-      <li><a href="#vision-general" class="nav-link"><span class="nav-dot"></span> Visión general</a></li>
-      <li><a href="#criterios" class="nav-link"><span class="nav-dot"></span> Criterios</a></li>
-      <li><a href="#principios" class="nav-link"><span class="nav-dot"></span> Principios</a></li>
-      <li><a href="#etapas" class="nav-link"><span class="nav-dot"></span> Etapas</a></li>
-      <li><a href="#competencias" class="nav-link"><span class="nav-dot"></span> Competencias</a></li>
-      <li><a href="#objetivo" class="nav-link"><span class="nav-dot"></span> Objetivo</a></li>
+      <li><a href="#vision-general" class="nav-link nav-link--ripple"><span class="nav-dot"></span> Visión general</a></li>
+      <li><a href="#criterios" class="nav-link nav-link--ripple"><span class="nav-dot"></span> Criterios</a></li>
+      <li><a href="#principios" class="nav-link nav-link--ripple"><span class="nav-dot"></span> Principios</a></li>
+      <li><a href="#etapas" class="nav-link nav-link--ripple"><span class="nav-dot"></span> Etapas</a></li>
+      <li><a href="#competencias" class="nav-link nav-link--ripple"><span class="nav-dot"></span> Competencias</a></li>
+      <li><a href="#objetivo" class="nav-link nav-link--ripple"><span class="nav-dot"></span> Objetivo</a></li>
     </ul>
+    <div class="nav-actions">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Cambiar a modo claro" title="Modo claro/oscuro">
+        <i class="fa-solid fa-moon theme-icon theme-icon--dark" aria-hidden="true"></i>
+        <i class="fa-solid fa-sun theme-icon theme-icon--light" aria-hidden="true"></i>
+      </button>
+    </div>
   </nav>
 
-  <header class="hero" role="banner">
+  <header class="hero cursor-custom" role="banner">
     <div class="hero-pattern" aria-hidden="true"></div>
     <div class="hero-inner">
       <div class="logo-ebi" aria-hidden="true">
         <span class="logo-text">ebi</span>
       </div>
-      <h1 class="hero-title">¿Qué es Sistema EBI en Santa María la Blanca?</h1>
+      <h1 class="hero-title">
+        <span class="hero-word">¿Qué es </span>
+        <span class="hero-word hero-word--accent">Sistema EBI</span>
+        <span class="hero-word"> en </span>
+        <span class="hero-word">Santa María la Blanca?</span>
+      </h1>
       <p class="hero-subtitle">Una propuesta de <strong>Personalización de la enseñanza</strong></p>
     </div>
   </header>
@@ -249,7 +268,7 @@
     </section>
 
     <!-- Objetivo final -->
-    <section id="objetivo" class="section section-cta" aria-labelledby="cta-heading">
+    <section id="objetivo" class="section section-cta cursor-custom" aria-labelledby="cta-heading">
       <div class="cta-inner">
         <h2 id="cta-heading" class="cta-title">Y ayudar a los alumnos a encontrar un <strong>sentido personal</strong> a su aprendizaje</h2>
       </div>
@@ -261,7 +280,12 @@
     <p class="footer-credit">Fundación Iruaritz Lezama</p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+  <!-- Botón subir (aparece al hacer scroll) -->
+  <a href="#main" class="back-to-top btn-bounce" id="back-to-top" aria-label="Volver arriba" title="Volver arriba">
+    <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+  </a>
+
+  <!-- Chart.js se carga en lazy cuando la sección Visión general entra en viewport (script.js) -->
   <script src="script.js"></script>
 </body>
 </html>
