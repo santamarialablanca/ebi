@@ -1254,29 +1254,29 @@ ul {
 
 /* Colores de chips por etapa (paleta colegio) */
 
-/* Acceso rápido por etapas: Raíz, Tallo, Nudo, Rama, Flor, Fruto */
+/* Acceso rápido: Raíz=Escuelita (verde agua), Tallo=Infantil (amarillo/crema) */
 .chip[href*="raiz"] {
-  background: #F7E8B8;
-  border-color: #E3C34A;
-  color: #151b26;
-}
-
-.chip[href*="raiz"]:hover {
-  background: #E3C34A;
-  border-color: #E3C34A;
-  color: #151b26;
-}
-
-.chip[href*="tallo"] {
   background: #C8E4E2;
   border-color: #5FAFA8;
   color: #151b26;
 }
 
-.chip[href*="tallo"]:hover {
+.chip[href*="raiz"]:hover {
   background: #5FAFA8;
   border-color: #5FAFA8;
   color: #fff;
+}
+
+.chip[href*="tallo"] {
+  background: #F7E8B8;
+  border-color: #E3C34A;
+  color: #151b26;
+}
+
+.chip[href*="tallo"]:hover {
+  background: #E3C34A;
+  border-color: #E3C34A;
+  color: #151b26;
 }
 
 .chip[href*="nudo"] {
@@ -2499,55 +2499,56 @@ ul {
 /* Paletas de colores por etapa - Colores exactos de los flyers */
 
 /* Escuelita - Verde esmeralda (#10b981) */
+/* Escuelita = verde agua #C8E4E2 / #5FAFA8 */
 .stage-hero--escuelita {
   background:
-    radial-gradient(circle at top left, rgba(16, 185, 129, 0.35), transparent 50%),
-    radial-gradient(circle at bottom right, rgba(5, 150, 105, 0.2), transparent 50%),
+    radial-gradient(circle at top left, rgba(95, 175, 168, 0.35), transparent 50%),
+    radial-gradient(circle at bottom right, rgba(95, 175, 168, 0.2), transparent 50%),
     #0b1220;
 }
 
 .stage-hero--escuelita .pill--accent {
-  background: linear-gradient(135deg, #10b981, #059669);
+  background: linear-gradient(135deg, #5FAFA8, #4a8f89);
   color: #f9fafb;
 }
 
 .stage-hero--escuelita .card--feature {
-  border-top-color: #10b981;
+  border-top-color: #5FAFA8;
 }
 
 .stage-hero--escuelita .card--usecase {
-  border-top-color: #10b981;
+  border-top-color: #5FAFA8;
 }
 
 .stage-hero--escuelita .btn--ghost:hover {
-  border-color: #10b981;
-  color: #10b981;
+  border-color: #5FAFA8;
+  color: #5FAFA8;
 }
 
-/* Infantil - Ámbar/Naranja (#f59e0b) */
+/* Infantil = amarillo/crema #F7E8B8 / #E3C34A */
 .stage-hero--infantil {
   background:
-    radial-gradient(circle at top left, rgba(245, 158, 11, 0.35), transparent 50%),
-    radial-gradient(circle at bottom right, rgba(217, 119, 6, 0.2), transparent 50%),
+    radial-gradient(circle at top left, rgba(227, 195, 74, 0.35), transparent 50%),
+    radial-gradient(circle at bottom right, rgba(227, 195, 74, 0.15), transparent 50%),
     #0b1220;
 }
 
 .stage-hero--infantil .pill--accent {
-  background: linear-gradient(135deg, #f59e0b, #d97706);
-  color: #0b1220;
+  background: linear-gradient(135deg, #E3C34A, #c9a82a);
+  color: #151b26;
 }
 
 .stage-hero--infantil .card--feature {
-  border-top-color: #f59e0b;
+  border-top-color: #E3C34A;
 }
 
 .stage-hero--infantil .card--usecase {
-  border-top-color: #f59e0b;
+  border-top-color: #E3C34A;
 }
 
 .stage-hero--infantil .btn--ghost:hover {
-  border-color: #f59e0b;
-  color: #f59e0b;
+  border-color: #E3C34A;
+  color: #E3C34A;
 }
 
 /* Primaria - Azul (#3b82f6) */
@@ -2658,14 +2659,14 @@ ul {
 
 body.etapa-escuelita .card--feature:hover,
 body.etapa-escuelita .card--usecase:hover {
-  border-color: #10b981;
-  background: radial-gradient(circle at top left, rgba(16, 185, 129, 0.15), #020617);
+  border-color: #5FAFA8;
+  background: radial-gradient(circle at top left, rgba(95, 175, 168, 0.15), #020617);
 }
 
 body.etapa-infantil .card--feature:hover,
 body.etapa-infantil .card--usecase:hover {
-  border-color: #f59e0b;
-  background: radial-gradient(circle at top left, rgba(245, 158, 11, 0.15), #020617);
+  border-color: #E3C34A;
+  background: radial-gradient(circle at top left, rgba(227, 195, 74, 0.2), #020617);
 }
 
 body.etapa-primaria .card--feature:hover,
@@ -2695,12 +2696,12 @@ body.etapa-fp .card--usecase:hover {
 /* Colores en secciones claras */
 body.etapa-escuelita .section--light .card--feature,
 body.etapa-escuelita .section--light .card--usecase {
-  border-top-color: #10b981;
+  border-top-color: #5FAFA8;
 }
 
 body.etapa-infantil .section--light .card--feature,
 body.etapa-infantil .section--light .card--usecase {
-  border-top-color: #f59e0b;
+  border-top-color: #E3C34A;
 }
 
 body.etapa-primaria .section--light .card--feature,
@@ -2751,23 +2752,24 @@ body.etapa-fp .section--light .card--usecase {
 
 /* Aplicar colores a las tarjetas de etapas en index */
 /* Raíz: infantil #F7E8B8 / #E3C34A */
+/* Raíz = Escuelita: verde agua #C8E4E2 / #5FAFA8 */
 #etapas .card--usecase:nth-child(1) {
-  border-top-color: #E3C34A;
-}
-
-#etapas .card--usecase:nth-child(1):hover {
-  border-color: #E3C34A;
-  background: radial-gradient(circle at top left, rgba(227, 195, 74, 0.2), #F7E8B8);
-}
-
-/* Tallo: escuelita #C8E4E2 / #5FAFA8 */
-#etapas .card--usecase:nth-child(2) {
   border-top-color: #5FAFA8;
 }
 
-#etapas .card--usecase:nth-child(2):hover {
+#etapas .card--usecase:nth-child(1):hover {
   border-color: #5FAFA8;
   background: radial-gradient(circle at top left, rgba(95, 175, 168, 0.2), #C8E4E2);
+}
+
+/* Tallo = Infantil: amarillo/crema #F7E8B8 / #E3C34A */
+#etapas .card--usecase:nth-child(2) {
+  border-top-color: #E3C34A;
+}
+
+#etapas .card--usecase:nth-child(2):hover {
+  border-color: #E3C34A;
+  background: radial-gradient(circle at top left, rgba(227, 195, 74, 0.2), #F7E8B8);
 }
 
 /* Nudo: primaria #C7D6E2 / #6E8FAF */
@@ -2815,8 +2817,8 @@ body.etapa-fp .section--light .card--usecase {
   color: #151b26;
 }
 
-#etapas .card--usecase:nth-child(1):hover h3 i { color: #E3C34A; }
-#etapas .card--usecase:nth-child(2):hover h3 i { color: #5FAFA8; }
+#etapas .card--usecase:nth-child(1):hover h3 i { color: #5FAFA8; }
+#etapas .card--usecase:nth-child(2):hover h3 i { color: #E3C34A; }
 #etapas .card--usecase:nth-child(3):hover h3 i { color: #6E8FAF; }
 #etapas .card--usecase:nth-child(4):hover h3 i { color: #E17A55; }
 #etapas .card--usecase:nth-child(5):hover h3 i { color: #E17A55; }
@@ -2829,13 +2831,21 @@ body.etapa-fp .section--light .card--usecase {
 
 /* Botones "Ver detalle" con colores de etapa */
 #etapas .card--usecase:nth-child(1) .btn--ghost:hover {
+  border-color: #5FAFA8;
+  color: #5FAFA8;
+}
+
+#etapas .card--usecase:nth-child(2) .btn--ghost:hover {
   border-color: #E3C34A;
   color: #151b26;
 }
 
-#etapas .card--usecase:nth-child(2) .btn--ghost:hover {
-  border-color: #5FAFA8;
+#etapas .card--usecase:nth-child(1) .stage-card-link {
   color: #5FAFA8;
+}
+
+#etapas .card--usecase:nth-child(2) .stage-card-link {
+  color: #E3C34A;
 }
 
 #etapas .card--usecase:nth-child(3) .btn--ghost:hover {
