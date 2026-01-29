@@ -1200,6 +1200,81 @@ ul {
 }
 
 /* Colores de chips por etapa (paleta colegio) */
+
+/* Acceso rápido por etapas: Raíz, Tallo, Nudo, Rama, Flor, Fruto */
+.chip[href*="raiz"] {
+  background: #F7E8B8;
+  border-color: #E3C34A;
+  color: #151b26;
+}
+
+.chip[href*="raiz"]:hover {
+  background: #E3C34A;
+  border-color: #E3C34A;
+  color: #151b26;
+}
+
+.chip[href*="tallo"] {
+  background: #C8E4E2;
+  border-color: #5FAFA8;
+  color: #151b26;
+}
+
+.chip[href*="tallo"]:hover {
+  background: #5FAFA8;
+  border-color: #5FAFA8;
+  color: #fff;
+}
+
+.chip[href*="nudo"] {
+  background: #C7D6E2;
+  border-color: #6E8FAF;
+  color: #151b26;
+}
+
+.chip[href*="nudo"]:hover {
+  background: #6E8FAF;
+  border-color: #6E8FAF;
+  color: #fff;
+}
+
+.chip[href*="rama"] {
+  background: #F3C1AF;
+  border-color: #E17A55;
+  color: #151b26;
+}
+
+.chip[href*="rama"]:hover {
+  background: #E17A55;
+  border-color: #E17A55;
+  color: #fff;
+}
+
+.chip[href*="flor"] {
+  background: #F3C1AF;
+  border-color: #E17A55;
+  color: #151b26;
+}
+
+.chip[href*="flor"]:hover {
+  background: #E17A55;
+  border-color: #E17A55;
+  color: #fff;
+}
+
+.chip[href*="fruto"] {
+  background: #D6CCE7;
+  border-color: #8C7CB8;
+  color: #151b26;
+}
+
+.chip[href*="fruto"]:hover {
+  background: #8C7CB8;
+  border-color: #8C7CB8;
+  color: #fff;
+}
+
+/* Chips por nombre de etapa (enlaces alternativos) */
 .chip[href*="escuelita"] {
   border-color: rgba(95, 175, 168, 0.6);
 }
@@ -2622,89 +2697,112 @@ body.etapa-fp .section--light .card--usecase {
 }
 
 /* Aplicar colores a las tarjetas de etapas en index */
+/* Raíz: infantil #F7E8B8 / #E3C34A */
 #etapas .card--usecase:nth-child(1) {
-  border-top-color: #10b981;
+  border-top-color: #E3C34A;
 }
 
 #etapas .card--usecase:nth-child(1):hover {
-  border-color: #10b981;
-  background: radial-gradient(circle at top left, rgba(16, 185, 129, 0.15), rgba(255, 255, 255, 0.9));
+  border-color: #E3C34A;
+  background: radial-gradient(circle at top left, rgba(227, 195, 74, 0.2), #F7E8B8);
 }
 
+/* Tallo: escuelita #C8E4E2 / #5FAFA8 */
 #etapas .card--usecase:nth-child(2) {
-  border-top-color: #f59e0b;
+  border-top-color: #5FAFA8;
 }
 
 #etapas .card--usecase:nth-child(2):hover {
-  border-color: #f59e0b;
-  background: radial-gradient(circle at top left, rgba(245, 158, 11, 0.15), rgba(255, 255, 255, 0.9));
+  border-color: #5FAFA8;
+  background: radial-gradient(circle at top left, rgba(95, 175, 168, 0.2), #C8E4E2);
 }
 
+/* Nudo: primaria #C7D6E2 / #6E8FAF */
 #etapas .card--usecase:nth-child(3) {
-  border-top-color: #3b82f6;
+  border-top-color: #6E8FAF;
 }
 
 #etapas .card--usecase:nth-child(3):hover {
-  border-color: #3b82f6;
-  background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.15), rgba(255, 255, 255, 0.9));
+  border-color: #6E8FAF;
+  background: radial-gradient(circle at top left, rgba(110, 143, 175, 0.2), #C7D6E2);
 }
 
+/* Rama: secundaria #F3C1AF / #E17A55 */
 #etapas .card--usecase:nth-child(4) {
-  border-top-color: #f97316;
+  border-top-color: #E17A55;
 }
 
 #etapas .card--usecase:nth-child(4):hover {
-  border-color: #f97316;
-  background: radial-gradient(circle at top left, rgba(249, 115, 22, 0.15), rgba(255, 255, 255, 0.9));
+  border-color: #E17A55;
+  background: radial-gradient(circle at top left, rgba(225, 122, 85, 0.2), #F3C1AF);
 }
 
+/* Flor: secundaria #F3C1AF / #E17A55 */
 #etapas .card--usecase:nth-child(5) {
-  border-top-color: #f97316;
+  border-top-color: #E17A55;
 }
 
 #etapas .card--usecase:nth-child(5):hover {
-  border-color: #f97316;
-  background: radial-gradient(circle at top left, rgba(249, 115, 22, 0.15), rgba(255, 255, 255, 0.9));
+  border-color: #E17A55;
+  background: radial-gradient(circle at top left, rgba(225, 122, 85, 0.2), #F3C1AF);
 }
 
+/* Fruto: fp #D6CCE7 / #8C7CB8 */
 #etapas .card--usecase:nth-child(6) {
-  border-top-color: #8b5cf6;
+  border-top-color: #8C7CB8;
 }
 
 #etapas .card--usecase:nth-child(6):hover {
-  border-color: #8b5cf6;
-  background: radial-gradient(circle at top left, rgba(139, 92, 246, 0.15), rgba(255, 255, 255, 0.9));
+  border-color: #8C7CB8;
+  background: radial-gradient(circle at top left, rgba(140, 124, 184, 0.2), #D6CCE7);
+}
+
+/* Texto legible en hover (fondo claro por etapa) */
+#etapas .card--usecase:hover h3 {
+  color: #151b26;
+}
+
+#etapas .card--usecase:nth-child(1):hover h3 i { color: #E3C34A; }
+#etapas .card--usecase:nth-child(2):hover h3 i { color: #5FAFA8; }
+#etapas .card--usecase:nth-child(3):hover h3 i { color: #6E8FAF; }
+#etapas .card--usecase:nth-child(4):hover h3 i { color: #E17A55; }
+#etapas .card--usecase:nth-child(5):hover h3 i { color: #E17A55; }
+#etapas .card--usecase:nth-child(6):hover h3 i { color: #8C7CB8; }
+
+#etapas .card--usecase:hover > div[role="region"] {
+  color: #374151;
+  border-top-color: rgba(21, 27, 38, 0.12);
 }
 
 /* Botones "Ver detalle" con colores de etapa */
 #etapas .card--usecase:nth-child(1) .btn--ghost:hover {
-  border-color: #10b981;
-  color: #10b981;
+  border-color: #E3C34A;
+  color: #151b26;
 }
 
 #etapas .card--usecase:nth-child(2) .btn--ghost:hover {
-  border-color: #f59e0b;
-  color: #f59e0b;
+  border-color: #5FAFA8;
+  color: #5FAFA8;
 }
 
 #etapas .card--usecase:nth-child(3) .btn--ghost:hover {
-  border-color: #3b82f6;
-  color: #3b82f6;
+  border-color: #6E8FAF;
+  color: #6E8FAF;
 }
 
 #etapas .card--usecase:nth-child(4) .btn--ghost:hover {
-  border-color: #f97316;
-  color: #f97316;
+  border-color: #E17A55;
+  color: #E17A55;
 }
 
 #etapas .card--usecase:nth-child(5) .btn--ghost:hover {
-  border-color: #f97316;
-  color: #f97316;
+  border-color: #E17A55;
+  color: #E17A55;
 }
 
 #etapas .card--usecase:nth-child(6) .btn--ghost:hover {
-  border-color: #8b5cf6;
-  color: #8b5cf6;
+  border-color: #8C7CB8;
+  color: #8C7CB8;
 }
 
 /* Animaciones de entrada */
