@@ -9,109 +9,39 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body data-theme="dark">
+<body>
   <a href="#main" class="skip-link">Ir al contenido principal</a>
 
-  <!-- Barra de progreso de scroll (minimalista) -->
-  <div class="scroll-progress" role="progressbar" aria-label="Progreso de lectura" aria-valuemin="0" aria-valuemax="100">
-    <div class="scroll-progress-bar"></div>
-  </div>
-
-  <!-- Textura sutil (grain) para sensación premium -->
-  <div class="grain" aria-hidden="true"></div>
-
-  <!-- Navegación fija: contenido + modo claro/oscuro -->
-  <nav class="nav-sections nav-top" aria-label="Contenido del Sistema EBI">
-    <span class="nav-sections-label">Contenido</span>
-    <ul class="nav-sections-list">
-      <li><a href="#vision-general" class="nav-link nav-link--ripple"><span class="nav-dot"></span> Visión general</a></li>
-      <li><a href="#criterios" class="nav-link nav-link--ripple"><span class="nav-dot"></span> Criterios</a></li>
-      <li><a href="#principios" class="nav-link nav-link--ripple"><span class="nav-dot"></span> Principios</a></li>
-      <li><a href="#etapas" class="nav-link nav-link--ripple"><span class="nav-dot"></span> Etapas</a></li>
-      <li><a href="#competencias" class="nav-link nav-link--ripple"><span class="nav-dot"></span> Competencias</a></li>
-      <li><a href="#objetivo" class="nav-link nav-link--ripple"><span class="nav-dot"></span> Objetivo</a></li>
-    </ul>
-    <div class="nav-actions">
-      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Cambiar a modo claro" title="Modo claro/oscuro">
-        <i class="fa-solid fa-moon theme-icon theme-icon--dark" aria-hidden="true"></i>
-        <i class="fa-solid fa-sun theme-icon theme-icon--light" aria-hidden="true"></i>
-      </button>
-    </div>
-  </nav>
-
-  <header class="hero cursor-custom" role="banner">
+  <header class="hero" role="banner">
     <div class="hero-pattern" aria-hidden="true"></div>
     <div class="hero-inner">
       <div class="logo-ebi" aria-hidden="true">
         <span class="logo-text">ebi</span>
       </div>
-      <h1 class="hero-title">
-        <span class="hero-word">¿Qué es </span>
-        <span class="hero-word hero-word--accent">Sistema EBI</span>
-        <span class="hero-word"> en </span>
-        <span class="hero-word">Santa María la Blanca?</span>
-      </h1>
+      <h1 class="hero-title">¿Qué es Sistema EBI en Santa María la Blanca?</h1>
       <p class="hero-subtitle">Una propuesta de <strong>Personalización de la enseñanza</strong></p>
     </div>
   </header>
 
   <main id="main" class="main" role="main">
-    <!-- Visión general: gráfico + tabla + contadores -->
-    <section id="vision-general" class="section section-vision section-bg-alt" aria-labelledby="vision-heading">
-      <div class="section__inner section__inner--vision">
-        <h2 id="vision-heading" class="section-title">Estructura del Sistema EBI</h2>
-        <p class="section-desc">Resumen visual de los cuatro pilares que componen la propuesta.</p>
-        <!-- Contadores animados -->
-        <div class="vision-stats" aria-live="polite">
-          <div class="vision-stat" data-count="2">
-            <span class="vision-stat-value" id="stat-criterios">0</span>
-            <span class="vision-stat-label">Criterios</span>
-          </div>
-          <div class="vision-stat" data-count="4">
-            <span class="vision-stat-value" id="stat-principios">0</span>
-            <span class="vision-stat-label">Principios</span>
-          </div>
-          <div class="vision-stat" data-count="6">
-            <span class="vision-stat-value" id="stat-etapas">0</span>
-            <span class="vision-stat-label">Etapas</span>
-          </div>
-          <div class="vision-stat" data-count="6">
-            <span class="vision-stat-value" id="stat-competencias">0</span>
-            <span class="vision-stat-label">Competencias</span>
-          </div>
-        </div>
-        <div class="vision-grid">
-          <div class="vision-chart-wrap" role="img" aria-label="Gráfico de barras: 2 criterios, 4 principios, 6 etapas, 6 competencias">
-            <canvas id="ebi-structure-chart" width="400" height="280"></canvas>
-          </div>
-          <div class="vision-table-wrap">
-            <table class="vision-table">
-              <caption class="vision-table-caption">Datos en texto</caption>
-              <thead>
-                <tr>
-                  <th scope="col">Pilar</th>
-                  <th scope="col">Cantidad</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>Criterios</td><td>2</td></tr>
-                <tr><td>Principios</td><td>4</td></tr>
-                <tr><td>Etapas</td><td>6</td></tr>
-                <tr><td>Competencias</td><td>6</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Navegación por secciones -->
+    <nav class="nav-sections" aria-label="Contenido del Sistema EBI">
+      <h2 class="nav-sections-title">Contenido</h2>
+      <ul class="nav-sections-list">
+        <li><a href="#criterios" class="nav-link"><span class="nav-dot"></span> Dos criterios</a></li>
+        <li><a href="#principios" class="nav-link"><span class="nav-dot"></span> Cuatro principios</a></li>
+        <li><a href="#etapas" class="nav-link"><span class="nav-dot"></span> Seis etapas</a></li>
+        <li><a href="#competencias" class="nav-link"><span class="nav-dot"></span> Seis competencias</a></li>
+        <li><a href="#objetivo" class="nav-link"><span class="nav-dot"></span> Objetivo final</a></li>
+      </ul>
+    </nav>
 
     <!-- Criterios -->
     <section id="criterios" class="section section-criteria section-bg" aria-labelledby="criteria-heading">
-      <div class="section__inner">
-        <h2 id="criteria-heading" class="section-title">Basada en <span class="highlight">dos criterios</span></h2>
-        <div class="criteria-grid">
+      <h2 id="criteria-heading" class="section-title">Basada en <span class="highlight">dos criterios</span></h2>
+      <div class="criteria-grid">
         <article class="card card-criterion card-accent-1" id="criterio-1">
           <div class="card-icon-wrap card-icon-wrap--yellow"><i class="fa-solid fa-lightbulb card-icon" aria-hidden="true"></i></div>
           <h3 class="card-title">Perfil de aprendizaje</h3>
@@ -131,15 +61,13 @@
             <li>Alumno y profesor</li>
           </ul>
         </article>
-        </div>
       </div>
     </section>
 
     <!-- Principios -->
     <section id="principios" class="section section-principles section-bg-alt" aria-labelledby="principles-heading">
-      <div class="section__inner">
-        <h2 id="principles-heading" class="section-title">Y en <span class="highlight">cuatro principios</span></h2>
-        <div class="principles-flow">
+      <h2 id="principles-heading" class="section-title">Y en <span class="highlight">cuatro principios</span></h2>
+      <div class="principles-flow">
         <article class="card card-principle" tabindex="0">
           <span class="principle-num" aria-hidden="true">1</span>
           <h3 class="card-title">Planificación centrada en el alumno</h3>
@@ -163,16 +91,14 @@
           <h3 class="card-title">Transformación curricular</h3>
           <p class="card-desc">Innovación y mejora del currículo.</p>
         </article>
-        </div>
       </div>
     </section>
 
     <!-- Etapas (interactivas: clic para ver descripción) -->
     <section id="etapas" class="section section-stages section-bg" aria-labelledby="stages-heading">
-      <div class="section__inner">
-        <h2 id="stages-heading" class="section-title">Estructurada en <span class="highlight">seis etapas</span></h2>
-        <p class="section-desc">Metáfora del crecimiento: de la raíz al fruto. <span class="hint">Haz clic en cada etapa para ver más.</span></p>
-        <div class="stages-track">
+      <h2 id="stages-heading" class="section-title">Estructurada en <span class="highlight">seis etapas</span></h2>
+      <p class="section-desc">Metáfora del crecimiento: de la raíz al fruto. <span class="hint">Haz clic en cada etapa para ver más.</span></p>
+      <div class="stages-track">
         <ol class="stages-list">
           <li class="stage-item">
             <button type="button" class="stage-btn" data-stage="raiz" aria-expanded="false" aria-controls="stage-desc-raiz" id="stage-btn-raiz">
@@ -218,20 +144,14 @@
           </li>
         </ol>
         <div class="stages-line" aria-hidden="true"></div>
-        </div>
       </div>
     </section>
 
-    <!-- Competencias: gráfico circular + grid de tarjetas -->
+    <!-- Competencias (interactivas: hover/clic muestra descripción) -->
     <section id="competencias" class="section section-competences section-bg-alt" aria-labelledby="competences-heading">
-      <div class="section__inner section__inner--competences">
-        <h2 id="competences-heading" class="section-title">Con el fin de desarrollar <span class="highlight">seis competencias</span></h2>
-        <p class="section-desc"><span class="hint">Pasa el cursor o toca cada tarjeta para ver su descripción.</span></p>
-        <div class="competences-layout">
-          <div class="competences-chart-wrap" role="img" aria-label="Gráfico circular: seis competencias en igual proporción">
-            <canvas id="ebi-competences-chart" width="260" height="260"></canvas>
-          </div>
-          <ul class="competences-grid">
+      <h2 id="competences-heading" class="section-title">Con el fin de desarrollar <span class="highlight">seis competencias</span></h2>
+      <p class="section-desc"><span class="hint">Pasa el cursor o toca cada tarjeta para ver su descripción.</span></p>
+      <ul class="competences-grid">
         <li class="card card-competence" data-competence="personal">
           <i class="fa-solid fa-user competence-icon" aria-hidden="true"></i>
           <span class="competence-name">Personal y social</span>
@@ -262,13 +182,11 @@
           <span class="competence-name">Científica</span>
           <p class="competence-desc">Pensamiento lógico, indagación y resolución de problemas.</p>
         </li>
-        </ul>
-        </div>
-      </div>
+      </ul>
     </section>
 
     <!-- Objetivo final -->
-    <section id="objetivo" class="section section-cta cursor-custom" aria-labelledby="cta-heading">
+    <section id="objetivo" class="section section-cta" aria-labelledby="cta-heading">
       <div class="cta-inner">
         <h2 id="cta-heading" class="cta-title">Y ayudar a los alumnos a encontrar un <strong>sentido personal</strong> a su aprendizaje</h2>
       </div>
@@ -280,12 +198,6 @@
     <p class="footer-credit">Fundación Iruaritz Lezama</p>
   </footer>
 
-  <!-- Botón subir (aparece al hacer scroll) -->
-  <a href="#main" class="back-to-top btn-bounce" id="back-to-top" aria-label="Volver arriba" title="Volver arriba">
-    <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
-  </a>
-
-  <!-- Chart.js se carga en lazy cuando la sección Visión general entra en viewport (script.js) -->
   <script src="script.js"></script>
 </body>
 </html>
