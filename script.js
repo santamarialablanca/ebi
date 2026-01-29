@@ -69,6 +69,21 @@
   });
   updateActiveNav();
 
+  // --- Nav sticky: añadir clase al hacer scroll (pasado el hero) ---
+  var hero = document.querySelector('.hero');
+  var navSections = document.querySelector('.nav-sections');
+  if (hero && navSections) {
+    var heroBottom = hero.offsetHeight;
+    function toggleStickyNav() {
+      var scrolled = window.scrollY || window.pageYOffset;
+      navSections.classList.toggle('is-sticky', scrolled > heroBottom * 0.6);
+    }
+    window.addEventListener('scroll', function () {
+      requestAnimationFrame(toggleStickyNav);
+    });
+    toggleStickyNav();
+  }
+
   // --- Etapas: expandir/colapsar descripción al clic ---
   document.querySelectorAll('.stage-btn').forEach(function (btn) {
     var panelId = btn.getAttribute('aria-controls');
