@@ -69,44 +69,45 @@
   });
   updateActiveNav();
 
-  // --- Etapas: expandir/colapsar descripción al clic ---
-  document.querySelectorAll('.stage-btn').forEach(function (btn) {
+  // --- Etapas: botón "Ver detalle" expande/colapsa (accesible, sin depender de hover) ---
+  document.querySelectorAll('.stage-card-btn').forEach(function (btn) {
     var panelId = btn.getAttribute('aria-controls');
     var panel = panelId ? document.getElementById(panelId) : null;
     if (!panel) return;
 
-    btn.addEventListener('click', function () {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
       var expanded = btn.getAttribute('aria-expanded') === 'true';
       btn.setAttribute('aria-expanded', !expanded);
       panel.hidden = expanded;
+      btn.textContent = expanded ? 'Ver detalle' : 'Ver menos';
     });
   });
 
-  // --- Competencias: toggle descripción al clic (hover en desktop + clic en todos) ---
-  document.querySelectorAll('.card-competence').forEach(function (card) {
-    card.setAttribute('role', 'button');
-    card.setAttribute('tabindex', '0');
-    card.setAttribute('aria-expanded', 'false');
+  // --- Competencias: botón "Ver más" expande/colapsa definición completa (accesible) ---
+  document.querySelectorAll('.competence-btn').forEach(function (btn) {
+    var panelId = btn.getAttribute('aria-controls');
+    var panel = panelId ? document.getElementById(panelId) : null;
+    if (!panel) return;
 
-    card.addEventListener('click', function (e) {
-      e.preventDefault();
-      var wasOpen = card.classList.contains('is-open');
-      document.querySelectorAll('.card-competence').forEach(function (c) {
-        c.classList.remove('is-open');
-        c.setAttribute('aria-expanded', 'false');
-      });
-      if (!wasOpen) {
-        card.classList.add('is-open');
-        card.setAttribute('aria-expanded', 'true');
-      }
-    });
-
-    card.addEventListener('keydown', function (e) {
-      if (e.key !== 'Enter' && e.key !== ' ') return;
-      e.preventDefault();
-      card.click();
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !expanded);
+      panel.hidden = expanded;
+      btn.textContent = expanded ? 'Ver más' : 'Ver menos';
     });
   });
 
   document.documentElement.style.scrollPaddingTop = '1rem';
+
+  // Nav fija: blur al hacer scroll
+  var navFixed = document.querySelector('.nav-fixed');
+  if (navFixed) {
+    function toggleNavScrolled() {
+      navFixed.classList.toggle('nav-fixed--scrolled', window.scrollY > 60);
+    }
+    window.addEventListener('scroll', toggleNavScrolled, { passive: true });
+    toggleNavScrolled();
+  }
 })();

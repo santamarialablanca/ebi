@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>¿Qué es Sistema EBI? | Santa María La Blanca</title>
+  <style>html { scroll-padding-top: 80px; }</style>
   <meta name="description" content="Sistema EBI: una propuesta de personalización de la enseñanza en Santa María La Blanca, basada en criterios, principios, etapas y competencias.">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
@@ -13,6 +14,17 @@
 </head>
 <body>
   <a href="#main" class="skip-link">Ir al contenido principal</a>
+
+  <nav class="nav-fixed" aria-label="Principal">
+    <a href="#main" class="nav-fixed__logo"><i class="fa-solid fa-seedling" aria-hidden="true"></i> EBI</a>
+    <ul class="nav-fixed__links">
+      <li><a href="#criterios"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i><span>Criterios</span></a></li>
+      <li><a href="#principios"><i class="fa-solid fa-list" aria-hidden="true"></i><span>Principios</span></a></li>
+      <li><a href="#etapas"><i class="fa-solid fa-layer-group" aria-hidden="true"></i><span>Etapas</span></a></li>
+      <li><a href="#competencias"><i class="fa-solid fa-star" aria-hidden="true"></i><span>Competencias</span></a></li>
+      <li><a href="#objetivo"><i class="fa-solid fa-bullseye" aria-hidden="true"></i><span>Objetivo</span></a></li>
+    </ul>
+  </nav>
 
   <header class="hero" role="banner">
     <div class="hero-pattern" aria-hidden="true"></div>
@@ -94,93 +106,101 @@
       </div>
     </section>
 
-    <!-- Etapas (interactivas: clic para ver descripción) -->
+    <!-- Etapas: acceso rápido + grid de tarjetas (más visual y accesible) -->
     <section id="etapas" class="section section-stages section-bg" aria-labelledby="stages-heading">
       <h2 id="stages-heading" class="section-title">Estructurada en <span class="highlight">seis etapas</span></h2>
-      <p class="section-desc">Metáfora del crecimiento: de la raíz al fruto. <span class="hint">Haz clic en cada etapa para ver más.</span></p>
-      <div class="stages-track">
-        <ol class="stages-list">
-          <li class="stage-item">
-            <button type="button" class="stage-btn" data-stage="raiz" aria-expanded="false" aria-controls="stage-desc-raiz" id="stage-btn-raiz">
-              <i class="fa-solid fa-seedling stage-icon" aria-hidden="true"></i>
-              <span class="stage-name">Raíz</span>
-            </button>
-            <div id="stage-desc-raiz" class="stage-desc" role="region" aria-labelledby="stage-btn-raiz" hidden>Etapa evolutiva: 1-6 años. Horizonte de expectativas del Sistema EBI (Manual de Bases Psicopedagógicas).</div>
-          </li>
-          <li class="stage-item">
-            <button type="button" class="stage-btn" data-stage="tallo" aria-expanded="false" aria-controls="stage-desc-tallo" id="stage-btn-tallo">
-              <i class="fa-solid fa-leaf stage-icon" aria-hidden="true"></i>
-              <span class="stage-name">Tallo</span>
-            </button>
-            <div id="stage-desc-tallo" class="stage-desc" role="region" aria-labelledby="stage-btn-tallo" hidden>Etapa evolutiva: 5-9 años. Horizonte de expectativas del Sistema EBI (Manual de Bases Psicopedagógicas).</div>
-          </li>
-          <li class="stage-item">
-            <button type="button" class="stage-btn" data-stage="nudo" aria-expanded="false" aria-controls="stage-desc-nudo" id="stage-btn-nudo">
-              <i class="fa-solid fa-circle-nodes stage-icon" aria-hidden="true"></i>
-              <span class="stage-name">Nudo</span>
-            </button>
-            <div id="stage-desc-nudo" class="stage-desc" role="region" aria-labelledby="stage-btn-nudo" hidden>Etapa evolutiva: 8-12 años. Horizonte de expectativas del Sistema EBI (Manual de Bases Psicopedagógicas).</div>
-          </li>
-          <li class="stage-item">
-            <button type="button" class="stage-btn" data-stage="rama" aria-expanded="false" aria-controls="stage-desc-rama" id="stage-btn-rama">
-              <i class="fa-solid fa-tree stage-icon" aria-hidden="true"></i>
-              <span class="stage-name">Rama</span>
-            </button>
-            <div id="stage-desc-rama" class="stage-desc" role="region" aria-labelledby="stage-btn-rama" hidden>Etapa evolutiva: 11-14 años. Horizonte de expectativas del Sistema EBI (Manual de Bases Psicopedagógicas).</div>
-          </li>
-          <li class="stage-item">
-            <button type="button" class="stage-btn" data-stage="flor" aria-expanded="false" aria-controls="stage-desc-flor" id="stage-btn-flor">
-              <i class="fa-solid fa-spa stage-icon" aria-hidden="true"></i>
-              <span class="stage-name">Flor</span>
-            </button>
-            <div id="stage-desc-flor" class="stage-desc" role="region" aria-labelledby="stage-btn-flor" hidden>Etapa evolutiva: 13-16 años. Horizonte de expectativas del Sistema EBI (Manual de Bases Psicopedagógicas).</div>
-          </li>
-          <li class="stage-item">
-            <button type="button" class="stage-btn" data-stage="fruto" aria-expanded="false" aria-controls="stage-desc-fruto" id="stage-btn-fruto">
-              <i class="fa-solid fa-apple-whole stage-icon" aria-hidden="true"></i>
-              <span class="stage-name">Fruto</span>
-            </button>
-            <div id="stage-desc-fruto" class="stage-desc" role="region" aria-labelledby="stage-btn-fruto" hidden>Etapa evolutiva: 15-19 años. Horizonte de expectativas del Sistema EBI (Manual de Bases Psicopedagógicas).</div>
-          </li>
-        </ol>
-        <div class="stages-line" aria-hidden="true"></div>
+      <p class="section-desc">Metáfora del crecimiento: de la raíz al fruto. <span class="hint">Haz clic en «Ver detalle» para ampliar.</span></p>
+      <div class="stages-quick-access" aria-label="Acceso rápido por etapas">
+        <span class="stages-quick-label">Acceso rápido por etapas</span>
+        <div class="stages-pills">
+          <a href="#stage-card-raiz" class="stage-pill stage-pill--raiz">Raíz (1-6)</a>
+          <a href="#stage-card-tallo" class="stage-pill stage-pill--tallo">Tallo (5-9)</a>
+          <a href="#stage-card-nudo" class="stage-pill stage-pill--nudo">Nudo (8-12)</a>
+          <a href="#stage-card-rama" class="stage-pill stage-pill--rama">Rama (11-14)</a>
+          <a href="#stage-card-flor" class="stage-pill stage-pill--flor">Flor (13-16)</a>
+          <a href="#stage-card-fruto" class="stage-pill stage-pill--fruto">Fruto (15-19)</a>
+        </div>
+      </div>
+      <div class="stages-grid">
+        <article id="stage-card-raiz" class="stage-card stage-card--raiz">
+          <span class="stage-card-pill">Raíz</span>
+          <h3 class="stage-card-title">Raíz · 1-6 años</h3>
+          <button type="button" class="stage-card-btn" aria-expanded="false" aria-controls="stage-detail-raiz" id="stage-btn-raiz">Ver detalle</button>
+          <div id="stage-detail-raiz" class="stage-card-detail" role="region" aria-labelledby="stage-btn-raiz" hidden>Etapa evolutiva: 1-6 años. Horizonte de expectativas del Sistema EBI (Manual de Bases Psicopedagógicas).</div>
+        </article>
+        <article id="stage-card-tallo" class="stage-card stage-card--tallo">
+          <span class="stage-card-pill">Tallo</span>
+          <h3 class="stage-card-title">Tallo · 5-9 años</h3>
+          <button type="button" class="stage-card-btn" aria-expanded="false" aria-controls="stage-detail-tallo" id="stage-btn-tallo">Ver detalle</button>
+          <div id="stage-detail-tallo" class="stage-card-detail" role="region" aria-labelledby="stage-btn-tallo" hidden>Etapa evolutiva: 5-9 años. Horizonte de expectativas del Sistema EBI (Manual de Bases Psicopedagógicas).</div>
+        </article>
+        <article id="stage-card-nudo" class="stage-card stage-card--nudo">
+          <span class="stage-card-pill">Nudo</span>
+          <h3 class="stage-card-title">Nudo · 8-12 años</h3>
+          <button type="button" class="stage-card-btn" aria-expanded="false" aria-controls="stage-detail-nudo" id="stage-btn-nudo">Ver detalle</button>
+          <div id="stage-detail-nudo" class="stage-card-detail" role="region" aria-labelledby="stage-btn-nudo" hidden>Etapa evolutiva: 8-12 años. Horizonte de expectativas del Sistema EBI (Manual de Bases Psicopedagógicas).</div>
+        </article>
+        <article id="stage-card-rama" class="stage-card stage-card--rama">
+          <span class="stage-card-pill">Rama</span>
+          <h3 class="stage-card-title">Rama · 11-14 años</h3>
+          <button type="button" class="stage-card-btn" aria-expanded="false" aria-controls="stage-detail-rama" id="stage-btn-rama">Ver detalle</button>
+          <div id="stage-detail-rama" class="stage-card-detail" role="region" aria-labelledby="stage-btn-rama" hidden>Etapa evolutiva: 11-14 años. Horizonte de expectativas del Sistema EBI (Manual de Bases Psicopedagógicas).</div>
+        </article>
+        <article id="stage-card-flor" class="stage-card stage-card--flor">
+          <span class="stage-card-pill">Flor</span>
+          <h3 class="stage-card-title">Flor · 13-16 años</h3>
+          <button type="button" class="stage-card-btn" aria-expanded="false" aria-controls="stage-detail-flor" id="stage-btn-flor">Ver detalle</button>
+          <div id="stage-detail-flor" class="stage-card-detail" role="region" aria-labelledby="stage-btn-flor" hidden>Etapa evolutiva: 13-16 años. Horizonte de expectativas del Sistema EBI (Manual de Bases Psicopedagógicas).</div>
+        </article>
+        <article id="stage-card-fruto" class="stage-card stage-card--fruto">
+          <span class="stage-card-pill">Fruto</span>
+          <h3 class="stage-card-title">Fruto · 15-19 años</h3>
+          <button type="button" class="stage-card-btn" aria-expanded="false" aria-controls="stage-detail-fruto" id="stage-btn-fruto">Ver detalle</button>
+          <div id="stage-detail-fruto" class="stage-card-detail" role="region" aria-labelledby="stage-btn-fruto" hidden>Etapa evolutiva: 15-19 años. Horizonte de expectativas del Sistema EBI (Manual de Bases Psicopedagógicas).</div>
+        </article>
       </div>
     </section>
 
-    <!-- Competencias (interactivas: hover/clic muestra descripción) -->
+    <!-- Competencias: grid visual con descripción visible y “Ver más” accesible -->
     <section id="competencias" class="section section-competences section-bg-alt" aria-labelledby="competences-heading">
       <h2 id="competences-heading" class="section-title">Con el fin de desarrollar <span class="highlight">seis competencias</span></h2>
-      <p class="section-desc"><span class="hint">Pasa el cursor o toca cada tarjeta para ver su descripción.</span></p>
-      <ul class="competences-grid">
-        <li class="card card-competence" data-competence="personal">
-          <i class="fa-solid fa-user competence-icon" aria-hidden="true"></i>
-          <span class="competence-name">Personal y social</span>
-          <p class="competence-desc">Desarrollo progresivo de la capacidad de gestionar el desarrollo personal y colectivo, comprometiéndose con el bienestar propio y de su entorno más próximo, así como con la mejora de la sociedad.</p>
+      <p class="section-desc"><span class="hint">Haz clic en «Ver más» para leer la definición completa.</span></p>
+      <ul class="competences-grid" aria-label="Competencias EBI">
+        <li class="card card-competence">
+          <div class="competence-icon-wrap" aria-hidden="true"><i class="fa-solid fa-user competence-icon" aria-hidden="true"></i></div>
+          <h3 class="competence-name">Personal y social</h3>
+          <button type="button" class="competence-btn" aria-expanded="false" aria-controls="comp-detail-personal" id="comp-btn-personal">Ver más</button>
+          <div id="comp-detail-personal" class="competence-detail" role="region" aria-labelledby="comp-btn-personal" hidden>Desarrollo progresivo de la capacidad de gestionar el desarrollo personal y colectivo, comprometiéndose con el bienestar propio y de su entorno más próximo, así como con la mejora de la sociedad.</div>
         </li>
-        <li class="card card-competence" data-competence="iniciativa">
-          <i class="fa-solid fa-compass competence-icon" aria-hidden="true"></i>
-          <span class="competence-name">Iniciativa y autonomía</span>
-          <p class="competence-desc">Desarrollo progresivo de la capacidad de conocer y controlar los propios procesos de aprendizaje con el fin de lograr un aprendizaje cada vez más autónomo y eficaz.</p>
+        <li class="card card-competence">
+          <div class="competence-icon-wrap" aria-hidden="true"><i class="fa-solid fa-compass competence-icon" aria-hidden="true"></i></div>
+          <h3 class="competence-name">Iniciativa y autonomía</h3>
+          <button type="button" class="competence-btn" aria-expanded="false" aria-controls="comp-detail-iniciativa" id="comp-btn-iniciativa">Ver más</button>
+          <div id="comp-detail-iniciativa" class="competence-detail" role="region" aria-labelledby="comp-btn-iniciativa" hidden>Desarrollo progresivo de la capacidad de conocer y controlar los propios procesos de aprendizaje con el fin de lograr un aprendizaje cada vez más autónomo y eficaz.</div>
         </li>
-        <li class="card card-competence" data-competence="digital">
-          <i class="fa-solid fa-laptop competence-icon" aria-hidden="true"></i>
-          <span class="competence-name">Digital</span>
-          <p class="competence-desc">Desarrollo progresivo de la capacidad de usar de forma creativa, crítica y segura las TIC para alcanzar objetivos vinculados al aprendizaje.</p>
+        <li class="card card-competence">
+          <div class="competence-icon-wrap" aria-hidden="true"><i class="fa-solid fa-laptop competence-icon" aria-hidden="true"></i></div>
+          <h3 class="competence-name">Digital</h3>
+          <button type="button" class="competence-btn" aria-expanded="false" aria-controls="comp-detail-digital" id="comp-btn-digital">Ver más</button>
+          <div id="comp-detail-digital" class="competence-detail" role="region" aria-labelledby="comp-btn-digital" hidden>Desarrollo progresivo de la capacidad de usar de forma creativa, crítica y segura las TIC para alcanzar objetivos vinculados al aprendizaje.</div>
         </li>
-        <li class="card card-competence" data-competence="comunicativa">
-          <i class="fa-solid fa-comments competence-icon" aria-hidden="true"></i>
-          <span class="competence-name">Comunicativa</span>
-          <p class="competence-desc">Desarrollo progresivo de la capacidad de comprender, expresar y crear a través de diversos lenguajes como instrumento fundamental para la socialización.</p>
+        <li class="card card-competence">
+          <div class="competence-icon-wrap" aria-hidden="true"><i class="fa-solid fa-comments competence-icon" aria-hidden="true"></i></div>
+          <h3 class="competence-name">Comunicativa</h3>
+          <button type="button" class="competence-btn" aria-expanded="false" aria-controls="comp-detail-comunicativa" id="comp-btn-comunicativa">Ver más</button>
+          <div id="comp-detail-comunicativa" class="competence-detail" role="region" aria-labelledby="comp-btn-comunicativa" hidden>Desarrollo progresivo de la capacidad de comprender, expresar y crear a través de diversos lenguajes como instrumento fundamental para la socialización.</div>
         </li>
-        <li class="card card-competence" data-competence="artistica">
-          <i class="fa-solid fa-palette competence-icon" aria-hidden="true"></i>
-          <span class="competence-name">Artística</span>
-          <p class="competence-desc">Desarrollo progresivo de la capacidad de comprender, expresar y crear productos social y culturalmente relevantes como medio de expresión genuinamente humano.</p>
+        <li class="card card-competence">
+          <div class="competence-icon-wrap" aria-hidden="true"><i class="fa-solid fa-palette competence-icon" aria-hidden="true"></i></div>
+          <h3 class="competence-name">Artística</h3>
+          <button type="button" class="competence-btn" aria-expanded="false" aria-controls="comp-detail-artistica" id="comp-btn-artistica">Ver más</button>
+          <div id="comp-detail-artistica" class="competence-detail" role="region" aria-labelledby="comp-btn-artistica" hidden>Desarrollo progresivo de la capacidad de comprender, expresar y crear productos social y culturalmente relevantes como medio de expresión genuinamente humano.</div>
         </li>
-        <li class="card card-competence" data-competence="cientifica">
-          <i class="fa-solid fa-atom competence-icon" aria-hidden="true"></i>
-          <span class="competence-name">Científica</span>
-          <p class="competence-desc">Desarrollo progresivo de la capacidad de comprender y aplicar conocimientos y metodologías para explicar la naturaleza y los cambios ligados a la actividad humana así como la responsabilidad de cada individuo como ciudadano.</p>
+        <li class="card card-competence">
+          <div class="competence-icon-wrap" aria-hidden="true"><i class="fa-solid fa-atom competence-icon" aria-hidden="true"></i></div>
+          <h3 class="competence-name">Científica</h3>
+          <button type="button" class="competence-btn" aria-expanded="false" aria-controls="comp-detail-cientifica" id="comp-btn-cientifica">Ver más</button>
+          <div id="comp-detail-cientifica" class="competence-detail" role="region" aria-labelledby="comp-btn-cientifica" hidden>Desarrollo progresivo de la capacidad de comprender y aplicar conocimientos y metodologías para explicar la naturaleza y los cambios ligados a la actividad humana así como la responsabilidad de cada individuo como ciudadano.</div>
         </li>
       </ul>
     </section>
