@@ -25,7 +25,7 @@
 
   // --- Revelado al hacer scroll (Intersection Observer) ---
   if (!prefersReducedMotion) {
-    const sections = document.querySelectorAll('.section-criteria, .section-principles, .section-stages, .section-competences, .section-cta, .nav-sections');
+    const sections = document.querySelectorAll('main .section');
     const observer = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
@@ -37,13 +37,13 @@
       { rootMargin: '0px 0px -40px 0px', threshold: 0.1 }
     );
     sections.forEach(function (el) {
-      el.classList.add('reveal');
+      el.classList.add('reveal-on-scroll');
       observer.observe(el);
     });
   }
 
   // --- Navegación activa según scroll ---
-  const navLinks = document.querySelectorAll('.nav-link');
+  const navLinks = document.querySelectorAll('.nav__links a[href^="#"]');
   const sectionIds = ['criterios', 'principios', 'etapas', 'competencias', 'objetivo'];
 
   function updateActiveNav() {
@@ -70,7 +70,7 @@
   updateActiveNav();
 
   // --- Etapas: botón "Ver detalle" expande/colapsa (accesible, sin depender de hover) ---
-  document.querySelectorAll('.stage-card-btn').forEach(function (btn) {
+  document.querySelectorAll('.stage-toggle').forEach(function (btn) {
     var panelId = btn.getAttribute('aria-controls');
     var panel = panelId ? document.getElementById(panelId) : null;
     if (!panel) return;
@@ -101,11 +101,11 @@
 
   document.documentElement.style.scrollPaddingTop = '1rem';
 
-  // Nav fija: blur al hacer scroll
-  var navFixed = document.querySelector('.nav-fixed');
-  if (navFixed) {
+  // Nav: blur al hacer scroll
+  var navEl = document.querySelector('.nav');
+  if (navEl) {
     function toggleNavScrolled() {
-      navFixed.classList.toggle('nav-fixed--scrolled', window.scrollY > 60);
+      navEl.classList.toggle('nav--scrolled', window.scrollY > 60);
     }
     window.addEventListener('scroll', toggleNavScrolled, { passive: true });
     toggleNavScrolled();

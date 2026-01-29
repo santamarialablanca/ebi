@@ -15,9 +15,12 @@
 <body>
   <a href="#main" class="skip-link">Ir al contenido principal</a>
 
-  <nav class="nav-fixed" aria-label="Principal">
-    <a href="#main" class="nav-fixed__logo"><i class="fa-solid fa-seedling" aria-hidden="true"></i> EBI</a>
-    <ul class="nav-fixed__links">
+  <nav class="nav" role="navigation" aria-label="Navegación principal">
+    <div class="nav__logo" aria-label="Sistema EBI">
+      <i class="fa-solid fa-seedling" aria-hidden="true"></i>
+      Sistema EBI
+    </div>
+    <ul class="nav__links" role="menubar">
       <li><a href="#criterios"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i><span>Criterios</span></a></li>
       <li><a href="#principios"><i class="fa-solid fa-list" aria-hidden="true"></i><span>Principios</span></a></li>
       <li><a href="#etapas"><i class="fa-solid fa-layer-group" aria-hidden="true"></i><span>Etapas</span></a></li>
@@ -27,36 +30,62 @@
   </nav>
 
   <header class="hero" role="banner">
-    <div class="hero-pattern" aria-hidden="true"></div>
-    <div class="hero-inner">
-      <div class="logo-ebi" aria-hidden="true">
-        <span class="logo-text">ebi</span>
+    <div class="hero__parallax-bg" aria-hidden="true"></div>
+    <div class="hero__content">
+      <div class="hero__text">
+        <h1>¿Qué es Sistema EBI en Santa María La Blanca?</h1>
+        <p class="hero__subtitle">Una propuesta de <strong>personalización de la enseñanza</strong> basada en criterios, principios, etapas y competencias.</p>
+        <div class="hero__actions">
+          <a href="#criterios" class="btn btn--primary"><i class="fa-solid fa-arrow-down" aria-hidden="true"></i> Conocer el sistema</a>
+          <a href="#etapas" class="btn btn--ghost"><i class="fa-solid fa-compass" aria-hidden="true"></i> Explorar etapas</a>
+        </div>
+        <p class="hero__note">Departamento de Innovación del Colegio Santa María La Blanca.</p>
+        <div class="stage-links">
+          <span class="stage-links__label">Acceso rápido por etapas</span>
+          <div class="stage-links__buttons">
+            <a href="#stage-card-raiz" class="chip">Raíz (1-6)</a>
+            <a href="#stage-card-tallo" class="chip">Tallo (5-9)</a>
+            <a href="#stage-card-nudo" class="chip">Nudo (8-12)</a>
+            <a href="#stage-card-rama" class="chip">Rama (11-14)</a>
+            <a href="#stage-card-flor" class="chip">Flor (13-16)</a>
+            <a href="#stage-card-fruto" class="chip">Fruto (15-19)</a>
+          </div>
+        </div>
       </div>
-      <h1 class="hero-title">¿Qué es Sistema EBI en Santa María La Blanca?</h1>
-      <p class="hero-subtitle">Una propuesta de <strong>Personalización de la enseñanza</strong></p>
+      <div class="hero__visual">
+        <div class="hero-card">
+          <div class="hero-card__header">
+            <span class="pill pill--accent">EBI</span>
+            <span class="hero-card__tag">Progresión de autonomía</span>
+          </div>
+          <p class="hero-card__prompt">Línea visual que conecta las etapas con las fases Raíz, Tallo, Nudo, Rama, Flor y Fruto.</p>
+          <div class="hero-card__charts">
+            <div class="mini-chart mini-chart--bars">
+              <div class="mini-chart__bar" style="height: 40%"></div>
+              <div class="mini-chart__bar" style="height: 55%"></div>
+              <div class="mini-chart__bar" style="height: 70%"></div>
+              <div class="mini-chart__bar" style="height: 85%"></div>
+            </div>
+            <div class="mini-chart mini-chart--donut">
+              <div class="mini-chart__donut"><span>+</span></div>
+              <p>Autonomía creciente</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
-  <main id="main" class="main" role="main">
-    <!-- Navegación por secciones -->
-    <nav class="nav-sections" aria-label="Contenido del Sistema EBI">
-      <h2 class="nav-sections-title"><i class="fa-solid fa-bars-staggered" aria-hidden="true"></i> Contenido</h2>
-      <ul class="nav-sections-list">
-        <li><a href="#criterios" class="nav-link"><i class="fa-solid fa-lightbulb nav-link-icon" aria-hidden="true"></i><span class="nav-dot"></span> Dos criterios</a></li>
-        <li><a href="#principios" class="nav-link"><i class="fa-solid fa-list-check nav-link-icon" aria-hidden="true"></i><span class="nav-dot"></span> Cuatro principios</a></li>
-        <li><a href="#etapas" class="nav-link"><i class="fa-solid fa-layer-group nav-link-icon" aria-hidden="true"></i><span class="nav-dot"></span> Seis etapas</a></li>
-        <li><a href="#competencias" class="nav-link"><i class="fa-solid fa-star nav-link-icon" aria-hidden="true"></i><span class="nav-dot"></span> Seis competencias</a></li>
-        <li><a href="#objetivo" class="nav-link"><i class="fa-solid fa-bullseye nav-link-icon" aria-hidden="true"></i><span class="nav-dot"></span> Objetivo final</a></li>
-      </ul>
-    </nav>
-
+  <main id="main" role="main">
     <!-- Criterios -->
-    <section id="criterios" class="section section-criteria section-bg" aria-labelledby="criteria-heading">
-      <h2 id="criteria-heading" class="section-title"><i class="fa-solid fa-scale-balanced section-title-icon" aria-hidden="true"></i> Basada en <span class="highlight">dos criterios</span></h2>
+    <section id="criterios" class="section" aria-labelledby="criteria-heading">
+      <div class="section__header">
+        <h2 id="criteria-heading"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i> Basada en dos criterios</h2>
+        <p>Perfil de aprendizaje y relaciones significativas como base del Sistema EBI.</p>
+      </div>
       <div class="criteria-grid">
-        <article class="card card-criterion card-accent-1" id="criterio-1">
-          <div class="card-icon-wrap card-icon-wrap--yellow"><i class="fa-solid fa-lightbulb card-icon" aria-hidden="true"></i></div>
-          <h3 class="card-title">Perfil de aprendizaje</h3>
+        <article class="card card--feature" id="criterio-1">
+          <h3><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Perfil de aprendizaje</h3>
           <ul class="card-list">
             <li>Diversidad e inclusión</li>
             <li>Conocimiento y autoconocimiento</li>
@@ -64,9 +93,8 @@
           </ul>
         </article>
         <span class="criteria-connector" aria-hidden="true">y</span>
-        <article class="card card-criterion card-accent-2" id="criterio-2">
-          <div class="card-icon-wrap card-icon-wrap--blue"><i class="fa-solid fa-people-group card-icon" aria-hidden="true"></i></div>
-          <h3 class="card-title">Relaciones significativas</h3>
+        <article class="card card--feature" id="criterio-2">
+          <h3><i class="fa-solid fa-people-group" aria-hidden="true"></i> Relaciones significativas</h3>
           <ul class="card-list">
             <li>Recursos del entorno</li>
             <li>Equipos de colaboración y cooperación</li>
@@ -77,98 +105,88 @@
     </section>
 
     <!-- Principios -->
-    <section id="principios" class="section section-principles section-bg-alt" aria-labelledby="principles-heading">
-      <h2 id="principles-heading" class="section-title"><i class="fa-solid fa-compass section-title-icon" aria-hidden="true"></i> Y en <span class="highlight">cuatro principios</span></h2>
-      <div class="principles-flow">
-        <article class="card card-principle" tabindex="0">
-          <span class="principle-num" aria-hidden="true">1</span>
-          <div class="card-principle-icon"><i class="fa-solid fa-user-graduate" aria-hidden="true"></i></div>
-          <h3 class="card-title">Planificación centrada en el alumno</h3>
-          <p class="card-desc">Diseño de la enseñanza orientado a cada estudiante.</p>
+    <section id="principios" class="section section--light" aria-labelledby="principles-heading">
+      <div class="section__header">
+        <h2 id="principles-heading"><i class="fa-solid fa-compass" aria-hidden="true"></i> Y en cuatro principios</h2>
+        <p>Planificación centrada en el alumno, comunidad de aprendizaje, fortalecimiento docente y transformación curricular.</p>
+      </div>
+      <div class="cards cards--4">
+        <article class="card card--feature" tabindex="0">
+          <h3><i class="fa-solid fa-user-graduate" aria-hidden="true"></i> Planificación centrada en el alumno</h3>
+          <p>Diseño de la enseñanza orientado a cada estudiante.</p>
         </article>
-        <span class="flow-arrow" aria-hidden="true"></span>
-        <article class="card card-principle" tabindex="0">
-          <span class="principle-num" aria-hidden="true">2</span>
-          <div class="card-principle-icon"><i class="fa-solid fa-people-group" aria-hidden="true"></i></div>
-          <h3 class="card-title">Comunidad de aprendizaje</h3>
-          <p class="card-desc">Aprendizaje en red y colaboración entre todos.</p>
+        <article class="card card--feature" tabindex="0">
+          <h3><i class="fa-solid fa-people-group" aria-hidden="true"></i> Comunidad de aprendizaje</h3>
+          <p>Aprendizaje en red y colaboración entre todos.</p>
         </article>
-        <span class="flow-arrow" aria-hidden="true"></span>
-        <article class="card card-principle" tabindex="0">
-          <span class="principle-num" aria-hidden="true">3</span>
-          <div class="card-principle-icon"><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i></div>
-          <h3 class="card-title">Fortalecimiento docente</h3>
-          <p class="card-desc">Formación y desarrollo continuo del profesorado.</p>
+        <article class="card card--feature" tabindex="0">
+          <h3><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i> Fortalecimiento docente</h3>
+          <p>Formación y desarrollo continuo del profesorado.</p>
         </article>
-        <span class="flow-arrow" aria-hidden="true"></span>
-        <article class="card card-principle" tabindex="0">
-          <span class="principle-num" aria-hidden="true">4</span>
-          <div class="card-principle-icon"><i class="fa-solid fa-book-open" aria-hidden="true"></i></div>
-          <h3 class="card-title">Transformación curricular</h3>
-          <p class="card-desc">Innovación y mejora del currículo.</p>
+        <article class="card card--feature" tabindex="0">
+          <h3><i class="fa-solid fa-book-open" aria-hidden="true"></i> Transformación curricular</h3>
+          <p>Innovación y mejora del currículo.</p>
         </article>
       </div>
     </section>
 
-    <!-- Etapas: acceso rápido + grid de tarjetas (más visual y accesible) -->
-    <section id="etapas" class="section section-stages section-bg" aria-labelledby="stages-heading">
-      <h2 id="stages-heading" class="section-title"><i class="fa-solid fa-seedling section-title-icon" aria-hidden="true"></i> Estructurada en <span class="highlight">seis etapas</span></h2>
-      <p class="section-desc">Metáfora del crecimiento: de la raíz al fruto. <span class="hint">Haz clic en «Ver detalle» para ampliar.</span></p>
-      <div class="stages-quick-access" aria-label="Acceso rápido por etapas">
-        <span class="stages-quick-label"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Acceso rápido por etapas</span>
-        <div class="stages-pills">
-          <a href="#stage-card-raiz" class="stage-pill stage-pill--raiz"><i class="fa-solid fa-seedling stage-pill-icon" aria-hidden="true"></i> Raíz (1-6)</a>
-          <a href="#stage-card-tallo" class="stage-pill stage-pill--tallo"><i class="fa-solid fa-leaf stage-pill-icon" aria-hidden="true"></i> Tallo (5-9)</a>
-          <a href="#stage-card-nudo" class="stage-pill stage-pill--nudo"><i class="fa-solid fa-code-branch stage-pill-icon" aria-hidden="true"></i> Nudo (8-12)</a>
-          <a href="#stage-card-rama" class="stage-pill stage-pill--rama"><i class="fa-solid fa-tree stage-pill-icon" aria-hidden="true"></i> Rama (11-14)</a>
-          <a href="#stage-card-flor" class="stage-pill stage-pill--flor"><i class="fa-solid fa-flower stage-pill-icon" aria-hidden="true"></i> Flor (13-16)</a>
-          <a href="#stage-card-fruto" class="stage-pill stage-pill--fruto"><i class="fa-solid fa-apple-whole stage-pill-icon" aria-hidden="true"></i> Fruto (15-19)</a>
+    <!-- Etapas -->
+    <section id="etapas" class="section" aria-labelledby="stages-heading">
+      <div class="section__header">
+        <h2 id="stages-heading"><i class="fa-solid fa-seedling" aria-hidden="true"></i> Estructurada en seis etapas</h2>
+        <p>Metáfora del crecimiento: de la raíz al fruto. Haz clic en «Ver detalle» para ampliar.</p>
+      </div>
+      <div class="stage-links">
+        <span class="stage-links__label">Acceso rápido por etapas</span>
+        <div class="stage-links__buttons">
+          <a href="#stage-card-raiz" class="chip">Raíz (1-6)</a>
+          <a href="#stage-card-tallo" class="chip">Tallo (5-9)</a>
+          <a href="#stage-card-nudo" class="chip">Nudo (8-12)</a>
+          <a href="#stage-card-rama" class="chip">Rama (11-14)</a>
+          <a href="#stage-card-flor" class="chip">Flor (13-16)</a>
+          <a href="#stage-card-fruto" class="chip">Fruto (15-19)</a>
         </div>
       </div>
-      <div class="stages-grid">
-        <article id="stage-card-raiz" class="stage-card stage-card--raiz">
-          <span class="stage-card-pill"><i class="fa-solid fa-seedling" aria-hidden="true"></i> Raíz</span>
-          <h3 class="stage-card-title">Raíz · 1-6 años</h3>
-          <button type="button" class="stage-card-btn" aria-expanded="false" aria-controls="stage-detail-raiz" id="stage-btn-raiz">Ver detalle</button>
-          <div id="stage-detail-raiz" class="stage-card-detail" role="region" aria-labelledby="stage-btn-raiz" hidden>Etapa evolutiva: 1-6 años. Horizonte de expectativas del Sistema EBI (Manual de Bases Psicopedagógicas).</div>
+      <div class="grid grid--3x2">
+        <article id="stage-card-raiz" class="card card--usecase">
+          <h3><i class="fa-solid fa-seedling" aria-hidden="true"></i> Raíz · 1-6 años</h3>
+          <button type="button" class="btn btn--ghost stage-toggle" aria-expanded="false" aria-controls="stage-detail-raiz" id="stage-btn-raiz">Ver detalle</button>
+          <div id="stage-detail-raiz" role="region" aria-labelledby="stage-btn-raiz" hidden>Etapa evolutiva: 1-6 años. Horizonte de expectativas del Sistema EBI (Manual de Bases Psicopedagógicas).</div>
         </article>
-        <article id="stage-card-tallo" class="stage-card stage-card--tallo">
-          <span class="stage-card-pill"><i class="fa-solid fa-leaf" aria-hidden="true"></i> Tallo</span>
-          <h3 class="stage-card-title">Tallo · 5-9 años</h3>
-          <button type="button" class="stage-card-btn" aria-expanded="false" aria-controls="stage-detail-tallo" id="stage-btn-tallo">Ver detalle</button>
-          <div id="stage-detail-tallo" class="stage-card-detail" role="region" aria-labelledby="stage-btn-tallo" hidden>Etapa evolutiva: 5-9 años. Horizonte de expectativas del Sistema EBI (Manual de Bases Psicopedagógicas).</div>
+        <article id="stage-card-tallo" class="card card--usecase">
+          <h3><i class="fa-solid fa-leaf" aria-hidden="true"></i> Tallo · 5-9 años</h3>
+          <button type="button" class="btn btn--ghost stage-toggle" aria-expanded="false" aria-controls="stage-detail-tallo" id="stage-btn-tallo">Ver detalle</button>
+          <div id="stage-detail-tallo" role="region" aria-labelledby="stage-btn-tallo" hidden>Etapa evolutiva: 5-9 años. Horizonte de expectativas del Sistema EBI (Manual de Bases Psicopedagógicas).</div>
         </article>
-        <article id="stage-card-nudo" class="stage-card stage-card--nudo">
-          <span class="stage-card-pill"><i class="fa-solid fa-code-branch" aria-hidden="true"></i> Nudo</span>
-          <h3 class="stage-card-title">Nudo · 8-12 años</h3>
-          <button type="button" class="stage-card-btn" aria-expanded="false" aria-controls="stage-detail-nudo" id="stage-btn-nudo">Ver detalle</button>
-          <div id="stage-detail-nudo" class="stage-card-detail" role="region" aria-labelledby="stage-btn-nudo" hidden>Etapa evolutiva: 8-12 años. Horizonte de expectativas del Sistema EBI (Manual de Bases Psicopedagógicas).</div>
+        <article id="stage-card-nudo" class="card card--usecase">
+          <h3><i class="fa-solid fa-code-branch" aria-hidden="true"></i> Nudo · 8-12 años</h3>
+          <button type="button" class="btn btn--ghost stage-toggle" aria-expanded="false" aria-controls="stage-detail-nudo" id="stage-btn-nudo">Ver detalle</button>
+          <div id="stage-detail-nudo" role="region" aria-labelledby="stage-btn-nudo" hidden>Etapa evolutiva: 8-12 años. Horizonte de expectativas del Sistema EBI (Manual de Bases Psicopedagógicas).</div>
         </article>
-        <article id="stage-card-rama" class="stage-card stage-card--rama">
-          <span class="stage-card-pill"><i class="fa-solid fa-tree" aria-hidden="true"></i> Rama</span>
-          <h3 class="stage-card-title">Rama · 11-14 años</h3>
-          <button type="button" class="stage-card-btn" aria-expanded="false" aria-controls="stage-detail-rama" id="stage-btn-rama">Ver detalle</button>
-          <div id="stage-detail-rama" class="stage-card-detail" role="region" aria-labelledby="stage-btn-rama" hidden>Etapa evolutiva: 11-14 años. Horizonte de expectativas del Sistema EBI (Manual de Bases Psicopedagógicas).</div>
+        <article id="stage-card-rama" class="card card--usecase">
+          <h3><i class="fa-solid fa-tree" aria-hidden="true"></i> Rama · 11-14 años</h3>
+          <button type="button" class="btn btn--ghost stage-toggle" aria-expanded="false" aria-controls="stage-detail-rama" id="stage-btn-rama">Ver detalle</button>
+          <div id="stage-detail-rama" role="region" aria-labelledby="stage-btn-rama" hidden>Etapa evolutiva: 11-14 años. Horizonte de expectativas del Sistema EBI (Manual de Bases Psicopedagógicas).</div>
         </article>
-        <article id="stage-card-flor" class="stage-card stage-card--flor">
-          <span class="stage-card-pill"><i class="fa-solid fa-flower" aria-hidden="true"></i> Flor</span>
-          <h3 class="stage-card-title">Flor · 13-16 años</h3>
-          <button type="button" class="stage-card-btn" aria-expanded="false" aria-controls="stage-detail-flor" id="stage-btn-flor">Ver detalle</button>
-          <div id="stage-detail-flor" class="stage-card-detail" role="region" aria-labelledby="stage-btn-flor" hidden>Etapa evolutiva: 13-16 años. Horizonte de expectativas del Sistema EBI (Manual de Bases Psicopedagógicas).</div>
+        <article id="stage-card-flor" class="card card--usecase">
+          <h3><i class="fa-solid fa-flower" aria-hidden="true"></i> Flor · 13-16 años</h3>
+          <button type="button" class="btn btn--ghost stage-toggle" aria-expanded="false" aria-controls="stage-detail-flor" id="stage-btn-flor">Ver detalle</button>
+          <div id="stage-detail-flor" role="region" aria-labelledby="stage-btn-flor" hidden>Etapa evolutiva: 13-16 años. Horizonte de expectativas del Sistema EBI (Manual de Bases Psicopedagógicas).</div>
         </article>
-        <article id="stage-card-fruto" class="stage-card stage-card--fruto">
-          <span class="stage-card-pill"><i class="fa-solid fa-apple-whole" aria-hidden="true"></i> Fruto</span>
-          <h3 class="stage-card-title">Fruto · 15-19 años</h3>
-          <button type="button" class="stage-card-btn" aria-expanded="false" aria-controls="stage-detail-fruto" id="stage-btn-fruto">Ver detalle</button>
-          <div id="stage-detail-fruto" class="stage-card-detail" role="region" aria-labelledby="stage-btn-fruto" hidden>Etapa evolutiva: 15-19 años. Horizonte de expectativas del Sistema EBI (Manual de Bases Psicopedagógicas).</div>
+        <article id="stage-card-fruto" class="card card--usecase">
+          <h3><i class="fa-solid fa-apple-whole" aria-hidden="true"></i> Fruto · 15-19 años</h3>
+          <button type="button" class="btn btn--ghost stage-toggle" aria-expanded="false" aria-controls="stage-detail-fruto" id="stage-btn-fruto">Ver detalle</button>
+          <div id="stage-detail-fruto" role="region" aria-labelledby="stage-btn-fruto" hidden>Etapa evolutiva: 15-19 años. Horizonte de expectativas del Sistema EBI (Manual de Bases Psicopedagógicas).</div>
         </article>
       </div>
     </section>
 
     <!-- Competencias: grid visual con descripción visible y “Ver más” accesible -->
-    <section id="competencias" class="section section-competences section-bg-alt" aria-labelledby="competences-heading">
-      <h2 id="competences-heading" class="section-title"><i class="fa-solid fa-graduation-cap section-title-icon" aria-hidden="true"></i> Con el fin de desarrollar <span class="highlight">seis competencias</span></h2>
-      <p class="section-desc"><span class="hint">Haz clic en «Ver más» para leer la definición completa.</span></p>
+    <section id="competencias" class="section section--light" aria-labelledby="competences-heading">
+      <div class="section__header">
+        <h2 id="competences-heading"><i class="fa-solid fa-star" aria-hidden="true"></i> Con el fin de desarrollar <span class="highlight">seis competencias</span></h2>
+        <p>Seis competencias clave que se desarrollan progresivamente. Haz clic en «Ver más» para leer la definición completa.</p>
+      </div>
       <ul class="competences-grid" aria-label="Competencias EBI">
         <li class="card card-competence">
           <div class="competence-icon-wrap" aria-hidden="true"><i class="fa-solid fa-heart-pulse competence-icon" aria-hidden="true"></i></div>
