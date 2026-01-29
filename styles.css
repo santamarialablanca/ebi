@@ -183,6 +183,70 @@ ul {
   gap: 24px;
 }
 
+/* Lista de etapas 1x6 (Escuelita, Infantil…) en una sola línea, sin iconos */
+.stage-cards-list {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  max-width: 1200px;
+  margin: 48px auto 0;
+}
+
+@media (max-width: 900px) {
+  .stage-cards-list {
+    grid-template-columns: repeat(6, minmax(160px, 1fr));
+    overflow-x: auto;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+.stage-cards-list .card--usecase h3 {
+  display: block;
+}
+
+.stage-cards-list .card--usecase:nth-child(1) { border-top-color: #5FAFA8; }
+.stage-cards-list .card--usecase:nth-child(1):hover {
+  border-color: #5FAFA8;
+  background: radial-gradient(circle at top left, rgba(95, 175, 168, 0.2), #C8E4E2);
+}
+.stage-cards-list .card--usecase:nth-child(1) .stage-card-link { color: #5FAFA8; }
+
+.stage-cards-list .card--usecase:nth-child(2) { border-top-color: #E3C34A; }
+.stage-cards-list .card--usecase:nth-child(2):hover {
+  border-color: #E3C34A;
+  background: radial-gradient(circle at top left, rgba(227, 195, 74, 0.2), #F7E8B8);
+}
+.stage-cards-list .card--usecase:nth-child(2) .stage-card-link { color: #E3C34A; }
+
+.stage-cards-list .card--usecase:nth-child(3) { border-top-color: #6E8FAF; }
+.stage-cards-list .card--usecase:nth-child(3):hover {
+  border-color: #6E8FAF;
+  background: radial-gradient(circle at top left, rgba(110, 143, 175, 0.2), #C7D6E2);
+}
+.stage-cards-list .card--usecase:nth-child(3) .stage-card-link { color: #6E8FAF; }
+
+.stage-cards-list .card--usecase:nth-child(4) { border-top-color: #E17A55; }
+.stage-cards-list .card--usecase:nth-child(4):hover {
+  border-color: #E17A55;
+  background: radial-gradient(circle at top left, rgba(225, 122, 85, 0.2), #F3C1AF);
+}
+.stage-cards-list .card--usecase:nth-child(4) .stage-card-link { color: #E17A55; }
+
+.stage-cards-list .card--usecase:nth-child(5) { border-top-color: #E17A55; }
+.stage-cards-list .card--usecase:nth-child(5):hover {
+  border-color: #E17A55;
+  background: radial-gradient(circle at top left, rgba(225, 122, 85, 0.2), #F3C1AF);
+}
+.stage-cards-list .card--usecase:nth-child(5) .stage-card-link { color: #E17A55; }
+
+.stage-cards-list .card--usecase:nth-child(6) { border-top-color: #8C7CB8; }
+.stage-cards-list .card--usecase:nth-child(6):hover {
+  border-color: #8C7CB8;
+  background: radial-gradient(circle at top left, rgba(140, 124, 184, 0.2), #D6CCE7);
+}
+.stage-cards-list .card--usecase:nth-child(6) .stage-card-link { color: #8C7CB8; }
+
 /* Grid 4x2 específico para 8 elementos */
 .grid--4x2 {
   grid-template-columns: repeat(4, 1fr);
