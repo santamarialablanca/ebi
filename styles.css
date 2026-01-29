@@ -8,6 +8,8 @@
   --colegio-dark: #293345;
   --colegio-cream: #fafaf7;
   --colegio-red: #970036;
+  /* Acento en secciones de fondo claro (iconos, bordes, enlaces): azul corporativo */
+  --accent-light: #293345;
   --etapa-infantil: #E3C34A;
   --etapa-infantil-bg: #F7E8B8;
   --etapa-escuelita: #5FAFA8;
@@ -88,7 +90,7 @@ ul {
 
 .section {
   padding: 100px 24px 80px;
-  background: radial-gradient(circle at top left, #1f2a38 0, #151b26 55%);
+  background: var(--colegio-dark);
   color: #e8e8e4;
   scroll-margin-top: 80px;
   min-height: auto;
@@ -107,6 +109,26 @@ ul {
   text-align: center;
 }
 
+/* Menos espacio vertical en Etapas y Horizonte de expectativas */
+#etapas.section,
+#horizonte.section {
+  padding-top: 56px;
+  padding-bottom: 48px;
+}
+
+#etapas .section__header,
+#horizonte .section__header {
+  margin-bottom: 24px;
+}
+
+#horizonte.section {
+  padding-top: 32px;
+}
+
+#etapas .stage-cards-list {
+  margin-top: 0;
+}
+
 .section__header h2 {
   margin: 0 0 16px;
   font-size: clamp(1.5rem, 4vw, 2rem);
@@ -123,6 +145,10 @@ ul {
 
 .section--light .section__header h2 {
   color: #151b26;
+}
+
+.section--light .section__header h2 i {
+  color: var(--accent-light);
 }
 
 .section__header h2 i {
@@ -189,7 +215,7 @@ ul {
   grid-template-columns: repeat(6, 1fr);
   gap: 16px;
   max-width: 1200px;
-  margin: 48px auto 0;
+  margin: 0 auto;
 }
 
 @media (max-width: 900px) {
@@ -302,6 +328,11 @@ ul {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
+.section--light .card:focus-within {
+  outline: 2px solid var(--accent-light);
+  outline-offset: 2px;
+}
+
 .card h3 {
   margin: 0 0 12px;
   font-size: 1.2rem;
@@ -325,7 +356,7 @@ ul {
 }
 
 .section--light .card h3 i {
-  color: #970036;
+  color: var(--accent-light);
 }
 
 .card h4 {
@@ -369,6 +400,14 @@ ul {
 
 .section--light .card ul li {
   color: #374151;
+}
+
+.section--light .card ul li::before {
+  color: var(--accent-light);
+}
+
+.section--light .card--feature {
+  border-top-color: var(--accent-light);
 }
 
 .card ul li::before {
@@ -419,7 +458,7 @@ ul {
 }
 
 .section--light .stage-card-link {
-  color: #970036;
+  color: var(--accent-light);
 }
 
 .card--usecase > div[role="region"] {
@@ -939,6 +978,10 @@ ul {
   font-size: 1.1rem;
 }
 
+.section--light .table-card__title i {
+  color: var(--accent-light);
+}
+
 .section--light .table-card__title {
   color: #151b26;
 }
@@ -999,8 +1042,8 @@ ul {
 }
 
 .section--light .comparison-table thead th {
-  color: #970036;
-  background: rgba(151, 0, 54, 0.08);
+  color: var(--accent-light);
+  background: rgba(41, 51, 69, 0.08);
   border-bottom-color: rgba(41, 51, 69, 0.15);
 }
 
@@ -1021,7 +1064,7 @@ ul {
 }
 
 .section--light .comparison-table tbody tr:hover {
-  background: rgba(151, 0, 54, 0.06);
+  background: rgba(41, 51, 69, 0.06);
 }
 
 .comparison-table tbody td {
@@ -1074,7 +1117,7 @@ ul {
 .kpi-card:nth-child(2) {
   background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), #020617);
   border-color: rgba(56, 189, 248, 0.7);
-  box-shadow: 0 14px 36px rgba(37, 99, 235, 0.6);
+  box-shadow: 0 14px 36px rgba(41, 51, 69, 0.6);
 }
 
 .kpi-card:nth-child(3) {
@@ -2245,7 +2288,7 @@ ul {
 }
 
 .section--light .competence-icon {
-  color: #970036;
+  color: var(--accent-light);
 }
 
 .competence-name {
@@ -2273,8 +2316,19 @@ ul {
   border-color: #970036;
 }
 
+.section--light .competence-btn:hover {
+  background: rgba(41, 51, 69, 0.15);
+  border-color: var(--accent-light);
+}
+
 .section--light .competence-btn {
-  color: #970036;
+  color: var(--accent-light);
+  border-color: rgba(41, 51, 69, 0.5);
+}
+
+.section--light .competence-btn[aria-expanded="true"] {
+  background: rgba(41, 51, 69, 0.2);
+  border-color: var(--accent-light);
 }
 
 .competence-btn[aria-expanded="true"] {
@@ -2619,7 +2673,7 @@ ul {
 .stage-hero--primaria {
   background:
     radial-gradient(circle at top left, rgba(59, 130, 246, 0.35), transparent 50%),
-    radial-gradient(circle at bottom right, rgba(37, 99, 235, 0.2), transparent 50%),
+    radial-gradient(circle at bottom right, rgba(41, 51, 69, 0.2), transparent 50%),
     #0b1220;
 }
 
