@@ -14,6 +14,19 @@
 <body>
   <a href="#main" class="skip-link">Ir al contenido principal</a>
 
+  <!-- Navegación fija en la parte superior, una sola fila -->
+  <nav class="nav-sections nav-top" aria-label="Contenido del Sistema EBI">
+    <span class="nav-sections-label">Contenido</span>
+    <ul class="nav-sections-list">
+      <li><a href="#vision-general" class="nav-link"><span class="nav-dot"></span> Visión general</a></li>
+      <li><a href="#criterios" class="nav-link"><span class="nav-dot"></span> Criterios</a></li>
+      <li><a href="#principios" class="nav-link"><span class="nav-dot"></span> Principios</a></li>
+      <li><a href="#etapas" class="nav-link"><span class="nav-dot"></span> Etapas</a></li>
+      <li><a href="#competencias" class="nav-link"><span class="nav-dot"></span> Competencias</a></li>
+      <li><a href="#objetivo" class="nav-link"><span class="nav-dot"></span> Objetivo</a></li>
+    </ul>
+  </nav>
+
   <header class="hero" role="banner">
     <div class="hero-pattern" aria-hidden="true"></div>
     <div class="hero-inner">
@@ -26,17 +39,33 @@
   </header>
 
   <main id="main" class="main" role="main">
-    <!-- Navegación por secciones -->
-    <nav class="nav-sections" aria-label="Contenido del Sistema EBI">
-      <h2 class="nav-sections-title">Contenido</h2>
-      <ul class="nav-sections-list">
-        <li><a href="#criterios" class="nav-link"><span class="nav-dot"></span> Dos criterios</a></li>
-        <li><a href="#principios" class="nav-link"><span class="nav-dot"></span> Cuatro principios</a></li>
-        <li><a href="#etapas" class="nav-link"><span class="nav-dot"></span> Seis etapas</a></li>
-        <li><a href="#competencias" class="nav-link"><span class="nav-dot"></span> Seis competencias</a></li>
-        <li><a href="#objetivo" class="nav-link"><span class="nav-dot"></span> Objetivo final</a></li>
-      </ul>
-    </nav>
+    <!-- Visión general: gráfico + tabla accesible -->
+    <section id="vision-general" class="section section-vision section-bg-alt" aria-labelledby="vision-heading">
+      <div class="section__inner">
+        <h2 id="vision-heading" class="section-title">Estructura del Sistema EBI</h2>
+        <p class="section-desc">Resumen visual de los cuatro pilares que componen la propuesta.</p>
+        <div class="vision-chart-wrap" role="img" aria-label="Gráfico: 2 criterios, 4 principios, 6 etapas, 6 competencias">
+          <canvas id="ebi-structure-chart" width="400" height="280"></canvas>
+        </div>
+        <div class="vision-table-wrap">
+          <table class="vision-table">
+            <caption class="vision-table-caption">Datos en texto</caption>
+            <thead>
+              <tr>
+                <th scope="col">Pilar</th>
+                <th scope="col">Cantidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Criterios</td><td>2</td></tr>
+              <tr><td>Principios</td><td>4</td></tr>
+              <tr><td>Etapas</td><td>6</td></tr>
+              <tr><td>Competencias</td><td>6</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
 
     <!-- Criterios -->
     <section id="criterios" class="section section-criteria section-bg" aria-labelledby="criteria-heading">
@@ -206,6 +235,7 @@
     <p class="footer-credit">Fundación Iruaritz Lezama</p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" crossorigin="anonymous"></script>
   <script src="script.js"></script>
 </body>
 </html>

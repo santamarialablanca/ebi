@@ -25,7 +25,7 @@
 
   // --- Revelado al hacer scroll (Intersection Observer) ---
   if (!prefersReducedMotion) {
-    const sections = document.querySelectorAll('.section-criteria, .section-principles, .section-stages, .section-competences, .section-cta, .nav-sections');
+    const sections = document.querySelectorAll('.section-vision, .section-criteria, .section-principles, .section-stages, .section-competences, .section-cta');
     const observer = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
@@ -44,7 +44,7 @@
 
   // --- Navegación activa según scroll ---
   const navLinks = document.querySelectorAll('.nav-link');
-  const sectionIds = ['criterios', 'principios', 'etapas', 'competencias', 'objetivo'];
+  const sectionIds = ['vision-general', 'criterios', 'principios', 'etapas', 'competencias', 'objetivo'];
 
   function updateActiveNav() {
     var current = '';
@@ -68,21 +68,6 @@
     requestAnimationFrame(updateActiveNav);
   });
   updateActiveNav();
-
-  // --- Nav sticky: añadir clase al hacer scroll (pasado el hero) ---
-  var hero = document.querySelector('.hero');
-  var navSections = document.querySelector('.nav-sections');
-  if (hero && navSections) {
-    var heroBottom = hero.offsetHeight;
-    function toggleStickyNav() {
-      var scrolled = window.scrollY || window.pageYOffset;
-      navSections.classList.toggle('is-sticky', scrolled > heroBottom * 0.6);
-    }
-    window.addEventListener('scroll', function () {
-      requestAnimationFrame(toggleStickyNav);
-    });
-    toggleStickyNav();
-  }
 
   // --- Etapas: expandir/colapsar descripción al clic ---
   document.querySelectorAll('.stage-btn').forEach(function (btn) {
@@ -124,4 +109,60 @@
   });
 
   document.documentElement.style.scrollPaddingTop = '1rem';
+
+  // --- Gráfico estructura EBI (Chart.js) ---
+  var chartCanvas = document.getElementById('ebi-structure-chart');
+  if (chartCanvas && typeof Chart !== 'undefined') {
+    var ctx = chartCanvas.getContext('2d');
+    var chartAnimations = !prefersReducedMotion;
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Criterios', 'Principios', 'Etapas', 'Competencias'],
+        datasets: [{
+          label: 'Elementos',
+          data: [2, 4, 6, 6],
+          backgroundColor: [
+            'rgba(151, 0, 54, 0.9)',
+            'rgba(30, 40, 56, 0.9)',
+            'rgba(196, 77, 108, 0.9)',
+            'rgba(30, 40, 56, 0.7)'
+          ],
+          borderColor: ['#970036', '#1e2838', '#c44d6c', '#1e2838'],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 1.4,
+        animation: chartAnimations,
+        transitions: { active: { animation: { duration: 0 } } },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: function (context) {
+                return context.parsed.x + ' elementos';
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            min: 0,
+            max: 8,
+            ticks: { stepSize: 2, color: '#1e2838' },
+            grid: { color: 'rgba(30, 40, 56, 0.12)' },
+            title: { display: false }
+          },
+          y: {
+            grid: { display: false },
+            ticks: { color: '#1e2838', font: { size: 13 } }
+          }
+        }
+      }
+    });
+  }
 })();
