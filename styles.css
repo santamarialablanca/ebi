@@ -22,8 +22,10 @@
   --etapa-fp-bg: #D6CCE7;
   --etapa-fp: #8C7CB8;
 
-  --font-body: 'Source Sans 3', system-ui, -apple-system, sans-serif;
-  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Syne', system-ui, sans-serif;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-duration: 0.35s;
 }
 
 *,
@@ -38,10 +40,25 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Animaciones dinámicas */
+@keyframes heroEnter {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal { opacity: 1; transform: none !important; }
+  .reveal { opacity: 1; transform: none !important; animation: none !important; }
   .card:hover, .card-competence:hover, .stage-card:hover { transform: none !important; }
+  .hero-inner .hero-title, .hero-inner .hero-subtitle, .hero-inner .logo-ebi { animation: none; opacity: 1; transform: none; }
 }
 
 body {
@@ -195,6 +212,17 @@ body {
   margin: 0 auto;
   text-align: center;
 }
+.hero-inner .logo-ebi {
+  animation: heroEnter 0.8s var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1)) forwards;
+}
+.hero-inner .hero-title {
+  animation: heroEnter 0.7s 0.15s var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1)) forwards;
+  opacity: 0;
+}
+.hero-inner .hero-subtitle {
+  animation: heroEnter 0.7s 0.3s var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1)) forwards;
+  opacity: 0;
+}
 .logo-ebi {
   display: inline-flex;
   align-items: center;
@@ -271,6 +299,16 @@ body {
   color: var(--colegio-red);
   font-weight: 700;
 }
+.section-title-icon {
+  display: inline-block;
+  margin-right: 0.5rem;
+  color: var(--colegio-red);
+  font-size: 0.9em;
+  vertical-align: middle;
+  opacity: 0.95;
+}
+.section-bg .section-title-icon,
+.section-bg-alt .section-title-icon { color: var(--colegio-red); }
 .section-desc {
   text-align: center;
   color: rgba(250, 250, 247, 0.85);
@@ -324,7 +362,17 @@ body {
   color: rgba(250, 250, 247, 0.7);
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
+.nav-sections-title i { color: var(--colegio-red); font-size: 0.9rem; }
+.nav-link-icon {
+  margin-right: 0.25rem;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+.nav-link.is-active .nav-link-icon { opacity: 1; }
 .nav-sections-list {
   list-style: none;
   margin: 0;
@@ -345,8 +393,9 @@ body {
   border-radius: 999px;
   background: transparent;
   border: 1px solid rgba(250, 250, 247, 0.2);
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
+.nav-link:hover { transform: translateY(-1px); }
 .nav-link:hover {
   background: rgba(151, 0, 54, 0.25);
   border-color: var(--colegio-red);
@@ -489,6 +538,23 @@ body {
 .card-principle:hover {
   border-left-color: var(--colegio-red);
 }
+.card-principle-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(151, 0, 54, 0.12);
+  color: var(--colegio-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  transition: transform var(--transition-duration) var(--ease-out), background var(--transition-duration);
+}
+.card-principle:hover .card-principle-icon {
+  transform: scale(1.08);
+  background: rgba(151, 0, 54, 0.2);
+}
 .principle-num {
   position: absolute;
   top: 0.75rem;
@@ -528,13 +594,21 @@ body {
   border: 1px solid rgba(250, 250, 247, 0.1);
 }
 .stages-quick-label {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 0.75rem;
   font-weight: 600;
   color: rgba(250, 250, 247, 0.7);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin-bottom: 0.75rem;
+}
+.stages-quick-label i { color: var(--etapa-infantil); }
+.stage-pill-icon {
+  margin-right: 0.35rem;
+  font-size: 0.85em;
+  opacity: 0.95;
 }
 .stages-pills {
   display: flex;
@@ -664,7 +738,9 @@ body {
 .stage-card--flor { border-top-color: var(--etapa-secundaria); }
 .stage-card--fruto { border-top-color: var(--etapa-fp); }
 .stage-card-pill {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   padding: 0.2rem 0.6rem;
   border-radius: 999px;
   font-size: 0.7rem;
@@ -673,6 +749,7 @@ body {
   letter-spacing: 0.04em;
   margin-bottom: 0.5rem;
 }
+.stage-card-pill i { font-size: 0.85em; opacity: 0.9; }
 .stage-card--raiz .stage-card-pill { background: var(--etapa-infantil-bg); color: #5c4a0a; }
 .stage-card--tallo .stage-card-pill { background: var(--etapa-escuelita-bg); color: #1a4a47; }
 .stage-card--nudo .stage-card-pill { background: var(--etapa-primaria-bg); color: var(--etapa-primaria-dark); }
@@ -714,6 +791,8 @@ body {
   font-size: 0.875rem;
   color: rgba(250, 250, 247, 0.9);
   border-left: 3px solid var(--colegio-red);
+  overflow: hidden;
+  transition: opacity var(--transition-duration) var(--ease-out), transform var(--transition-duration) var(--ease-out);
 }
 .section-bg .stage-card-detail,
 .section-bg-alt .stage-card-detail {
@@ -812,6 +891,8 @@ body {
   background: rgba(41, 51, 69, 0.5);
   border-radius: 8px;
   border-left: 3px solid var(--colegio-red);
+  overflow: hidden;
+  transition: opacity var(--transition-duration) var(--ease-out), transform var(--transition-duration) var(--ease-out);
 }
 .section-bg .competence-detail,
 .section-bg-alt .competence-detail {
@@ -833,6 +914,13 @@ body {
   margin-bottom: 0;
 }
 .cta-inner { max-width: 640px; margin: 0 auto; }
+.cta-icon {
+  margin: 0 0 1rem;
+  font-size: 2.5rem;
+  opacity: 0.95;
+  color: var(--colegio-cream);
+  animation: fadeIn 0.6s 0.2s var(--ease-out) both;
+}
 .cta-title {
   margin: 0;
   font-family: var(--font-display);
@@ -857,20 +945,52 @@ body {
   font-weight: 600;
   font-size: 0.9375rem;
   letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
+.footer-text i { opacity: 0.9; font-size: 1rem; }
 .footer-credit {
   margin: 0;
   font-size: 0.8125rem;
   opacity: 0.85;
 }
 
-/* ----- Reveal on scroll ----- */
+/* ----- Reveal on scroll (dinámico: sección + stagger de cards) ----- */
 .reveal {
   opacity: 0;
-  transform: translateY(1rem);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(1.25rem);
+  transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out);
 }
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
+/* Stagger: cards y elementos de grid se revelan con ligero retardo */
+.reveal .criteria-grid .card { opacity: 0; }
+.reveal.is-visible .criteria-grid .card { animation: fadeUp 0.5s var(--ease-out) forwards; }
+.reveal.is-visible .criteria-grid .card:nth-child(1) { animation-delay: 0.06s; }
+.reveal.is-visible .criteria-grid .card:nth-child(3) { animation-delay: 0.16s; }
+.reveal .principles-flow .card-principle { opacity: 0; }
+.reveal.is-visible .principles-flow .card-principle { animation: fadeUp 0.5s var(--ease-out) forwards; }
+.reveal.is-visible .principles-flow .card-principle:nth-child(1) { animation-delay: 0.05s; }
+.reveal.is-visible .principles-flow .card-principle:nth-child(3) { animation-delay: 0.12s; }
+.reveal.is-visible .principles-flow .card-principle:nth-child(5) { animation-delay: 0.19s; }
+.reveal.is-visible .principles-flow .card-principle:nth-child(7) { animation-delay: 0.26s; }
+.reveal .stages-grid .stage-card { opacity: 0; }
+.reveal.is-visible .stages-grid .stage-card { animation: fadeUp 0.45s var(--ease-out) forwards; }
+.reveal.is-visible .stages-grid .stage-card:nth-child(1) { animation-delay: 0.04s; }
+.reveal.is-visible .stages-grid .stage-card:nth-child(2) { animation-delay: 0.08s; }
+.reveal.is-visible .stages-grid .stage-card:nth-child(3) { animation-delay: 0.12s; }
+.reveal.is-visible .stages-grid .stage-card:nth-child(4) { animation-delay: 0.16s; }
+.reveal.is-visible .stages-grid .stage-card:nth-child(5) { animation-delay: 0.2s; }
+.reveal.is-visible .stages-grid .stage-card:nth-child(6) { animation-delay: 0.24s; }
+.reveal .competences-grid .card-competence { opacity: 0; }
+.reveal.is-visible .competences-grid .card-competence { animation: fadeUp 0.45s var(--ease-out) forwards; }
+.reveal.is-visible .competences-grid .card-competence:nth-child(1) { animation-delay: 0.04s; }
+.reveal.is-visible .competences-grid .card-competence:nth-child(2) { animation-delay: 0.08s; }
+.reveal.is-visible .competences-grid .card-competence:nth-child(3) { animation-delay: 0.12s; }
+.reveal.is-visible .competences-grid .card-competence:nth-child(4) { animation-delay: 0.16s; }
+.reveal.is-visible .competences-grid .card-competence:nth-child(5) { animation-delay: 0.2s; }
+.reveal.is-visible .competences-grid .card-competence:nth-child(6) { animation-delay: 0.24s; }
