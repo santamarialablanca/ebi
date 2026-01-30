@@ -103,6 +103,87 @@ ul {
   min-height: auto;
 }
 
+/* Criterios EBI al inicio de cada página de etapa: Perfil de aprendizaje y Relaciones significativas */
+.criterios-etapa {
+  padding: 64px 24px 72px;
+  background: var(--colegio-dark);
+  color: #e8e8e4;
+  scroll-margin-top: 80px;
+}
+
+.criterios-etapa .section__header {
+  margin-bottom: 32px;
+}
+
+.criterios-etapa .section__header h2 {
+  font-size: 1.35rem;
+}
+
+.criterios-etapa__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.criterio-block {
+  background: rgba(250, 250, 247, 0.08);
+  border: 1px solid rgba(250, 250, 247, 0.18);
+  border-radius: 20px;
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.criterio-block:hover {
+  border-color: rgba(250, 250, 247, 0.28);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.criterio-block__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  font-size: 1.4rem;
+  color: #fafaf7;
+  flex-shrink: 0;
+}
+
+.criterio-block--perfil .criterio-block__icon {
+  background: rgba(151, 0, 54, 0.4);
+}
+
+.criterio-block--relaciones .criterio-block__icon {
+  background: rgba(56, 189, 248, 0.35);
+}
+
+.criterio-block__title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fafaf7;
+  letter-spacing: 0.02em;
+}
+
+.criterio-block__text {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: rgba(250, 250, 247, 0.9);
+}
+
+@media (max-width: 640px) {
+  .criterios-etapa__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .section__header {
   max-width: 1000px;
   margin: 0 auto 48px;
@@ -2785,6 +2866,166 @@ ul {
 @media (max-width: 480px) {
   .stage-cards--competence {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Subcompetencias y camino (trazabilidad) en páginas de competencia */
+
+.subcompetencias-section {
+  margin-bottom: 48px;
+}
+
+.subcompetencias-section .section__header {
+  margin-bottom: 20px;
+}
+
+.subcompetencias-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+.subcompetencias-list li {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(41, 51, 69, 0.12);
+  color: #293345;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.section--light .subcompetencias-list li {
+  background: rgba(151, 0, 54, 0.08);
+  color: #5a0828;
+}
+
+/* Camino / trazabilidad: timeline vertical */
+.camino-section {
+  margin-top: 48px;
+}
+
+.camino-section .section__header {
+  margin-bottom: 32px;
+}
+
+.camino-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.camino-timeline::before {
+  content: "";
+  position: absolute;
+  left: 27px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #5FAFA8 0%, #E3C34A 20%, #6E8FAF 40%, #E17A55 60%, #E17A55 80%, #8C7CB8 100%);
+  border-radius: 3px;
+  opacity: 0.6;
+}
+
+.camino-stage {
+  position: relative;
+  padding-left: 72px;
+  padding-bottom: 40px;
+}
+
+.camino-stage:last-child {
+  padding-bottom: 0;
+}
+
+.camino-stage__node {
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.camino-stage--raiz .camino-stage__node { background: linear-gradient(135deg, #5FAFA8, #4a8f89); }
+.camino-stage--tallo .camino-stage__node { background: linear-gradient(135deg, #E3C34A, #c9a83d); }
+.camino-stage--nudo .camino-stage__node { background: linear-gradient(135deg, #6E8FAF, #5a7594); }
+.camino-stage--rama .camino-stage__node { background: linear-gradient(135deg, #E17A55, #c96844); }
+.camino-stage--flor .camino-stage__node { background: linear-gradient(135deg, #E17A55, #c96844); }
+.camino-stage--fruto .camino-stage__node { background: linear-gradient(135deg, #8C7CB8, #6e6096); }
+
+.camino-stage__title {
+  margin: 0 0 12px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a1525;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.camino-stage__age {
+  font-size: 0.85rem;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.camino-stage__expectativas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.camino-stage__expectativas li {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #374151;
+}
+
+.camino-stage__expectativas li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #970036;
+  font-weight: 600;
+}
+
+.camino-stage__expectativas li strong {
+  color: #293345;
+}
+
+@media (max-width: 640px) {
+  .camino-timeline::before {
+    left: 19px;
+  }
+  .camino-stage {
+    padding-left: 56px;
+  }
+  .camino-stage__node {
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
   }
 }
 
