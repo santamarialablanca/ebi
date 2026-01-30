@@ -3179,6 +3179,184 @@ body.etapa-nudo .section--nudo-competences .competence-btn:hover {
 body.etapa-nudo .section--nudo-competences .competence-detail { border-top-color: rgba(110, 143, 175, 0.25); }
 body.etapa-nudo .section--nudo-competences .competence-list strong { color: #3d5a75; }
 
+/* Rama: Horizonte de expectativas y Competencias (#E17A55 / #F3C1AF) */
+body.etapa-rama .section--rama-horizonte {
+  background: #F3C1AF;
+  color: #1a1525;
+}
+body.etapa-rama .section--rama-horizonte .section__header h2,
+body.etapa-rama .section--rama-horizonte .section__header p { color: #1a1525; }
+body.etapa-rama .section--rama-horizonte .horizonte-phase { font-weight: 600; font-size: 1rem; color: #a85a3d; margin: 0 0 8px; }
+body.etapa-rama .section--rama-horizonte .horizonte-intro { font-size: 1.1rem; font-weight: 600; color: #2d2438; margin: 0 0 32px; max-width: 640px; margin-left: auto; margin-right: auto; }
+body.etapa-rama .section--rama-horizonte .horizonte-aspiraciones { list-style: none; margin: 0; padding: 0; max-width: 900px; margin-left: auto; margin-right: auto; display: grid; gap: 20px; }
+body.etapa-rama .section--rama-horizonte .horizonte-item {
+  display: grid; grid-template-columns: auto auto 1fr; gap: 20px; align-items: start;
+  background: rgba(255, 255, 255, 0.9); border-radius: 16px; padding: 24px 24px 24px 20px;
+  border-left: 4px solid #E17A55; box-shadow: 0 4px 16px rgba(225, 122, 85, 0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+body.etapa-rama .section--rama-horizonte .horizonte-item:hover {
+  transform: translateX(4px); box-shadow: 0 8px 24px rgba(225, 122, 85, 0.3);
+}
+body.etapa-rama .section--rama-horizonte .horizonte-item__num {
+  display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg, #E17A55, #c96844); color: #fff; font-size: 1.25rem; font-weight: 700; flex-shrink: 0;
+}
+body.etapa-rama .section--rama-horizonte .horizonte-item__icon-wrap {
+  display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 12px;
+  background: rgba(225, 122, 85, 0.25); color: #E17A55; font-size: 1.35rem; flex-shrink: 0;
+}
+body.etapa-rama .section--rama-horizonte .horizonte-item__content { min-width: 0; }
+body.etapa-rama .section--rama-horizonte .horizonte-item__title { margin: 0 0 8px; font-size: 1.1rem; font-weight: 700; color: #2d2438; }
+body.etapa-rama .section--rama-horizonte .horizonte-item__text { margin: 0; font-size: 0.95rem; line-height: 1.55; color: #4b5563; }
+body.etapa-rama .section--rama-horizonte .section__header--with-icon,
+body.etapa-rama .section--rama-competences .section__header--with-icon {
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+}
+body.etapa-rama .section--rama-horizonte .section__header-icon {
+  display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 50%;
+  background: rgba(225, 122, 85, 0.4); color: #a85a3d; font-size: 2.25rem; margin-bottom: 8px;
+  box-shadow: 0 4px 20px rgba(225, 122, 85, 0.3);
+}
+@media (max-width: 640px) {
+  body.etapa-rama .section--rama-horizonte .horizonte-item { grid-template-columns: 1fr; grid-template-rows: auto auto auto; gap: 14px; }
+  body.etapa-rama .section--rama-horizonte .horizonte-item__num { grid-row: 1; }
+  body.etapa-rama .section--rama-horizonte .horizonte-item__icon-wrap { grid-row: 2; }
+  body.etapa-rama .section--rama-horizonte .horizonte-item__content { grid-row: 3; }
+}
+body.etapa-rama .section--rama-competences { background: #F3C1AF; color: #1a1525; }
+body.etapa-rama .section--rama-competences .section__header h2,
+body.etapa-rama .section--rama-competences .section__header p { color: #1a1525; }
+body.etapa-rama .section--rama-competences .section__header-icon {
+  background: rgba(225, 122, 85, 0.4); color: #a85a3d; box-shadow: 0 4px 20px rgba(225, 122, 85, 0.3);
+}
+body.etapa-rama .section--rama-competences .competences-grid--dynamic { gap: 24px; }
+body.etapa-rama .section--rama-competences .competences-grid--dynamic .card-competence {
+  background: #fff; border: none; border-radius: 20px; padding: 28px 26px;
+  box-shadow: 0 4px 20px rgba(225, 122, 85, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex; flex-direction: column; align-items: flex-start;
+}
+body.etapa-rama .section--rama-competences .competences-grid--dynamic .card-competence:hover {
+  transform: translateY(-4px); box-shadow: 0 12px 28px rgba(225, 122, 85, 0.18);
+}
+body.etapa-rama .section--rama-competences .competences-grid--dynamic .competence-icon-wrap {
+  width: 70px; height: 70px; border-radius: 18px;
+  background: #F3C1AF; display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+}
+body.etapa-rama .section--rama-competences .competences-grid--dynamic .competence-icon {
+  color: #E17A55; font-size: 1.75rem;
+}
+body.etapa-rama .section--rama-competences .competence-badge {
+  display: inline-block; padding: 6px 14px; border-radius: 999px;
+  background: #F3C1AF; color: #1a1525; font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.02em; margin-bottom: 12px; text-align: center;
+}
+body.etapa-rama .section--rama-competences .competence-teaser {
+  color: #4b5563; font-size: 0.95rem; line-height: 1.55; margin: 0 0 16px;
+}
+body.etapa-rama .section--rama-competences .competences-grid--dynamic .competence-name {
+  color: #1a1525; font-size: 1.25rem; font-weight: 700; margin: 0 0 8px;
+}
+body.etapa-rama .section--rama-competences .competence-btn {
+  border-color: rgba(225, 122, 85, 0.6); color: #E17A55; background: rgba(255, 255, 255, 0.8);
+}
+body.etapa-rama .section--rama-competences .competence-btn:hover {
+  background: rgba(225, 122, 85, 0.2); border-color: #E17A55; color: #a85a3d;
+}
+body.etapa-rama .section--rama-competences .competence-detail { border-top-color: rgba(225, 122, 85, 0.25); }
+body.etapa-rama .section--rama-competences .competence-list strong { color: #a85a3d; }
+
+/* Flor: Horizonte de expectativas y Competencias (#E17A55 / #F3C1AF) */
+body.etapa-flor .section--flor-horizonte {
+  background: #F3C1AF;
+  color: #1a1525;
+}
+body.etapa-flor .section--flor-horizonte .section__header h2,
+body.etapa-flor .section--flor-horizonte .section__header p { color: #1a1525; }
+body.etapa-flor .section--flor-horizonte .horizonte-phase { font-weight: 600; font-size: 1rem; color: #a85a3d; margin: 0 0 8px; }
+body.etapa-flor .section--flor-horizonte .horizonte-intro { font-size: 1.1rem; font-weight: 600; color: #2d2438; margin: 0 0 32px; max-width: 640px; margin-left: auto; margin-right: auto; }
+body.etapa-flor .section--flor-horizonte .horizonte-aspiraciones { list-style: none; margin: 0; padding: 0; max-width: 900px; margin-left: auto; margin-right: auto; display: grid; gap: 20px; }
+body.etapa-flor .section--flor-horizonte .horizonte-item {
+  display: grid; grid-template-columns: auto auto 1fr; gap: 20px; align-items: start;
+  background: rgba(255, 255, 255, 0.9); border-radius: 16px; padding: 24px 24px 24px 20px;
+  border-left: 4px solid #E17A55; box-shadow: 0 4px 16px rgba(225, 122, 85, 0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+body.etapa-flor .section--flor-horizonte .horizonte-item:hover {
+  transform: translateX(4px); box-shadow: 0 8px 24px rgba(225, 122, 85, 0.3);
+}
+body.etapa-flor .section--flor-horizonte .horizonte-item__num {
+  display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg, #E17A55, #c96844); color: #fff; font-size: 1.25rem; font-weight: 700; flex-shrink: 0;
+}
+body.etapa-flor .section--flor-horizonte .horizonte-item__icon-wrap {
+  display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 12px;
+  background: rgba(225, 122, 85, 0.25); color: #E17A55; font-size: 1.35rem; flex-shrink: 0;
+}
+body.etapa-flor .section--flor-horizonte .horizonte-item__content { min-width: 0; }
+body.etapa-flor .section--flor-horizonte .horizonte-item__title { margin: 0 0 8px; font-size: 1.1rem; font-weight: 700; color: #2d2438; }
+body.etapa-flor .section--flor-horizonte .horizonte-item__text { margin: 0; font-size: 0.95rem; line-height: 1.55; color: #4b5563; }
+body.etapa-flor .section--flor-horizonte .section__header--with-icon,
+body.etapa-flor .section--flor-competences .section__header--with-icon {
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+}
+body.etapa-flor .section--flor-horizonte .section__header-icon {
+  display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 50%;
+  background: rgba(225, 122, 85, 0.4); color: #a85a3d; font-size: 2.25rem; margin-bottom: 8px;
+  box-shadow: 0 4px 20px rgba(225, 122, 85, 0.3);
+}
+@media (max-width: 640px) {
+  body.etapa-flor .section--flor-horizonte .horizonte-item { grid-template-columns: 1fr; grid-template-rows: auto auto auto; gap: 14px; }
+  body.etapa-flor .section--flor-horizonte .horizonte-item__num { grid-row: 1; }
+  body.etapa-flor .section--flor-horizonte .horizonte-item__icon-wrap { grid-row: 2; }
+  body.etapa-flor .section--flor-horizonte .horizonte-item__content { grid-row: 3; }
+}
+body.etapa-flor .section--flor-competences { background: #F3C1AF; color: #1a1525; }
+body.etapa-flor .section--flor-competences .section__header h2,
+body.etapa-flor .section--flor-competences .section__header p { color: #1a1525; }
+body.etapa-flor .section--flor-competences .section__header-icon {
+  background: rgba(225, 122, 85, 0.4); color: #a85a3d; box-shadow: 0 4px 20px rgba(225, 122, 85, 0.3);
+}
+body.etapa-flor .section--flor-competences .competences-grid--dynamic { gap: 24px; }
+body.etapa-flor .section--flor-competences .competences-grid--dynamic .card-competence {
+  background: #fff; border: none; border-radius: 20px; padding: 28px 26px;
+  box-shadow: 0 4px 20px rgba(225, 122, 85, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex; flex-direction: column; align-items: flex-start;
+}
+body.etapa-flor .section--flor-competences .competences-grid--dynamic .card-competence:hover {
+  transform: translateY(-4px); box-shadow: 0 12px 28px rgba(225, 122, 85, 0.18);
+}
+body.etapa-flor .section--flor-competences .competences-grid--dynamic .competence-icon-wrap {
+  width: 70px; height: 70px; border-radius: 18px;
+  background: #F3C1AF; display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+}
+body.etapa-flor .section--flor-competences .competences-grid--dynamic .competence-icon {
+  color: #E17A55; font-size: 1.75rem;
+}
+body.etapa-flor .section--flor-competences .competence-badge {
+  display: inline-block; padding: 6px 14px; border-radius: 999px;
+  background: #F3C1AF; color: #1a1525; font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.02em; margin-bottom: 12px; text-align: center;
+}
+body.etapa-flor .section--flor-competences .competence-teaser {
+  color: #4b5563; font-size: 0.95rem; line-height: 1.55; margin: 0 0 16px;
+}
+body.etapa-flor .section--flor-competences .competences-grid--dynamic .competence-name {
+  color: #1a1525; font-size: 1.25rem; font-weight: 700; margin: 0 0 8px;
+}
+body.etapa-flor .section--flor-competences .competence-btn {
+  border-color: rgba(225, 122, 85, 0.6); color: #E17A55; background: rgba(255, 255, 255, 0.8);
+}
+body.etapa-flor .section--flor-competences .competence-btn:hover {
+  background: rgba(225, 122, 85, 0.2); border-color: #E17A55; color: #a85a3d;
+}
+body.etapa-flor .section--flor-competences .competence-detail { border-top-color: rgba(225, 122, 85, 0.25); }
+body.etapa-flor .section--flor-competences .competence-list strong { color: #a85a3d; }
+
 body.etapa-rama .section--light .card--feature,
 body.etapa-rama .section--light .card--usecase { border-top-color: #E17A55; }
 body.etapa-rama .card--feature:hover,
