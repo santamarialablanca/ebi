@@ -2298,6 +2298,36 @@ ul {
   color: inherit;
 }
 
+.competence-age {
+  margin: 0 0 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: inherit;
+  opacity: 0.9;
+}
+
+.competence-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  list-style: disc;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: inherit;
+  flex: 1;
+}
+
+.competence-list li {
+  margin-bottom: 8px;
+}
+
+.competence-list li:last-child {
+  margin-bottom: 0;
+}
+
+.section--light .competence-list {
+  color: #374151;
+}
+
 .competence-btn {
   margin-top: auto;
   padding: 8px 14px;
@@ -2585,9 +2615,30 @@ ul {
   align-items: start;
 }
 
+.stage-hero__title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
 .stage-hero__content h1 {
-  margin: 10px 0 12px;
+  margin: 0;
   font-size: clamp(2rem, 2vw + 1.4rem, 2.6rem);
+}
+
+.stage-hero__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(250, 250, 247, 0.15);
+  color: rgba(250, 250, 247, 0.95);
+  font-size: 1.75rem;
+  flex-shrink: 0;
 }
 
 .stage-hero__content p {
@@ -2831,6 +2882,10 @@ ul {
     #0b1220;
 }
 .stage-hero--fruto .pill--accent { background: linear-gradient(135deg, #8C7CB8, #6e6096); color: #f9fafb; }
+.stage-hero--fruto .stage-hero__icon {
+  background: rgba(140, 124, 184, 0.35);
+  color: #e8e0f5;
+}
 .stage-hero--fruto .card--feature, .stage-hero--fruto .card--usecase { border-top-color: #8C7CB8; }
 .stage-hero--fruto .btn--ghost:hover { border-color: #8C7CB8; color: #8C7CB8; }
 
@@ -2864,6 +2919,102 @@ body.etapa-fruto .section--light .card--feature,
 body.etapa-fruto .section--light .card--usecase { border-top-color: #8C7CB8; }
 body.etapa-fruto .card--feature:hover,
 body.etapa-fruto .card--usecase:hover { border-color: #8C7CB8; background: radial-gradient(circle at top left, rgba(140, 124, 184, 0.2), #020617); }
+
+/* Fruto: fondo sección competencias y estilo dinámico */
+body.etapa-fruto .section--light {
+  background: #D6CCE7;
+  color: #1a1525;
+}
+
+body.etapa-fruto .section--light .section__header h2,
+body.etapa-fruto .section--light .section__header p {
+  color: #1a1525;
+}
+
+body.etapa-fruto .section--light .section__header--with-icon {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+body.etapa-fruto .section--light .section__header-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(140, 124, 184, 0.4);
+  color: #5a4a7a;
+  font-size: 2.25rem;
+  margin-bottom: 8px;
+  box-shadow: 0 4px 20px rgba(140, 124, 184, 0.3);
+}
+
+body.etapa-fruto .section--light .competences-grid--dynamic {
+  gap: 24px;
+}
+
+body.etapa-fruto .section--light .competences-grid--dynamic .card-competence {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(140, 124, 184, 0.25);
+  border-left: 4px solid #8C7CB8;
+  border-radius: 16px;
+  padding: 24px 22px;
+  box-shadow: 0 4px 16px rgba(140, 124, 184, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+body.etapa-fruto .section--light .competences-grid--dynamic .card-competence:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(140, 124, 184, 0.22);
+  border-left-color: #6e6096;
+}
+
+body.etapa-fruto .section--light .competences-grid--dynamic .competence-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(140, 124, 184, 0.25), rgba(140, 124, 184, 0.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+body.etapa-fruto .section--light .competences-grid--dynamic .competence-icon {
+  color: #8C7CB8;
+  font-size: 1.35rem;
+}
+
+body.etapa-fruto .section--light .competences-grid--dynamic .competence-name {
+  color: #2d2438;
+  font-size: 1.15rem;
+  margin-bottom: 4px;
+}
+
+body.etapa-fruto .section--light .competences-grid--dynamic .competence-age {
+  color: #5a4a7a;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+  letter-spacing: 0.02em;
+}
+
+body.etapa-fruto .section--light .competences-grid--dynamic .competence-list {
+  color: #374151;
+  padding-left: 1.2rem;
+}
+
+body.etapa-fruto .section--light .competences-grid--dynamic .competence-list li {
+  margin-bottom: 10px;
+}
+
+body.etapa-fruto .section--light .competences-grid--dynamic .competence-list strong {
+  color: #5a4a7a;
+}
 
 /* Estilos de secciones por etapa */
 
