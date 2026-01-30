@@ -3001,6 +3001,184 @@ body.etapa-nudo .section--light .card--usecase { border-top-color: #6E8FAF; }
 body.etapa-nudo .card--feature:hover,
 body.etapa-nudo .card--usecase:hover { border-color: #6E8FAF; background: radial-gradient(circle at top left, rgba(110, 143, 175, 0.2), #020617); }
 
+/* Tallo: Horizonte de expectativas y Competencias (#E3C34A / #F7E8B8) */
+body.etapa-tallo .section--tallo-horizonte {
+  background: #F7E8B8;
+  color: #1a1525;
+}
+body.etapa-tallo .section--tallo-horizonte .section__header h2,
+body.etapa-tallo .section--tallo-horizonte .section__header p { color: #1a1525; }
+body.etapa-tallo .section--tallo-horizonte .horizonte-phase { font-weight: 600; font-size: 1rem; color: #6b5a1f; margin: 0 0 8px; }
+body.etapa-tallo .section--tallo-horizonte .horizonte-intro { font-size: 1.1rem; font-weight: 600; color: #2d2438; margin: 0 0 32px; max-width: 640px; margin-left: auto; margin-right: auto; }
+body.etapa-tallo .section--tallo-horizonte .horizonte-aspiraciones { list-style: none; margin: 0; padding: 0; max-width: 900px; margin-left: auto; margin-right: auto; display: grid; gap: 20px; }
+body.etapa-tallo .section--tallo-horizonte .horizonte-item {
+  display: grid; grid-template-columns: auto auto 1fr; gap: 20px; align-items: start;
+  background: rgba(255, 255, 255, 0.9); border-radius: 16px; padding: 24px 24px 24px 20px;
+  border-left: 4px solid #E3C34A; box-shadow: 0 4px 16px rgba(227, 195, 74, 0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+body.etapa-tallo .section--tallo-horizonte .horizonte-item:hover {
+  transform: translateX(4px); box-shadow: 0 8px 24px rgba(227, 195, 74, 0.3);
+}
+body.etapa-tallo .section--tallo-horizonte .horizonte-item__num {
+  display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg, #E3C34A, #c9a83d); color: #1a1525; font-size: 1.25rem; font-weight: 700; flex-shrink: 0;
+}
+body.etapa-tallo .section--tallo-horizonte .horizonte-item__icon-wrap {
+  display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 12px;
+  background: rgba(227, 195, 74, 0.25); color: #8b7324; font-size: 1.35rem; flex-shrink: 0;
+}
+body.etapa-tallo .section--tallo-horizonte .horizonte-item__content { min-width: 0; }
+body.etapa-tallo .section--tallo-horizonte .horizonte-item__title { margin: 0 0 8px; font-size: 1.1rem; font-weight: 700; color: #2d2438; }
+body.etapa-tallo .section--tallo-horizonte .horizonte-item__text { margin: 0; font-size: 0.95rem; line-height: 1.55; color: #4b5563; }
+body.etapa-tallo .section--tallo-horizonte .section__header--with-icon,
+body.etapa-tallo .section--tallo-competences .section__header--with-icon {
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+}
+body.etapa-tallo .section--tallo-horizonte .section__header-icon {
+  display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 50%;
+  background: rgba(227, 195, 74, 0.45); color: #6b5a1f; font-size: 2.25rem; margin-bottom: 8px;
+  box-shadow: 0 4px 20px rgba(227, 195, 74, 0.35);
+}
+@media (max-width: 640px) {
+  body.etapa-tallo .section--tallo-horizonte .horizonte-item { grid-template-columns: 1fr; grid-template-rows: auto auto auto; gap: 14px; }
+  body.etapa-tallo .section--tallo-horizonte .horizonte-item__num { grid-row: 1; }
+  body.etapa-tallo .section--tallo-horizonte .horizonte-item__icon-wrap { grid-row: 2; }
+  body.etapa-tallo .section--tallo-horizonte .horizonte-item__content { grid-row: 3; }
+}
+body.etapa-tallo .section--tallo-competences { background: #F7E8B8; color: #1a1525; }
+body.etapa-tallo .section--tallo-competences .section__header h2,
+body.etapa-tallo .section--tallo-competences .section__header p { color: #1a1525; }
+body.etapa-tallo .section--tallo-competences .section__header-icon {
+  background: rgba(227, 195, 74, 0.45); color: #6b5a1f; box-shadow: 0 4px 20px rgba(227, 195, 74, 0.35);
+}
+body.etapa-tallo .section--tallo-competences .competences-grid--dynamic { gap: 24px; }
+body.etapa-tallo .section--tallo-competences .competences-grid--dynamic .card-competence {
+  background: #fff; border: none; border-radius: 20px; padding: 28px 26px;
+  box-shadow: 0 4px 20px rgba(227, 195, 74, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex; flex-direction: column; align-items: flex-start;
+}
+body.etapa-tallo .section--tallo-competences .competences-grid--dynamic .card-competence:hover {
+  transform: translateY(-4px); box-shadow: 0 12px 28px rgba(227, 195, 74, 0.2);
+}
+body.etapa-tallo .section--tallo-competences .competences-grid--dynamic .competence-icon-wrap {
+  width: 70px; height: 70px; border-radius: 18px;
+  background: #F7E8B8; display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+}
+body.etapa-tallo .section--tallo-competences .competences-grid--dynamic .competence-icon {
+  color: #E3C34A; font-size: 1.75rem;
+}
+body.etapa-tallo .section--tallo-competences .competence-badge {
+  display: inline-block; padding: 6px 14px; border-radius: 999px;
+  background: #F7E8B8; color: #1a1525; font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.02em; margin-bottom: 12px; text-align: center;
+}
+body.etapa-tallo .section--tallo-competences .competence-teaser {
+  color: #4b5563; font-size: 0.95rem; line-height: 1.55; margin: 0 0 16px;
+}
+body.etapa-tallo .section--tallo-competences .competences-grid--dynamic .competence-name {
+  color: #1a1525; font-size: 1.25rem; font-weight: 700; margin: 0 0 8px;
+}
+body.etapa-tallo .section--tallo-competences .competence-btn {
+  border-color: rgba(227, 195, 74, 0.6); color: #8b7324; background: rgba(255, 255, 255, 0.8);
+}
+body.etapa-tallo .section--tallo-competences .competence-btn:hover {
+  background: rgba(227, 195, 74, 0.2); border-color: #E3C34A; color: #6b5a1f;
+}
+body.etapa-tallo .section--tallo-competences .competence-detail { border-top-color: rgba(227, 195, 74, 0.25); }
+body.etapa-tallo .section--tallo-competences .competence-list strong { color: #6b5a1f; }
+
+/* Nudo: Horizonte de expectativas y Competencias (#6E8FAF / #C7D6E2) */
+body.etapa-nudo .section--nudo-horizonte {
+  background: #C7D6E2;
+  color: #1a1525;
+}
+body.etapa-nudo .section--nudo-horizonte .section__header h2,
+body.etapa-nudo .section--nudo-horizonte .section__header p { color: #1a1525; }
+body.etapa-nudo .section--nudo-horizonte .horizonte-phase { font-weight: 600; font-size: 1rem; color: #3d5a75; margin: 0 0 8px; }
+body.etapa-nudo .section--nudo-horizonte .horizonte-intro { font-size: 1.1rem; font-weight: 600; color: #2d2438; margin: 0 0 32px; max-width: 640px; margin-left: auto; margin-right: auto; }
+body.etapa-nudo .section--nudo-horizonte .horizonte-aspiraciones { list-style: none; margin: 0; padding: 0; max-width: 900px; margin-left: auto; margin-right: auto; display: grid; gap: 20px; }
+body.etapa-nudo .section--nudo-horizonte .horizonte-item {
+  display: grid; grid-template-columns: auto auto 1fr; gap: 20px; align-items: start;
+  background: rgba(255, 255, 255, 0.9); border-radius: 16px; padding: 24px 24px 24px 20px;
+  border-left: 4px solid #6E8FAF; box-shadow: 0 4px 16px rgba(110, 143, 175, 0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+body.etapa-nudo .section--nudo-horizonte .horizonte-item:hover {
+  transform: translateX(4px); box-shadow: 0 8px 24px rgba(110, 143, 175, 0.3);
+}
+body.etapa-nudo .section--nudo-horizonte .horizonte-item__num {
+  display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg, #6E8FAF, #5a7594); color: #fff; font-size: 1.25rem; font-weight: 700; flex-shrink: 0;
+}
+body.etapa-nudo .section--nudo-horizonte .horizonte-item__icon-wrap {
+  display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 12px;
+  background: rgba(110, 143, 175, 0.25); color: #6E8FAF; font-size: 1.35rem; flex-shrink: 0;
+}
+body.etapa-nudo .section--nudo-horizonte .horizonte-item__content { min-width: 0; }
+body.etapa-nudo .section--nudo-horizonte .horizonte-item__title { margin: 0 0 8px; font-size: 1.1rem; font-weight: 700; color: #2d2438; }
+body.etapa-nudo .section--nudo-horizonte .horizonte-item__text { margin: 0; font-size: 0.95rem; line-height: 1.55; color: #4b5563; }
+body.etapa-nudo .section--nudo-horizonte .section__header--with-icon,
+body.etapa-nudo .section--nudo-competences .section__header--with-icon {
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+}
+body.etapa-nudo .section--nudo-horizonte .section__header-icon {
+  display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 50%;
+  background: rgba(110, 143, 175, 0.4); color: #3d5a75; font-size: 2.25rem; margin-bottom: 8px;
+  box-shadow: 0 4px 20px rgba(110, 143, 175, 0.3);
+}
+@media (max-width: 640px) {
+  body.etapa-nudo .section--nudo-horizonte .horizonte-item { grid-template-columns: 1fr; grid-template-rows: auto auto auto; gap: 14px; }
+  body.etapa-nudo .section--nudo-horizonte .horizonte-item__num { grid-row: 1; }
+  body.etapa-nudo .section--nudo-horizonte .horizonte-item__icon-wrap { grid-row: 2; }
+  body.etapa-nudo .section--nudo-horizonte .horizonte-item__content { grid-row: 3; }
+}
+body.etapa-nudo .section--nudo-competences { background: #C7D6E2; color: #1a1525; }
+body.etapa-nudo .section--nudo-competences .section__header h2,
+body.etapa-nudo .section--nudo-competences .section__header p { color: #1a1525; }
+body.etapa-nudo .section--nudo-competences .section__header-icon {
+  background: rgba(110, 143, 175, 0.4); color: #3d5a75; box-shadow: 0 4px 20px rgba(110, 143, 175, 0.3);
+}
+body.etapa-nudo .section--nudo-competences .competences-grid--dynamic { gap: 24px; }
+body.etapa-nudo .section--nudo-competences .competences-grid--dynamic .card-competence {
+  background: #fff; border: none; border-radius: 20px; padding: 28px 26px;
+  box-shadow: 0 4px 20px rgba(110, 143, 175, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex; flex-direction: column; align-items: flex-start;
+}
+body.etapa-nudo .section--nudo-competences .competences-grid--dynamic .card-competence:hover {
+  transform: translateY(-4px); box-shadow: 0 12px 28px rgba(110, 143, 175, 0.18);
+}
+body.etapa-nudo .section--nudo-competences .competences-grid--dynamic .competence-icon-wrap {
+  width: 70px; height: 70px; border-radius: 18px;
+  background: #C7D6E2; display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+}
+body.etapa-nudo .section--nudo-competences .competences-grid--dynamic .competence-icon {
+  color: #6E8FAF; font-size: 1.75rem;
+}
+body.etapa-nudo .section--nudo-competences .competence-badge {
+  display: inline-block; padding: 6px 14px; border-radius: 999px;
+  background: #C7D6E2; color: #1a1525; font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.02em; margin-bottom: 12px; text-align: center;
+}
+body.etapa-nudo .section--nudo-competences .competence-teaser {
+  color: #4b5563; font-size: 0.95rem; line-height: 1.55; margin: 0 0 16px;
+}
+body.etapa-nudo .section--nudo-competences .competences-grid--dynamic .competence-name {
+  color: #1a1525; font-size: 1.25rem; font-weight: 700; margin: 0 0 8px;
+}
+body.etapa-nudo .section--nudo-competences .competence-btn {
+  border-color: rgba(110, 143, 175, 0.6); color: #6E8FAF; background: rgba(255, 255, 255, 0.8);
+}
+body.etapa-nudo .section--nudo-competences .competence-btn:hover {
+  background: rgba(110, 143, 175, 0.2); border-color: #6E8FAF; color: #3d5a75;
+}
+body.etapa-nudo .section--nudo-competences .competence-detail { border-top-color: rgba(110, 143, 175, 0.25); }
+body.etapa-nudo .section--nudo-competences .competence-list strong { color: #3d5a75; }
+
 body.etapa-rama .section--light .card--feature,
 body.etapa-rama .section--light .card--usecase { border-top-color: #E17A55; }
 body.etapa-rama .card--feature:hover,

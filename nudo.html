@@ -32,28 +32,148 @@
   <header class="stage-hero stage-hero--nudo" role="banner">
     <div class="stage-hero__content">
       <span class="pill pill--accent">Nudo</span>
-      <h1>Nudo</h1>
+      <div class="stage-hero__title-wrap">
+        <h1>Nudo</h1>
+        <span class="stage-hero__icon" aria-hidden="true"><i class="fa-solid fa-link"></i></span>
+      </div>
       <p>Etapa Nudo del Sistema EBI · 8-12 años. Horizonte de expectativas y desarrollo de la autonomía.</p>
       <a href="index.html#horizonte" class="btn btn--ghost"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Ver horizonte de expectativas</a>
     </div>
   </header>
 
   <main id="main" role="main">
-    <section class="section section--light" aria-labelledby="horizonte-heading">
-      <div class="section__header">
-        <h2 id="horizonte-heading"><i class="fa-solid fa-compass" aria-hidden="true"></i> Horizonte de expectativas</h2>
-        <p>Contenidos y criterios propios de la etapa Nudo (8-12 años) dentro del Sistema EBI.</p>
+    <section id="horizonte-expectativas" class="section section--light section--nudo-horizonte" aria-labelledby="horizonte-expectativas-heading">
+      <div class="section__header section__header--with-icon">
+        <span class="section__header-icon" aria-hidden="true"><i class="fa-solid fa-link"></i></span>
+        <h2 id="horizonte-expectativas-heading">Horizonte de expectativas</h2>
+        <p class="horizonte-phase">Fase Nudo · 8-12 años</p>
+        <p class="horizonte-intro">La comunidad educativa de Santa María La Blanca quiere:</p>
       </div>
-      <div class="cards cards--2" style="max-width: 900px; margin: 0 auto;">
-        <article class="card card--feature">
-          <h3><i class="fa-solid fa-list-check" aria-hidden="true"></i> Áreas y competencias</h3>
-          <p>Desarrollo de las seis competencias EBI con niveles de dominio adecuados a la edad (8-12 años).</p>
-        </article>
-        <article class="card card--feature">
-          <h3><i class="fa-solid fa-book-open" aria-hidden="true"></i> Guía de la etapa</h3>
-          <p>Material de apoyo y orientaciones para la etapa Nudo en el marco de la metáfora del crecimiento.</p>
-        </article>
+      <ol class="horizonte-aspiraciones" aria-label="Aspiraciones de la comunidad educativa">
+        <li class="horizonte-item">
+          <span class="horizonte-item__num" aria-hidden="true">1</span>
+          <div class="horizonte-item__icon-wrap" aria-hidden="true"><i class="fa-solid fa-brain"></i></div>
+          <div class="horizonte-item__content">
+            <h3 class="horizonte-item__title">Desarrollar habilidades de pensamiento y aprendizaje</h3>
+            <p class="horizonte-item__text">Desarrollar habilidades de pensamiento y aprendizaje fundamentales para luego comenzar a enriquecer el aprendizaje con nuevas formas de enseñar.</p>
+          </div>
+        </li>
+        <li class="horizonte-item">
+          <span class="horizonte-item__num" aria-hidden="true">2</span>
+          <div class="horizonte-item__icon-wrap" aria-hidden="true"><i class="fa-solid fa-people-group"></i></div>
+          <div class="horizonte-item__content">
+            <h3 class="horizonte-item__title">Generar contextos seguros de exploración y cooperación</h3>
+            <p class="horizonte-item__text">Generar contextos seguros de exploración y cooperación.</p>
+          </div>
+        </li>
+        <li class="horizonte-item">
+          <span class="horizonte-item__num" aria-hidden="true">3</span>
+          <div class="horizonte-item__icon-wrap" aria-hidden="true"><i class="fa-solid fa-lightbulb"></i></div>
+          <div class="horizonte-item__content">
+            <h3 class="horizonte-item__title">Transformar el currículum</h3>
+            <p class="horizonte-item__text">Transformar el currículum para desarrollar destrezas de pensamiento básicas, conocimientos significativos y habilidades.</p>
+          </div>
+        </li>
+        <li class="horizonte-item">
+          <span class="horizonte-item__num" aria-hidden="true">4</span>
+          <div class="horizonte-item__icon-wrap" aria-hidden="true"><i class="fa-solid fa-guitar"></i></div>
+          <div class="horizonte-item__content">
+            <h3 class="horizonte-item__title">Aprovechar los recursos y participación de las familias</h3>
+            <p class="horizonte-item__text">Aprovechar los recursos de la comunidad para enriquecer las experiencias de los alumnos. Establecer una comunicación para la participación de las familias.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section section--light section--nudo-competences" aria-labelledby="competencias-heading">
+      <div class="section__header section__header--with-icon">
+        <span class="section__header-icon" aria-hidden="true"><i class="fa-solid fa-link"></i></span>
+        <h2 id="competencias-heading">Competencias EBI · Fase Nudo</h2>
+        <p>Seis competencias clave para la etapa Nudo (8-12 años). Horizonte de expectativas del Sistema EBI.</p>
       </div>
+      <ul class="competences-grid competences-grid--dynamic" aria-label="Competencias EBI Fase Nudo">
+        <li class="card card-competence card-competence--expandable">
+          <div class="competence-icon-wrap" aria-hidden="true"><i class="fa-solid fa-users competence-icon" aria-hidden="true"></i></div>
+          <span class="competence-badge">8-12 años</span>
+          <h3 class="competence-name">Personal y social</h3>
+          <p class="competence-teaser">Identidad personal, inteligencia emocional y participación con responsabilidad.</p>
+          <button type="button" class="competence-btn" aria-expanded="false" aria-controls="comp-nudo-personal" id="comp-btn-nudo-personal">Ver más</button>
+          <div id="comp-nudo-personal" class="competence-detail" role="region" aria-labelledby="comp-btn-nudo-personal" hidden>
+            <ul class="competence-list">
+              <li>Toma de conciencia de la <strong>identidad personal</strong> y desarrollar la <strong>inteligencia emocional</strong> para lograr el respeto por uno mismo y por los demás.</li>
+              <li>Facilitar herramientas para el <strong>silencio interior</strong> y la <strong>oración</strong> como medio de <strong>comunicación con Dios</strong> y <strong>con uno mismo</strong>.</li>
+              <li>Conocer <strong>diferentes realidades sociales</strong> y participar activamente en la clase con <strong>responsabilidad y autonomía</strong>.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="card card-competence card-competence--expandable">
+          <div class="competence-icon-wrap" aria-hidden="true"><i class="fa-solid fa-compass competence-icon" aria-hidden="true"></i></div>
+          <span class="competence-badge">8-12 años</span>
+          <h3 class="competence-name">Iniciativa y autonomía</h3>
+          <p class="competence-teaser">Responsabilidad, metas personales y trabajos cooperativos.</p>
+          <button type="button" class="competence-btn" aria-expanded="false" aria-controls="comp-nudo-iniciativa" id="comp-btn-nudo-iniciativa">Ver más</button>
+          <div id="comp-nudo-iniciativa" class="competence-detail" role="region" aria-labelledby="comp-btn-nudo-iniciativa" hidden>
+            <ul class="competence-list">
+              <li>Fortalecer la asunción de <strong>responsabilidad</strong> frente al trabajo y aprender a establecer <strong>metas personales</strong>.</li>
+              <li>Desarrollar la capacidad de participar activamente en <strong>trabajos cooperativos</strong> e iniciar las <strong>destrezas de pensamiento</strong>.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="card card-competence card-competence--expandable">
+          <div class="competence-icon-wrap" aria-hidden="true"><i class="fa-solid fa-laptop competence-icon" aria-hidden="true"></i></div>
+          <span class="competence-badge">8-12 años</span>
+          <h3 class="competence-name">Digital</h3>
+          <p class="competence-teaser">Usuario básico y conductas de seguridad y uso responsable.</p>
+          <button type="button" class="competence-btn" aria-expanded="false" aria-controls="comp-nudo-digital" id="comp-btn-nudo-digital">Ver más</button>
+          <div id="comp-nudo-digital" class="competence-detail" role="region" aria-labelledby="comp-btn-nudo-digital" hidden>
+            <ul class="competence-list">
+              <li>Iniciar el desarrollo de <strong>habilidades de usuario básico</strong> respecto al tratamiento de la información, comunicación, creación de contenido y resolución de problemas.</li>
+              <li>Iniciar el desarrollo de <strong>conductas básicas de seguridad y uso responsable de las TIC</strong> a través de la comprensión de los derechos y deberes digitales.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="card card-competence card-competence--expandable">
+          <div class="competence-icon-wrap" aria-hidden="true"><i class="fa-solid fa-atom competence-icon" aria-hidden="true"></i></div>
+          <span class="competence-badge">8-12 años</span>
+          <h3 class="competence-name">Científica</h3>
+          <p class="competence-teaser">Método científico, razonamiento lógico y desarrollo sostenible.</p>
+          <button type="button" class="competence-btn" aria-expanded="false" aria-controls="comp-nudo-cientifica" id="comp-btn-nudo-cientifica">Ver más</button>
+          <div id="comp-nudo-cientifica" class="competence-detail" role="region" aria-labelledby="comp-btn-nudo-cientifica" hidden>
+            <ul class="competence-list">
+              <li>Conocer y aplicar de forma básica la estructura del <strong>método científico</strong>.</li>
+              <li>Afianzar el desarrollo de proceso de <strong>razonamiento lógico y resolución de problemas</strong> basado en el pensamiento concreto.</li>
+              <li>Establecer con detalle las principales <strong>relaciones del ser humano</strong> y su <strong>entorno natural</strong> e iniciar la conciencia sobre la necesidad de <strong>comprometerse con el desarrollo sostenible</strong>.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="card card-competence card-competence--expandable">
+          <div class="competence-icon-wrap" aria-hidden="true"><i class="fa-solid fa-comments competence-icon" aria-hidden="true"></i></div>
+          <span class="competence-badge">8-12 años</span>
+          <h3 class="competence-name">Comunicación</h3>
+          <p class="competence-teaser">Recibir, organizar y elaborar información; expresarse y dialogar.</p>
+          <button type="button" class="competence-btn" aria-expanded="false" aria-controls="comp-nudo-comunicacion" id="comp-btn-nudo-comunicacion">Ver más</button>
+          <div id="comp-nudo-comunicacion" class="competence-detail" role="region" aria-labelledby="comp-btn-nudo-comunicacion" hidden>
+            <ul class="competence-list">
+              <li>Utilizar las destrezas del lenguaje oral y escrito para poder <strong>recibir, seleccionar, organizar y elaborar experiencias vitales o conocimiento aprendido</strong> en diferentes formatos y contextos.</li>
+              <li>Organizar el pensamiento para poder <strong>expresarse y dialogar</strong>, en diferentes contextos y con diferentes registros, como herramienta de aprendizaje y convivencia.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="card card-competence card-competence--expandable">
+          <div class="competence-icon-wrap" aria-hidden="true"><i class="fa-solid fa-palette competence-icon" aria-hidden="true"></i></div>
+          <span class="competence-badge">8-12 años</span>
+          <h3 class="competence-name">Cultural y artística</h3>
+          <p class="competence-teaser">Conocer movimientos artísticos y participar en actividades culturales.</p>
+          <button type="button" class="competence-btn" aria-expanded="false" aria-controls="comp-nudo-cultural" id="comp-btn-nudo-cultural">Ver más</button>
+          <div id="comp-nudo-cultural" class="competence-detail" role="region" aria-labelledby="comp-btn-nudo-cultural" hidden>
+            <ul class="competence-list">
+              <li><strong>Conocer</strong> distintos movimientos artísticos o culturales, así como sus principales características.</li>
+              <li><strong>Participar</strong> de forma adecuada en actividades culturales y artísticas del centro.</li>
+              <li>Utilizar el lenguaje plástico, musical, corporal y dramático para <strong>expresar</strong> ideas y emociones.</li>
+            </ul>
+          </div>
+        </li>
+      </ul>
     </section>
 
     <section class="section" aria-labelledby="recursos-heading">

@@ -32,28 +32,149 @@
   <header class="stage-hero stage-hero--tallo" role="banner">
     <div class="stage-hero__content">
       <span class="pill pill--accent">Tallo</span>
-      <h1>Tallo</h1>
+      <div class="stage-hero__title-wrap">
+        <h1>Tallo</h1>
+        <span class="stage-hero__icon" aria-hidden="true"><i class="fa-solid fa-leaf"></i></span>
+      </div>
       <p>Etapa Tallo del Sistema EBI · 5-9 años. Horizonte de expectativas y desarrollo de la autonomía.</p>
       <a href="index.html#horizonte" class="btn btn--ghost"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Ver horizonte de expectativas</a>
     </div>
   </header>
 
   <main id="main" role="main">
-    <section class="section section--light" aria-labelledby="horizonte-heading">
-      <div class="section__header">
-        <h2 id="horizonte-heading"><i class="fa-solid fa-compass" aria-hidden="true"></i> Horizonte de expectativas</h2>
-        <p>Contenidos y criterios propios de la etapa Tallo (5-9 años) dentro del Sistema EBI.</p>
+    <section id="horizonte-expectativas" class="section section--light section--tallo-horizonte" aria-labelledby="horizonte-expectativas-heading">
+      <div class="section__header section__header--with-icon">
+        <span class="section__header-icon" aria-hidden="true"><i class="fa-solid fa-leaf"></i></span>
+        <h2 id="horizonte-expectativas-heading">Horizonte de expectativas</h2>
+        <p class="horizonte-phase">Fase Tallo · 5-9 años</p>
+        <p class="horizonte-intro">La comunidad educativa de Santa María La Blanca quiere:</p>
       </div>
-      <div class="cards cards--2" style="max-width: 900px; margin: 0 auto;">
-        <article class="card card--feature">
-          <h3><i class="fa-solid fa-list-check" aria-hidden="true"></i> Áreas y competencias</h3>
-          <p>Desarrollo de las seis competencias EBI con niveles de dominio adecuados a la edad (5-9 años).</p>
-        </article>
-        <article class="card card--feature">
-          <h3><i class="fa-solid fa-book-open" aria-hidden="true"></i> Guía de la etapa</h3>
-          <p>Material de apoyo y orientaciones para la etapa Tallo en el marco de la metáfora del crecimiento.</p>
-        </article>
+      <ol class="horizonte-aspiraciones" aria-label="Aspiraciones de la comunidad educativa">
+        <li class="horizonte-item">
+          <span class="horizonte-item__num" aria-hidden="true">1</span>
+          <div class="horizonte-item__icon-wrap" aria-hidden="true"><i class="fa-solid fa-brain"></i></div>
+          <div class="horizonte-item__content">
+            <h3 class="horizonte-item__title">Desarrollar habilidades de pensamiento y aprendizaje</h3>
+            <p class="horizonte-item__text">Desarrollar habilidades de pensamiento y aprendizaje fundamentales para luego comenzar a enriquecer el aprendizaje con nuevas formas de enseñar.</p>
+          </div>
+        </li>
+        <li class="horizonte-item">
+          <span class="horizonte-item__num" aria-hidden="true">2</span>
+          <div class="horizonte-item__icon-wrap" aria-hidden="true"><i class="fa-solid fa-people-group"></i></div>
+          <div class="horizonte-item__content">
+            <h3 class="horizonte-item__title">Generar contextos seguros de exploración y cooperación</h3>
+            <p class="horizonte-item__text">Generar contextos seguros de exploración y cooperación.</p>
+          </div>
+        </li>
+        <li class="horizonte-item">
+          <span class="horizonte-item__num" aria-hidden="true">3</span>
+          <div class="horizonte-item__icon-wrap" aria-hidden="true"><i class="fa-solid fa-lightbulb"></i></div>
+          <div class="horizonte-item__content">
+            <h3 class="horizonte-item__title">Transformar el currículum</h3>
+            <p class="horizonte-item__text">Transformar el currículum para desarrollar destrezas de pensamiento básicas, conocimientos significativos y habilidades.</p>
+          </div>
+        </li>
+        <li class="horizonte-item">
+          <span class="horizonte-item__num" aria-hidden="true">4</span>
+          <div class="horizonte-item__icon-wrap" aria-hidden="true"><i class="fa-solid fa-guitar"></i></div>
+          <div class="horizonte-item__content">
+            <h3 class="horizonte-item__title">Aprovechar los recursos y participación de las familias</h3>
+            <p class="horizonte-item__text">Aprovechar los recursos de la comunidad para enriquecer las experiencias de los alumnos. Establecer una comunicación para la participación de las familias.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section section--light section--tallo-competences" aria-labelledby="competencias-heading">
+      <div class="section__header section__header--with-icon">
+        <span class="section__header-icon" aria-hidden="true"><i class="fa-solid fa-leaf"></i></span>
+        <h2 id="competencias-heading">Competencias EBI · Fase Tallo</h2>
+        <p>Seis competencias clave para la etapa Tallo (5-9 años). Horizonte de expectativas del Sistema EBI.</p>
       </div>
+      <ul class="competences-grid competences-grid--dynamic" aria-label="Competencias EBI Fase Tallo">
+        <li class="card card-competence card-competence--expandable">
+          <div class="competence-icon-wrap" aria-hidden="true"><i class="fa-solid fa-users competence-icon" aria-hidden="true"></i></div>
+          <span class="competence-badge">5-9 años</span>
+          <h3 class="competence-name">Personal y social</h3>
+          <p class="competence-teaser">Identidad personal, inteligencia emocional, silencio interior y responsabilidades.</p>
+          <button type="button" class="competence-btn" aria-expanded="false" aria-controls="comp-tallo-personal" id="comp-btn-tallo-personal">Ver más</button>
+          <div id="comp-tallo-personal" class="competence-detail" role="region" aria-labelledby="comp-btn-tallo-personal" hidden>
+            <ul class="competence-list">
+              <li>Toma de conciencia de la <strong>identidad personal</strong> y desarrollar los requisitos de la <strong>inteligencia emocional</strong> para lograr el respeto por uno mismo y por los demás.</li>
+              <li>Facilitar herramientas para el <strong>silencio interior</strong> y la <strong>oración</strong> como medio de <strong>comunicación con Dios</strong> y <strong>con uno mismo</strong>.</li>
+              <li>Tomar conciencia de la <strong>diversidad de alumnado</strong> del colegio y asumir las <strong>responsabilidades personales</strong> en la dinámica del aula y de la familia.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="card card-competence card-competence--expandable">
+          <div class="competence-icon-wrap" aria-hidden="true"><i class="fa-solid fa-compass competence-icon" aria-hidden="true"></i></div>
+          <span class="competence-badge">5-9 años</span>
+          <h3 class="competence-name">Iniciativa y autonomía</h3>
+          <p class="competence-teaser">Autonomía en el aula, consecuencias de las decisiones e interdependencia positiva.</p>
+          <button type="button" class="competence-btn" aria-expanded="false" aria-controls="comp-tallo-iniciativa" id="comp-btn-tallo-iniciativa">Ver más</button>
+          <div id="comp-tallo-iniciativa" class="competence-detail" role="region" aria-labelledby="comp-btn-tallo-iniciativa" hidden>
+            <ul class="competence-list">
+              <li>Fortalecer la <strong>autonomía</strong> en el trabajo en aula y aprender a analizar las <strong>consecuencias</strong> de las decisiones.</li>
+              <li>Desarrollar la capacidad de establecer relaciones de <strong>interdependencia positiva</strong> y consolidar <strong>habilidades de pensamiento</strong> básicas.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="card card-competence card-competence--expandable">
+          <div class="competence-icon-wrap" aria-hidden="true"><i class="fa-solid fa-laptop competence-icon" aria-hidden="true"></i></div>
+          <span class="competence-badge">5-9 años</span>
+          <h3 class="competence-name">Digital</h3>
+          <p class="competence-teaser">Prerrequisitos para alfabetización digital y uso seguro de las TIC.</p>
+          <button type="button" class="competence-btn" aria-expanded="false" aria-controls="comp-tallo-digital" id="comp-btn-tallo-digital">Ver más</button>
+          <div id="comp-tallo-digital" class="competence-detail" role="region" aria-labelledby="comp-btn-tallo-digital" hidden>
+            <ul class="competence-list">
+              <li>Consolidar prerrequisitos para una futura <strong>alfabetización digital</strong> respecto al tratamiento de la información, comunicación, creación de contenido y resolución de problemas.</li>
+              <li>Tomar conciencia sobre la necesidad e importancia de un <strong>uso seguro y responsable de las TIC</strong>, entendiendo cuáles son nuestros derechos y deberes digitales.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="card card-competence card-competence--expandable">
+          <div class="competence-icon-wrap" aria-hidden="true"><i class="fa-solid fa-atom competence-icon" aria-hidden="true"></i></div>
+          <span class="competence-badge">5-9 años</span>
+          <h3 class="competence-name">Científica</h3>
+          <p class="competence-teaser">Curiosidad, resolución de problemas y relaciones con el entorno.</p>
+          <button type="button" class="competence-btn" aria-expanded="false" aria-controls="comp-tallo-cientifica" id="comp-btn-tallo-cientifica">Ver más</button>
+          <div id="comp-tallo-cientifica" class="competence-detail" role="region" aria-labelledby="comp-btn-tallo-cientifica" hidden>
+            <ul class="competence-list">
+              <li>Generar <strong>curiosidad y hacerse preguntas</strong> sobre el medio físico y natural.</li>
+              <li>Fomentar un método de <strong>resolución de problemas</strong> y de <strong>razonamiento lógico</strong> centrado en la acción y en la manipulación a través de situaciones concretas.</li>
+              <li>Conocer en un nivel inicial las <strong>relaciones del ser humano</strong> con el <strong>entorno</strong> más próximo e iniciar el desarrollo de algunos <strong>hábitos de cuidado medio ambiental</strong>.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="card card-competence card-competence--expandable">
+          <div class="competence-icon-wrap" aria-hidden="true"><i class="fa-solid fa-comments competence-icon" aria-hidden="true"></i></div>
+          <span class="competence-badge">5-9 años</span>
+          <h3 class="competence-name">Comunicación</h3>
+          <p class="competence-teaser">Comprensión lectora, composición escrita, atención y diálogo.</p>
+          <button type="button" class="competence-btn" aria-expanded="false" aria-controls="comp-tallo-comunicacion" id="comp-btn-tallo-comunicacion">Ver más</button>
+          <div id="comp-tallo-comunicacion" class="competence-detail" role="region" aria-labelledby="comp-btn-tallo-comunicacion" hidden>
+            <ul class="competence-list">
+              <li>Desarrollar el gusto por la lectura/escritura y habilidades para la <strong>comprensión lectora y composición escrita</strong> a través de distintos <strong>códigos</strong>.</li>
+              <li>Profundizar en la capacidad de <strong>atención y escucha</strong> en diferentes actividades de aula.</li>
+              <li>Utilizar el lenguaje en distintos códigos para <strong>dialogar</strong> sobre las necesidades, pensamientos y sentimientos.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="card card-competence card-competence--expandable">
+          <div class="competence-icon-wrap" aria-hidden="true"><i class="fa-solid fa-palette competence-icon" aria-hidden="true"></i></div>
+          <span class="competence-badge">5-9 años</span>
+          <h3 class="competence-name">Cultural y artística</h3>
+          <p class="competence-teaser">Descubrir referentes, gusto por lo cultural y expresión.</p>
+          <button type="button" class="competence-btn" aria-expanded="false" aria-controls="comp-tallo-cultural" id="comp-btn-tallo-cultural">Ver más</button>
+          <div id="comp-tallo-cultural" class="competence-detail" role="region" aria-labelledby="comp-btn-tallo-cultural" hidden>
+            <ul class="competence-list">
+              <li><strong>Descubrir</strong> personas, obras o lugares que sean referente de distintos movimientos artísticos o culturales.</li>
+              <li>Tomar conciencia del gusto y el disfrute por lo cultural y artístico.</li>
+              <li>Utilizar el lenguaje plástico, musical, corporal y dramático para <strong>expresar</strong> ideas y emociones.</li>
+            </ul>
+          </div>
+        </li>
+      </ul>
     </section>
 
     <section class="section" aria-labelledby="recursos-heading">
