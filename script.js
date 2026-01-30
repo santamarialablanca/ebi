@@ -84,7 +84,7 @@
     });
   });
 
-  // --- Competencias: botón "Ver más" expande/colapsa definición completa (accesible) ---
+  // --- Competencias: botón "Ver detalle" expande/colapsa definición completa (accesible) ---
   document.querySelectorAll('.competence-btn').forEach(function (btn) {
     var panelId = btn.getAttribute('aria-controls');
     var panel = panelId ? document.getElementById(panelId) : null;
@@ -95,7 +95,7 @@
       var expanded = btn.getAttribute('aria-expanded') === 'true';
       btn.setAttribute('aria-expanded', !expanded);
       panel.hidden = expanded;
-      btn.textContent = expanded ? 'Ver más' : 'Ver menos';
+      btn.textContent = expanded ? 'Ocultar detalle' : 'Ver detalle';
     });
   });
 
