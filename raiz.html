@@ -32,28 +32,157 @@
   <header class="stage-hero stage-hero--raiz" role="banner">
     <div class="stage-hero__content">
       <span class="pill pill--accent">Raíz</span>
-      <h1>Raíz</h1>
+      <div class="stage-hero__title-wrap">
+        <h1>Raíz</h1>
+        <span class="stage-hero__icon" aria-hidden="true"><i class="fa-solid fa-tree"></i></span>
+      </div>
       <p>Etapa Raíz del Sistema EBI · 1-6 años. Horizonte de expectativas y desarrollo de la autonomía.</p>
       <a href="index.html#horizonte" class="btn btn--ghost"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Ver horizonte de expectativas</a>
     </div>
   </header>
 
   <main id="main" role="main">
-    <section class="section section--light" aria-labelledby="horizonte-heading">
-      <div class="section__header">
-        <h2 id="horizonte-heading"><i class="fa-solid fa-compass" aria-hidden="true"></i> Horizonte de expectativas</h2>
-        <p>Contenidos y criterios propios de la etapa Raíz (1-6 años) dentro del Sistema EBI.</p>
+    <!-- Horizonte de expectativas: aspiraciones de la comunidad educativa -->
+    <section id="horizonte-expectativas" class="section section--light section--raiz-horizonte" aria-labelledby="horizonte-expectativas-heading">
+      <div class="section__header section__header--with-icon">
+        <span class="section__header-icon" aria-hidden="true"><i class="fa-solid fa-tree"></i></span>
+        <h2 id="horizonte-expectativas-heading">Horizonte de expectativas</h2>
+        <p class="horizonte-phase">Fase Raíz · 1-6 años</p>
+        <p class="horizonte-intro">La comunidad educativa de Santa María La Blanca quiere:</p>
       </div>
-      <div class="cards cards--2" style="max-width: 900px; margin: 0 auto;">
-        <article class="card card--feature">
-          <h3><i class="fa-solid fa-list-check" aria-hidden="true"></i> Áreas y competencias</h3>
-          <p>Desarrollo de las seis competencias EBI con niveles de dominio adecuados a la edad (1-6 años).</p>
-        </article>
-        <article class="card card--feature">
-          <h3><i class="fa-solid fa-book-open" aria-hidden="true"></i> Guía de la etapa</h3>
-          <p>Material de apoyo y orientaciones para la etapa Raíz en el marco de la metáfora del crecimiento.</p>
-        </article>
+      <ol class="horizonte-aspiraciones" aria-label="Aspiraciones de la comunidad educativa">
+        <li class="horizonte-item">
+          <span class="horizonte-item__num" aria-hidden="true">1</span>
+          <div class="horizonte-item__icon-wrap" aria-hidden="true"><i class="fa-solid fa-seedling"></i></div>
+          <div class="horizonte-item__content">
+            <h3 class="horizonte-item__title">Germinar el perfil de aprendizaje</h3>
+            <p class="horizonte-item__text">Germinar el perfil de aprendizaje de cada alumno desde la etapa Raíz.</p>
+          </div>
+        </li>
+        <li class="horizonte-item">
+          <span class="horizonte-item__num" aria-hidden="true">2</span>
+          <div class="horizonte-item__icon-wrap" aria-hidden="true"><i class="fa-solid fa-people-group"></i></div>
+          <div class="horizonte-item__content">
+            <h3 class="horizonte-item__title">Generar contextos seguros de vinculación</h3>
+            <p class="horizonte-item__text">Generar contextos seguros de vinculación que favorezcan el desarrollo personal y colectivo.</p>
+          </div>
+        </li>
+        <li class="horizonte-item">
+          <span class="horizonte-item__num" aria-hidden="true">3</span>
+          <div class="horizonte-item__icon-wrap" aria-hidden="true"><i class="fa-solid fa-lightbulb"></i></div>
+          <div class="horizonte-item__content">
+            <h3 class="horizonte-item__title">Transformar el currículum</h3>
+            <p class="horizonte-item__text">Transformar el currículum para desarrollar hábitos de autonomía, aprendizaje y pensamiento básicas.</p>
+          </div>
+        </li>
+        <li class="horizonte-item">
+          <span class="horizonte-item__num" aria-hidden="true">4</span>
+          <div class="horizonte-item__icon-wrap" aria-hidden="true"><i class="fa-solid fa-guitar"></i></div>
+          <div class="horizonte-item__content">
+            <h3 class="horizonte-item__title">Aprovechar los recursos</h3>
+            <p class="horizonte-item__text">Aprovechar los recursos de la comunidad educativa para enriquecer las experiencias de los alumnos.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Competencias EBI · Fase Raíz -->
+    <section class="section section--light section--raiz-competences" aria-labelledby="competencias-heading">
+      <div class="section__header section__header--with-icon">
+        <span class="section__header-icon" aria-hidden="true"><i class="fa-solid fa-tree"></i></span>
+        <h2 id="competencias-heading">Competencias EBI · Fase Raíz</h2>
+        <p>Seis competencias clave para la etapa Raíz (1-6 años). Horizonte de expectativas del Sistema EBI.</p>
       </div>
+      <ul class="competences-grid competences-grid--dynamic" aria-label="Competencias EBI Fase Raíz">
+        <li class="card card-competence card-competence--expandable">
+          <div class="competence-icon-wrap" aria-hidden="true"><i class="fa-solid fa-users competence-icon" aria-hidden="true"></i></div>
+          <span class="competence-badge">1-6 años</span>
+          <h3 class="competence-name">Personal y social</h3>
+          <p class="competence-teaser">Identidad, inteligencia emocional, silencio interior y compromiso social.</p>
+          <button type="button" class="competence-btn" aria-expanded="false" aria-controls="comp-raiz-personal" id="comp-btn-raiz-personal">Ver más</button>
+          <div id="comp-raiz-personal" class="competence-detail" role="region" aria-labelledby="comp-btn-raiz-personal" hidden>
+            <ul class="competence-list">
+              <li>Toma de conciencia de su identidad a través de la comprensión de sus necesidades.</li>
+              <li>Germinar las estructuras básicas de la <strong>inteligencia emocional</strong> en todas sus dimensiones: autoconocimiento, regulación, asertividad, cooperación, empatía, motivación y resolución de conflictos.</li>
+              <li>Facilitar herramientas sencillas para el <strong>silencio interior</strong> y la <strong>oración</strong>.</li>
+              <li>Conocer personas que sean referente de valores y <strong>compromiso social</strong>.</li>
+              <li>Fomentar la iniciativa, la responsabilidad y la autonomía para una futura participación.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="card card-competence card-competence--expandable">
+          <div class="competence-icon-wrap" aria-hidden="true"><i class="fa-solid fa-compass competence-icon" aria-hidden="true"></i></div>
+          <span class="competence-badge">1-6 años</span>
+          <h3 class="competence-name">Iniciativa y autonomía</h3>
+          <p class="competence-teaser">Hábitos diarios, primeras decisiones y cooperación.</p>
+          <button type="button" class="competence-btn" aria-expanded="false" aria-controls="comp-raiz-iniciativa" id="comp-btn-raiz-iniciativa">Ver más</button>
+          <div id="comp-raiz-iniciativa" class="competence-detail" role="region" aria-labelledby="comp-btn-raiz-iniciativa" hidden>
+            <ul class="competence-list">
+              <li>Fortalecer la autonomía en <strong>hábitos diarios</strong>.</li>
+              <li>Facilitar que tomen sus <strong>primeras decisiones</strong>.</li>
+              <li>Fortalecer las primeras <strong>conductas básicas</strong> para la cooperación.</li>
+              <li>Desarrollar <strong>habilidades de pensamiento básico</strong>.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="card card-competence card-competence--expandable">
+          <div class="competence-icon-wrap" aria-hidden="true"><i class="fa-solid fa-laptop competence-icon" aria-hidden="true"></i></div>
+          <span class="competence-badge">1-6 años</span>
+          <h3 class="competence-name">Digital</h3>
+          <p class="competence-teaser">Prerrequisitos para la alfabetización digital y uso responsable de las TIC.</p>
+          <button type="button" class="competence-btn" aria-expanded="false" aria-controls="comp-raiz-digital" id="comp-btn-raiz-digital">Ver más</button>
+          <div id="comp-raiz-digital" class="competence-detail" role="region" aria-labelledby="comp-btn-raiz-digital" hidden>
+            <ul class="competence-list">
+              <li>Iniciar el desarrollo de <strong>prerrequisitos</strong> para una futura <strong>alfabetización digital</strong> respecto al tratamiento de la información, comunicación, creación de contenido y resolución de problemas.</li>
+              <li>Fomentar en el <strong>ecosistema familiar</strong> un <strong>uso responsable y seguro de las TIC</strong>.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="card card-competence card-competence--expandable">
+          <div class="competence-icon-wrap" aria-hidden="true"><i class="fa-solid fa-atom competence-icon" aria-hidden="true"></i></div>
+          <span class="competence-badge">1-6 años</span>
+          <h3 class="competence-name">Científica</h3>
+          <p class="competence-teaser">Curiosidad, resolución de problemas y cuidado del medio ambiente.</p>
+          <button type="button" class="competence-btn" aria-expanded="false" aria-controls="comp-raiz-cientifica" id="comp-btn-raiz-cientifica">Ver más</button>
+          <div id="comp-raiz-cientifica" class="competence-detail" role="region" aria-labelledby="comp-btn-raiz-cientifica" hidden>
+            <ul class="competence-list">
+              <li>Generar curiosidad y hacerse preguntas sobre el medio físico y natural.</li>
+              <li>Facilitar la <strong>resolución de problemas</strong> y el <strong>razonamiento</strong> a través de la activación y combinación de esquemas sensoriales y motores.</li>
+              <li>Conocer las características principales del <strong>entorno natural más próximo</strong> y algunas de las relaciones que el ser humano establece con el mismo.</li>
+              <li>Despertar la necesidad por desarrollar hábitos de <strong>cuidado del medio ambiente</strong>.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="card card-competence card-competence--expandable">
+          <div class="competence-icon-wrap" aria-hidden="true"><i class="fa-solid fa-comments competence-icon" aria-hidden="true"></i></div>
+          <span class="competence-badge">1-6 años</span>
+          <h3 class="competence-name">Comunicación</h3>
+          <p class="competence-teaser">Prerrequisitos de lectura y escritura, escucha y diálogo.</p>
+          <button type="button" class="competence-btn" aria-expanded="false" aria-controls="comp-raiz-comunicacion" id="comp-btn-raiz-comunicacion">Ver más</button>
+          <div id="comp-raiz-comunicacion" class="competence-detail" role="region" aria-labelledby="comp-btn-raiz-comunicacion" hidden>
+            <ul class="competence-list">
+              <li>Iniciarse en los <strong>prerrequisitos de la lectura y la escritura</strong>.</li>
+              <li>Conocer y utilizar los conceptos básicos de distintos <strong>códigos de comunicación y representación</strong>.</li>
+              <li>Focalizar la <strong>atención</strong> y la <strong>escucha</strong> en actividades conjuntas.</li>
+              <li>Utilizar el lenguaje en distintos códigos para <strong>dialogar</strong> sobre las necesidades, pensamientos y sentimientos.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="card card-competence card-competence--expandable">
+          <div class="competence-icon-wrap" aria-hidden="true"><i class="fa-solid fa-palette competence-icon" aria-hidden="true"></i></div>
+          <span class="competence-badge">1-6 años</span>
+          <h3 class="competence-name">Cultural y artística</h3>
+          <p class="competence-teaser">Referentes culturales y artísticos, gusto y expresión.</p>
+          <button type="button" class="competence-btn" aria-expanded="false" aria-controls="comp-raiz-cultural" id="comp-btn-raiz-cultural">Ver más</button>
+          <div id="comp-raiz-cultural" class="competence-detail" role="region" aria-labelledby="comp-btn-raiz-cultural" hidden>
+            <ul class="competence-list">
+              <li>Descubrir personas, obras o lugares que sean <strong>referente</strong> de distintos movimientos artísticos o culturales.</li>
+              <li>Germinar el <strong>gusto</strong> y el disfrute por lo <strong>cultural y artístico</strong>.</li>
+              <li>Experimentar con diferentes <strong>lenguajes</strong> la capacidad de expresión del ser humano.</li>
+            </ul>
+          </div>
+        </li>
+      </ul>
     </section>
 
     <section class="section" aria-labelledby="recursos-heading">

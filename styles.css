@@ -2832,6 +2832,10 @@ ul {
     #0b1220;
 }
 .stage-hero--raiz .pill--accent { background: linear-gradient(135deg, #5FAFA8, #4a8f89); color: #f9fafb; }
+.stage-hero--raiz .stage-hero__icon {
+  background: rgba(95, 175, 168, 0.35);
+  color: #c8e8e6;
+}
 .stage-hero--raiz .card--feature, .stage-hero--raiz .card--usecase { border-top-color: #5FAFA8; }
 .stage-hero--raiz .btn--ghost:hover { border-color: #5FAFA8; color: #5FAFA8; }
 
@@ -2895,6 +2899,98 @@ body.etapa-raiz .section--light .card--usecase { border-top-color: #5FAFA8; }
 body.etapa-raiz .card--feature:hover,
 body.etapa-raiz .card--usecase:hover { border-color: #5FAFA8; background: radial-gradient(circle at top left, rgba(95, 175, 168, 0.15), #020617); }
 
+/* Raíz: Horizonte de expectativas y Competencias (mismo patrón que Fruto, colores #5FAFA8 / #C8E4E2) */
+body.etapa-raiz .section--raiz-horizonte {
+  background: #C8E4E2;
+  color: #1a1525;
+}
+body.etapa-raiz .section--raiz-horizonte .section__header h2,
+body.etapa-raiz .section--raiz-horizonte .section__header p { color: #1a1525; }
+body.etapa-raiz .section--raiz-horizonte .horizonte-phase { font-weight: 600; font-size: 1rem; color: #2d6b67; margin: 0 0 8px; }
+body.etapa-raiz .section--raiz-horizonte .horizonte-intro { font-size: 1.1rem; font-weight: 600; color: #2d2438; margin: 0 0 32px; max-width: 640px; margin-left: auto; margin-right: auto; }
+body.etapa-raiz .section--raiz-horizonte .horizonte-aspiraciones { list-style: none; margin: 0; padding: 0; max-width: 900px; margin-left: auto; margin-right: auto; display: grid; gap: 20px; }
+body.etapa-raiz .section--raiz-horizonte .horizonte-item {
+  display: grid; grid-template-columns: auto auto 1fr; gap: 20px; align-items: start;
+  background: rgba(255, 255, 255, 0.9); border-radius: 16px; padding: 24px 24px 24px 20px;
+  border-left: 4px solid #5FAFA8; box-shadow: 0 4px 16px rgba(95, 175, 168, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+body.etapa-raiz .section--raiz-horizonte .horizonte-item:hover {
+  transform: translateX(4px); box-shadow: 0 8px 24px rgba(95, 175, 168, 0.25);
+}
+body.etapa-raiz .section--raiz-horizonte .horizonte-item__num {
+  display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg, #5FAFA8, #4a8f89); color: #fff; font-size: 1.25rem; font-weight: 700; flex-shrink: 0;
+}
+body.etapa-raiz .section--raiz-horizonte .horizonte-item__icon-wrap {
+  display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 12px;
+  background: rgba(95, 175, 168, 0.2); color: #5FAFA8; font-size: 1.35rem; flex-shrink: 0;
+}
+body.etapa-raiz .section--raiz-horizonte .horizonte-item__content { min-width: 0; }
+body.etapa-raiz .section--raiz-horizonte .horizonte-item__title { margin: 0 0 8px; font-size: 1.1rem; font-weight: 700; color: #2d2438; }
+body.etapa-raiz .section--raiz-horizonte .horizonte-item__text { margin: 0; font-size: 0.95rem; line-height: 1.55; color: #4b5563; }
+body.etapa-raiz .section--raiz-horizonte .section__header--with-icon,
+body.etapa-raiz .section--raiz-competences .section__header--with-icon {
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+}
+body.etapa-raiz .section--raiz-horizonte .section__header-icon {
+  display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 50%;
+  background: rgba(95, 175, 168, 0.4); color: #2d6b67; font-size: 2.25rem; margin-bottom: 8px;
+  box-shadow: 0 4px 20px rgba(95, 175, 168, 0.3);
+}
+@media (max-width: 640px) {
+  body.etapa-raiz .section--raiz-horizonte .horizonte-item { grid-template-columns: 1fr; grid-template-rows: auto auto auto; gap: 14px; }
+  body.etapa-raiz .section--raiz-horizonte .horizonte-item__num { grid-row: 1; }
+  body.etapa-raiz .section--raiz-horizonte .horizonte-item__icon-wrap { grid-row: 2; }
+  body.etapa-raiz .section--raiz-horizonte .horizonte-item__content { grid-row: 3; }
+}
+
+body.etapa-raiz .section--raiz-competences { background: #C8E4E2; color: #1a1525; }
+body.etapa-raiz .section--raiz-competences .section__header h2,
+body.etapa-raiz .section--raiz-competences .section__header p { color: #1a1525; }
+body.etapa-raiz .section--raiz-competences .section__header-icon {
+  background: rgba(95, 175, 168, 0.4); color: #2d6b67; box-shadow: 0 4px 20px rgba(95, 175, 168, 0.3);
+}
+body.etapa-raiz .section--raiz-competences .competences-grid--dynamic { gap: 24px; }
+body.etapa-raiz .section--raiz-competences .competences-grid--dynamic .card-competence {
+  background: #fff; border: none; border-radius: 20px; padding: 28px 26px;
+  box-shadow: 0 4px 20px rgba(95, 175, 168, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex; flex-direction: column; align-items: flex-start;
+}
+body.etapa-raiz .section--raiz-competences .competences-grid--dynamic .card-competence:hover {
+  transform: translateY(-4px); box-shadow: 0 12px 28px rgba(95, 175, 168, 0.18);
+}
+/* Bloque icono: cuadrado redondeado grande (estilo imagen) */
+body.etapa-raiz .section--raiz-competences .competences-grid--dynamic .competence-icon-wrap {
+  width: 70px; height: 70px; border-radius: 18px;
+  background: #C8E4E2; display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+}
+body.etapa-raiz .section--raiz-competences .competences-grid--dynamic .competence-icon {
+  color: #5FAFA8; font-size: 1.75rem;
+}
+/* Pill de edad: mismo tono claro, texto oscuro centrado */
+body.etapa-raiz .section--raiz-competences .competence-badge {
+  display: inline-block; padding: 6px 14px; border-radius: 999px;
+  background: #C8E4E2; color: #1a1525; font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.02em; margin-bottom: 12px; text-align: center;
+}
+body.etapa-raiz .section--raiz-competences .competence-teaser {
+  color: #4b5563; font-size: 0.95rem; line-height: 1.55; margin: 0 0 16px;
+}
+body.etapa-raiz .section--raiz-competences .competences-grid--dynamic .competence-name {
+  color: #1a1525; font-size: 1.25rem; font-weight: 700; margin: 0 0 8px;
+}
+body.etapa-raiz .section--raiz-competences .competence-btn {
+  border-color: rgba(95, 175, 168, 0.6); color: #5FAFA8; background: rgba(255, 255, 255, 0.8);
+}
+body.etapa-raiz .section--raiz-competences .competence-btn:hover {
+  background: rgba(95, 175, 168, 0.2); border-color: #5FAFA8; color: #2d6b67;
+}
+body.etapa-raiz .section--raiz-competences .competence-detail { border-top-color: rgba(95, 175, 168, 0.25); }
+body.etapa-raiz .section--raiz-competences .competence-list strong { color: #2d6b67; }
+
 body.etapa-tallo .section--light .card--feature,
 body.etapa-tallo .section--light .card--usecase { border-top-color: #E3C34A; }
 body.etapa-tallo .card--feature:hover,
@@ -2929,6 +3025,119 @@ body.etapa-fruto .section--light {
 body.etapa-fruto .section--light .section__header h2,
 body.etapa-fruto .section--light .section__header p {
   color: #1a1525;
+}
+
+/* Fruto: sección Horizonte de expectativas (aspiraciones) */
+body.etapa-fruto .section--fruto-horizonte {
+  background: #D6CCE7;
+  color: #1a1525;
+}
+
+body.etapa-fruto .section--fruto-horizonte .section__header h2,
+body.etapa-fruto .section--fruto-horizonte .section__header p {
+  color: #1a1525;
+}
+
+body.etapa-fruto .section--fruto-horizonte .horizonte-phase {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #5a4a7a;
+  margin: 0 0 8px;
+}
+
+body.etapa-fruto .section--fruto-horizonte .horizonte-intro {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d2438;
+  margin: 0 0 32px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.etapa-fruto .section--fruto-horizonte .horizonte-aspiraciones {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  gap: 20px;
+}
+
+body.etapa-fruto .section--fruto-horizonte .horizonte-item {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 20px;
+  align-items: start;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 24px 24px 24px 20px;
+  border-left: 4px solid #8C7CB8;
+  box-shadow: 0 4px 16px rgba(140, 124, 184, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+body.etapa-fruto .section--fruto-horizonte .horizonte-item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 8px 24px rgba(140, 124, 184, 0.2);
+}
+
+body.etapa-fruto .section--fruto-horizonte .horizonte-item__num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8C7CB8, #6e6096);
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+body.etapa-fruto .section--fruto-horizonte .horizonte-item__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(140, 124, 184, 0.2);
+  color: #8C7CB8;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+body.etapa-fruto .section--fruto-horizonte .horizonte-item__content {
+  min-width: 0;
+}
+
+body.etapa-fruto .section--fruto-horizonte .horizonte-item__title {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2d2438;
+}
+
+body.etapa-fruto .section--fruto-horizonte .horizonte-item__text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #4b5563;
+}
+
+@media (max-width: 640px) {
+  body.etapa-fruto .section--fruto-horizonte .horizonte-item {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 14px;
+  }
+  body.etapa-fruto .section--fruto-horizonte .horizonte-item__num { grid-row: 1; }
+  body.etapa-fruto .section--fruto-horizonte .horizonte-item__icon-wrap { grid-row: 2; }
+  body.etapa-fruto .section--fruto-horizonte .horizonte-item__content { grid-row: 3; }
 }
 
 body.etapa-fruto .section--light .section__header--with-icon {
