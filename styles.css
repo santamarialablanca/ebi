@@ -410,6 +410,22 @@ ul {
   border-top-color: var(--accent-light);
 }
 
+.card--link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card--link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card--link i {
+  margin-right: 8px;
+  opacity: 0.9;
+}
+
 .card ul li::before {
   content: "▸";
   position: absolute;
@@ -2380,6 +2396,27 @@ ul {
   color: #374151;
 }
 
+.competence-page-link {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #970036;
+  text-decoration: none;
+}
+
+.competence-page-link:hover {
+  text-decoration: underline;
+}
+
+.section--light .competence-page-link {
+  color: var(--accent-light);
+}
+
+.section--light .competence-page-link:hover {
+  color: var(--accent-light);
+}
+
 /* Diagrama de competencias */
 .competencies-diagram {
   position: relative;
@@ -2663,6 +2700,92 @@ ul {
   margin: 0;
   padding-left: 1.1rem;
   font-size: 0.9rem;
+}
+
+/* Páginas por competencia */
+
+.competence-hero {
+  padding: 100px 20px 60px;
+  background:
+    radial-gradient(circle at top right, rgba(151, 0, 54, 0.25), transparent 45%),
+    radial-gradient(circle at top left, rgba(41, 51, 69, 0.5), transparent 50%),
+    #293345;
+  color: #fafaf7;
+  scroll-margin-top: 80px;
+}
+
+.competence-hero__content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.competence-hero__content .pill--accent {
+  background: linear-gradient(135deg, #970036, #7a002b);
+  color: #fafaf7;
+}
+
+.competence-hero__title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.competence-hero__content h1 {
+  margin: 0;
+  font-size: clamp(1.75rem, 2vw + 1.2rem, 2.4rem);
+}
+
+.competence-hero__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(151, 0, 54, 0.4);
+  color: #fafaf7;
+  font-size: 1.75rem;
+  flex-shrink: 0;
+}
+
+.competence-hero__desc {
+  margin: 0 0 24px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.competence-hero .btn--ghost:hover {
+  border-color: #970036;
+  color: #fafaf7;
+}
+
+.stage-cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 20px;
+}
+
+.stage-cards--competence {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .stage-cards--competence {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .stage-cards--competence {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Paletas de colores por etapa - Colores exactos de los flyers */
