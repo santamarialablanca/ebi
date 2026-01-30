@@ -2773,6 +2773,98 @@ ul {
   color: #8b5cf6;
 }
 
+/* Páginas de metáfora (Raíz, Tallo, Nudo, Rama, Flor, Fruto) – colores paleta index */
+.stage-hero--raiz {
+  background:
+    radial-gradient(circle at top left, rgba(95, 175, 168, 0.35), transparent 50%),
+    radial-gradient(circle at bottom right, rgba(95, 175, 168, 0.2), transparent 50%),
+    #0b1220;
+}
+.stage-hero--raiz .pill--accent { background: linear-gradient(135deg, #5FAFA8, #4a8f89); color: #f9fafb; }
+.stage-hero--raiz .card--feature, .stage-hero--raiz .card--usecase { border-top-color: #5FAFA8; }
+.stage-hero--raiz .btn--ghost:hover { border-color: #5FAFA8; color: #5FAFA8; }
+
+.stage-hero--tallo {
+  background:
+    radial-gradient(circle at top left, rgba(227, 195, 74, 0.35), transparent 50%),
+    radial-gradient(circle at bottom right, rgba(227, 195, 74, 0.15), transparent 50%),
+    #0b1220;
+}
+.stage-hero--tallo .pill--accent { background: linear-gradient(135deg, #E3C34A, #c9a82a); color: #151b26; }
+.stage-hero--tallo .card--feature, .stage-hero--tallo .card--usecase { border-top-color: #E3C34A; }
+.stage-hero--tallo .btn--ghost:hover { border-color: #E3C34A; color: #E3C34A; }
+
+.stage-hero--nudo {
+  background:
+    radial-gradient(circle at top left, rgba(110, 143, 175, 0.35), transparent 50%),
+    radial-gradient(circle at bottom right, rgba(110, 143, 175, 0.2), transparent 50%),
+    #0b1220;
+}
+.stage-hero--nudo .pill--accent { background: linear-gradient(135deg, #6E8FAF, #5a7399); color: #f9fafb; }
+.stage-hero--nudo .card--feature, .stage-hero--nudo .card--usecase { border-top-color: #6E8FAF; }
+.stage-hero--nudo .btn--ghost:hover { border-color: #6E8FAF; color: #6E8FAF; }
+
+.stage-hero--rama {
+  background:
+    radial-gradient(circle at top left, rgba(225, 122, 85, 0.35), transparent 50%),
+    radial-gradient(circle at bottom right, rgba(225, 122, 85, 0.2), transparent 50%),
+    #0b1220;
+}
+.stage-hero--rama .pill--accent { background: linear-gradient(135deg, #E17A55, #c96844); color: #f9fafb; }
+.stage-hero--rama .card--feature, .stage-hero--rama .card--usecase { border-top-color: #E17A55; }
+.stage-hero--rama .btn--ghost:hover { border-color: #E17A55; color: #E17A55; }
+
+.stage-hero--flor {
+  background:
+    radial-gradient(circle at top left, rgba(225, 122, 85, 0.35), transparent 50%),
+    radial-gradient(circle at bottom right, rgba(225, 122, 85, 0.2), transparent 50%),
+    #0b1220;
+}
+.stage-hero--flor .pill--accent { background: linear-gradient(135deg, #E17A55, #c96844); color: #f9fafb; }
+.stage-hero--flor .card--feature, .stage-hero--flor .card--usecase { border-top-color: #E17A55; }
+.stage-hero--flor .btn--ghost:hover { border-color: #E17A55; color: #E17A55; }
+
+.stage-hero--fruto {
+  background:
+    radial-gradient(circle at top left, rgba(140, 124, 184, 0.35), transparent 50%),
+    radial-gradient(circle at bottom right, rgba(140, 124, 184, 0.2), transparent 50%),
+    #0b1220;
+}
+.stage-hero--fruto .pill--accent { background: linear-gradient(135deg, #8C7CB8, #6e6096); color: #f9fafb; }
+.stage-hero--fruto .card--feature, .stage-hero--fruto .card--usecase { border-top-color: #8C7CB8; }
+.stage-hero--fruto .btn--ghost:hover { border-color: #8C7CB8; color: #8C7CB8; }
+
+/* body.etapa-* para páginas de metáfora (cards en section--light) */
+body.etapa-raiz .section--light .card--feature,
+body.etapa-raiz .section--light .card--usecase { border-top-color: #5FAFA8; }
+body.etapa-raiz .card--feature:hover,
+body.etapa-raiz .card--usecase:hover { border-color: #5FAFA8; background: radial-gradient(circle at top left, rgba(95, 175, 168, 0.15), #020617); }
+
+body.etapa-tallo .section--light .card--feature,
+body.etapa-tallo .section--light .card--usecase { border-top-color: #E3C34A; }
+body.etapa-tallo .card--feature:hover,
+body.etapa-tallo .card--usecase:hover { border-color: #E3C34A; background: radial-gradient(circle at top left, rgba(227, 195, 74, 0.2), #020617); }
+
+body.etapa-nudo .section--light .card--feature,
+body.etapa-nudo .section--light .card--usecase { border-top-color: #6E8FAF; }
+body.etapa-nudo .card--feature:hover,
+body.etapa-nudo .card--usecase:hover { border-color: #6E8FAF; background: radial-gradient(circle at top left, rgba(110, 143, 175, 0.2), #020617); }
+
+body.etapa-rama .section--light .card--feature,
+body.etapa-rama .section--light .card--usecase { border-top-color: #E17A55; }
+body.etapa-rama .card--feature:hover,
+body.etapa-rama .card--usecase:hover { border-color: #E17A55; background: radial-gradient(circle at top left, rgba(225, 122, 85, 0.2), #020617); }
+
+body.etapa-flor .section--light .card--feature,
+body.etapa-flor .section--light .card--usecase { border-top-color: #E17A55; }
+body.etapa-flor .card--feature:hover,
+body.etapa-flor .card--usecase:hover { border-color: #E17A55; background: radial-gradient(circle at top left, rgba(225, 122, 85, 0.2), #020617); }
+
+body.etapa-fruto .section--light .card--feature,
+body.etapa-fruto .section--light .card--usecase { border-top-color: #8C7CB8; }
+body.etapa-fruto .card--feature:hover,
+body.etapa-fruto .card--usecase:hover { border-color: #8C7CB8; background: radial-gradient(circle at top left, rgba(140, 124, 184, 0.2), #020617); }
+
 /* Estilos de secciones por etapa */
 
 body.etapa-escuelita .card--feature:hover,
