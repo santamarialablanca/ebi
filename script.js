@@ -110,4 +110,36 @@
     window.addEventListener('scroll', toggleNavScrolled, { passive: true });
     toggleNavScrolled();
   }
+
+  // Menú móvil: toggle hamburguesa
+  var navToggle = document.querySelector('.nav__toggle');
+  var navMenu = document.getElementById('nav-menu');
+  if (navToggle && navMenu && navEl) {
+    navToggle.addEventListener('click', function () {
+      var isOpen = navEl.classList.toggle('nav--open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+      navToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    // Cerrar menú al hacer clic en un enlace (navegación)
+    navMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navEl.classList.remove('nav--open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-label', 'Abrir menú');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Cerrar menú con Escape
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && navEl.classList.contains('nav--open')) {
+        navEl.classList.remove('nav--open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-label', 'Abrir menú');
+        document.body.style.overflow = '';
+      }
+    });
+  }
 })();
