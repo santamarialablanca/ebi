@@ -1,5 +1,121 @@
 /* Flyer digital Escuelita: overrides y bloques propios (estilo EBI) */
 
+/* ============================================
+   Index de folletos: 5 cuadros por etapa
+   ============================================ */
+
+.flyers-index-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.flyer-index-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 28px 24px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: inherit;
+  border: 2px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.flyer-index-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.flyer-index-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.flyer-index-card--escuelita { border-top: 4px solid #5FAFA8; }
+.flyer-index-card--escuelita .flyer-index-card__icon { background: #C8E4E2; color: #5FAFA8; }
+.flyer-index-card--escuelita:hover { border-color: #5FAFA8; }
+
+.flyer-index-card--infantil { border-top: 4px solid #E3C34A; }
+.flyer-index-card--infantil .flyer-index-card__icon { background: #F7E8B8; color: #E3C34A; }
+.flyer-index-card--infantil:hover { border-color: #E3C34A; }
+
+.flyer-index-card--primaria { border-top: 4px solid #6E8FAF; }
+.flyer-index-card--primaria .flyer-index-card__icon { background: #C7D6E2; color: #6E8FAF; }
+.flyer-index-card--primaria:hover { border-color: #6E8FAF; }
+
+.flyer-index-card--secundaria { border-top: 4px solid #E17A55; }
+.flyer-index-card--secundaria .flyer-index-card__icon { background: #F3C1AF; color: #E17A55; }
+.flyer-index-card--secundaria:hover { border-color: #E17A55; }
+
+.flyer-index-card--fp { border-top: 4px solid #8C7CB8; }
+.flyer-index-card--fp .flyer-index-card__icon { background: #D6CCE7; color: #8C7CB8; }
+.flyer-index-card--fp:hover { border-color: #8C7CB8; }
+
+.flyer-index-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1a2030;
+}
+
+.flyer-index-card p {
+  margin: 0 0 16px;
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.flyer-index-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #293345;
+}
+
+.flyer-index-card:hover .flyer-index-card__link {
+  color: #970036;
+}
+
+.flyer-index-card--escuelita:hover .flyer-index-card__link { color: #5FAFA8; }
+.flyer-index-card--infantil:hover .flyer-index-card__link { color: #E3C34A; }
+.flyer-index-card--primaria:hover .flyer-index-card__link { color: #6E8FAF; }
+.flyer-index-card--secundaria:hover .flyer-index-card__link { color: #E17A55; }
+.flyer-index-card--fp:hover .flyer-index-card__link { color: #8C7CB8; }
+
+.flyer-index-card__badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(100, 116, 139, 0.2);
+  color: #64748b;
+}
+
+@media (max-width: 720px) {
+  .flyers-index-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
 /* Hero con imagen de fondo difuminada (blur como en el PDF) */
 .flyer-hero {
   position: relative;
@@ -39,11 +155,109 @@
   z-index: 2;
 }
 
+/* ============================================
+   Botones del flyer: integrados con Escuelita
+   ============================================ */
+
 .flyer-hero__cta {
-  margin-top: 12px;
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  align-items: center;
+}
+
+/* Override: todos los botones del hero usan paleta Escuelita */
+.flyer-hero__cta .btn {
+  border-radius: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: 2px solid transparent;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+/* Principal: verde sólido, coherente con pill y badges */
+.flyer-hero__cta .btn--primary {
+  background: #5FAFA8;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 20px rgba(95, 175, 168, 0.4);
+}
+
+.flyer-hero__cta .btn--primary:hover {
+  background: #4d9d96;
+  border-color: #C8E4E2;
+  box-shadow: 0 6px 28px rgba(95, 175, 168, 0.5);
+  transform: translateY(-1px);
+}
+
+/* Secundarios: estilo glass, se funden con el overlay */
+.flyer-hero__cta .btn--ghost {
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(250, 250, 247, 0.95);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.flyer-hero__cta .btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: #C8E4E2;
+  color: #fff;
+}
+
+.flyer-hero__cta .btn:focus-visible {
+  outline: 3px solid #5FAFA8;
+  outline-offset: 2px;
+}
+
+/* Enlace de vuelta al índice: estilo más ligero, tipo breadcrumb */
+.stage-hero__content .flyer-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: rgba(248, 250, 252, 0.9);
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.stage-hero__content .flyer-back-link i {
+  font-size: 0.85rem;
+}
+
+.stage-hero__content .flyer-back-link:hover {
+  color: #ffffff;
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.stage-hero__content .flyer-back-link:focus-visible {
+  outline: 2px solid #5FAFA8;
+  outline-offset: 2px;
+  border-radius: 999px;
+}
+
+/* Acciones al final del folleto */
+.flyer-closing__actions {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(95, 175, 168, 0.25);
+}
+
+.flyer-closing__actions .btn {
+  border-radius: 14px;
+  font-weight: 600;
+  background: transparent;
+  border: 2px solid #5FAFA8;
+  color: #1a2030;
+}
+
+.flyer-closing__actions .btn:hover {
+  background: rgba(95, 175, 168, 0.12);
+  border-color: #4d9d96;
+  color: #0f1419;
 }
 
 /* Footer: enlace de email */
@@ -108,6 +322,15 @@
 
 /* Responsive: una columna en móvil */
 @media (max-width: 720px) {
+  .flyer-hero__cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .flyer-hero__cta .btn {
+    justify-content: center;
+  }
+
   .flyer-hero__bg img {
     filter: blur(10px);
   }

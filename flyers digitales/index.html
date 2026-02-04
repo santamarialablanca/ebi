@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>La Escuelita · Folleto digital | Santa María La Blanca</title>
+  <title>Folletos digitales · Santa María La Blanca</title>
   <style>html { scroll-padding-top: 80px; }</style>
-  <meta name="description" content="La Escuelita (1º ciclo de Educación Infantil). Aquí empieza todo. Folleto digital del Colegio Santa María la Blanca.">
+  <meta name="description" content="Folletos digitales de las etapas educativas del Colegio Santa María La Blanca: Escuelita, Infantil, Primaria, Secundaria y FP.">
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="etapa-escuelita">
+<body>
   <a href="#main" class="skip-link">Ir al contenido principal</a>
 
   <nav class="nav" role="navigation" aria-label="Navegación principal">
@@ -33,116 +33,66 @@
     </ul>
   </nav>
 
-  <header class="stage-hero stage-hero--escuelita flyer-hero" role="banner">
-    <div class="flyer-hero__bg" aria-hidden="true">
-      <img src="img/1A4A1146.JPG" alt="">
-    </div>
-    <div class="flyer-hero__overlay" aria-hidden="true"></div>
-    <div class="stage-hero__content">
-      <span class="pill pill--accent">Escuelita</span>
-      <h1>Aquí empieza todo</h1>
-      <p>El inicio del camino: explorar, sentir y crecer en un entorno seguro, cuidado y estimulante.</p>
-      <div class="hero__actions flyer-hero__cta">
-        <a href="#aprenden" class="btn btn--primary"><i class="fa-solid fa-arrow-down" aria-hidden="true"></i> Ver el folleto</a>
-        <a href="#inicio" class="btn btn--ghost"><i class="fa-solid fa-compass" aria-hidden="true"></i> Valores CSMB</a>
-      </div>
-    </div>
-    <div class="flyer-hero-image">
-      <img src="img/1A4A1146.JPG" alt="Alumnos de La Escuelita pintando en el aula" loading="lazy">
+  <header class="stage-hero" role="banner">
+    <div class="stage-hero__content" style="grid-template-columns: 1fr;">
+      <span class="pill pill--accent">Folletos digitales</span>
+      <h1>Etapas educativas</h1>
+      <p>Descubre cada etapa del Colegio Santa María La Blanca a través de nuestros folletos digitales.</p>
     </div>
   </header>
 
   <main id="main" role="main">
-    <section id="aprenden" class="section section--light" aria-labelledby="aprenden-heading">
+    <section class="section section--light" aria-labelledby="flyers-heading">
       <div class="section__header">
-        <span class="flyer-section-badge">Aprendizaje</span>
-        <h2 id="aprenden-heading"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> ¿Cómo aprenden nuestros alumnos?</h2>
-        <p>Aprenden desde la curiosidad, el juego y la experiencia, con una progresión de autonomía adaptada a su edad.</p>
+        <h2 id="flyers-heading"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Elige una etapa</h2>
+        <p>Haz clic en cada etapa para ver su folleto digital.</p>
       </div>
-      <div class="flyer-cards">
-        <article class="card card--feature">
-          <h3><i class="fa-solid fa-bullseye flyer-card__icon" aria-hidden="true"></i> Aprenden con sentido</h3>
-          <p>Exploran y descubren el mundo desde la curiosidad y el juego, a su propio ritmo, atendiendo a sus intereses y necesidades mediante el movimiento, la expresión y la comunicación.</p>
-        </article>
-        <article class="card card--feature">
-          <h3><i class="fa-solid fa-puzzle-piece flyer-card__icon" aria-hidden="true"></i> Autonomía progresiva</h3>
-          <p>Las rutinas diarias les aportan seguridad y les animan a participar, cuidarse y hacer pequeñas acciones por sí mismos, poniendo en valor cada pequeño logro.</p>
-        </article>
-        <article class="card card--feature">
-          <h3><i class="fa-solid fa-brain flyer-card__icon" aria-hidden="true"></i> Aprendizaje globalizado</h3>
-          <p>Propuestas planificadas en unidades didácticas basadas en centros de interés, que organizan objetivos, contenidos y experiencias clave diseñadas en base a su nivel de desarrollo.</p>
-        </article>
-        <article class="card card--feature">
-          <h3><i class="fa-solid fa-hand-holding-hand flyer-card__icon" aria-hidden="true"></i> Metodologías activas y sensoriales</h3>
-          <p>Los diferentes espacios favorecen un aprendizaje activo y vivencial a través del juego, la psicomotricidad, la exploración sensorial, la experimentación y la manipulación de materiales.</p>
-        </article>
-        <article class="card card--feature flyer-card--wide">
-          <h3><i class="fa-solid fa-wand-magic-sparkles flyer-card__icon" aria-hidden="true"></i> Pensamiento creativo</h3>
-          <p>Aprenden a observar, elegir y probar mediante materiales no estructurados, propuestas de juego y espacios de exploración que estimulan su creatividad.</p>
-        </article>
-      </div>
-    </section>
+      <div class="flyers-index-grid">
+        <a href="escuelita-flyer.html" class="flyer-index-card flyer-index-card--escuelita">
+          <span class="flyer-index-card__icon" aria-hidden="true"><i class="fa-solid fa-seedling"></i></span>
+          <h3>Escuelita</h3>
+          <p>1-2 años · Los primeros pasos</p>
+          <span class="flyer-index-card__link">Ver folleto <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
 
-    <section id="acompanamos" class="section" aria-labelledby="acompanamos-heading">
-      <div class="section__header">
-        <span class="flyer-section-badge">Acompañamiento</span>
-        <h2 id="acompanamos-heading"><i class="fa-solid fa-people-group" aria-hidden="true"></i> ¿Cómo acompañamos a cada alumno?</h2>
-        <p>Acompañamos desde el vínculo, la mirada atenta y una evaluación que acompaña el proceso evolutivo.</p>
-      </div>
-      <div class="flyer-cards">
-        <article class="card card--feature">
-          <h3><i class="fa-solid fa-heart flyer-card__icon" aria-hidden="true"></i> Vínculo y seguridad emocional</h3>
-          <p>Acompañamos desde el afecto, el apego y la confianza, creando un clima de calma y seguridad en el que los niños se sienten protegidos.</p>
-        </article>
-        <article class="card card--feature">
-          <h3><i class="fa-solid fa-people-roof flyer-card__icon" aria-hidden="true"></i> Familia y escuela</h3>
-          <p>Trabajamos de forma coordinada, con una relación cercana y una comunicación diaria y constante con las familias, acercando el inglés en el aula de manera natural.</p>
-        </article>
-        <article class="card card--feature">
-          <h3><i class="fa-solid fa-seedling flyer-card__icon" aria-hidden="true"></i> Acompañamiento integral</h3>
-          <p>Cuidamos el desarrollo cognitivo, social, emocional y trascendente, respetando los ritmos de desarrollo como eje del acompañamiento en cada momento del aula.</p>
-        </article>
-        <article class="card card--feature">
-          <h3><i class="fa-solid fa-eye flyer-card__icon" aria-hidden="true"></i> Mirada que cuida</h3>
-          <p>Descubrimos a cada niño a través de una mirada atenta y respetuosa, comprendiendo sus necesidades y adaptando las propuestas a su desarrollo individual.</p>
-        </article>
-        <article class="card card--feature flyer-card--wide">
-          <h3><i class="fa-solid fa-location-dot flyer-card__icon" aria-hidden="true"></i> Evaluación que acompaña</h3>
-          <p>Seguimiento del proceso evolutivo y de la participación, la autonomía y la socialización mediante una observación directa y continua.</p>
-        </article>
-      </div>
-    </section>
+        <a href="infantil-flyer.html" class="flyer-index-card flyer-index-card--infantil">
+          <span class="flyer-index-card__icon" aria-hidden="true"><i class="fa-solid fa-child"></i></span>
+          <h3>Infantil</h3>
+          <p>3-6 años · Educación Infantil</p>
+          <span class="flyer-index-card__link">Ver folleto <i class="fa-solid fa-arrow-right"></i></span>
+          <span class="flyer-index-card__badge">Próximamente</span>
+        </a>
 
-    <section id="inicio" class="section section--light" aria-labelledby="inicio-heading">
-      <div class="section__header">
-        <h2 id="inicio-heading"><i class="fa-solid fa-route" aria-hidden="true"></i> El inicio del camino</h2>
-      </div>
-      <div class="flyer-closing">
-        <div class="flyer-closing__panel">
-          <div class="flyer-closing__text">
-            <p><strong>Explorar, sentir y crecer.</strong> Acompañamos a los niños en sus primeros años para que se sientan seguros, queridos y capaces.</p>
-            <p><strong>Los cimientos del desarrollo.</strong> Sentamos las bases de la seguridad emocional, el lenguaje, la autonomía y la socialización, en espacios especialmente adaptados que favorecen su evolución.</p>
-            <p><strong>Educamos para la vida.</strong> Valores del alumno CSMB:</p>
-            <div class="flyer-closing__chips" aria-label="Valores del alumno CSMB">
-              <span class="pill">Trascendente</span>
-              <span class="pill">Libre</span>
-              <span class="pill">Autónomo</span>
-              <span class="pill">Resiliente</span>
-              <span class="pill">Crítico</span>
-              <span class="pill">Creativo</span>
-              <span class="pill">Empático</span>
-              <span class="pill">Cooperador</span>
-              <span class="pill">Asertivo</span>
-            </div>
-          </div>
-        </div>
+        <a href="primaria-flyer.html" class="flyer-index-card flyer-index-card--primaria">
+          <span class="flyer-index-card__icon" aria-hidden="true"><i class="fa-solid fa-book-open"></i></span>
+          <h3>Primaria</h3>
+          <p>6-12 años · Educación Primaria</p>
+          <span class="flyer-index-card__link">Ver folleto <i class="fa-solid fa-arrow-right"></i></span>
+          <span class="flyer-index-card__badge">Próximamente</span>
+        </a>
+
+        <a href="secundaria-flyer.html" class="flyer-index-card flyer-index-card--secundaria">
+          <span class="flyer-index-card__icon" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></span>
+          <h3>Secundaria</h3>
+          <p>12-18 años · ESO y Bachillerato</p>
+          <span class="flyer-index-card__link">Ver folleto <i class="fa-solid fa-arrow-right"></i></span>
+          <span class="flyer-index-card__badge">Próximamente</span>
+        </a>
+
+        <a href="fp-flyer.html" class="flyer-index-card flyer-index-card--fp">
+          <span class="flyer-index-card__icon" aria-hidden="true"><i class="fa-solid fa-briefcase"></i></span>
+          <h3>Formación Profesional</h3>
+          <p>FP · Grado Medio y Superior</p>
+          <span class="flyer-index-card__link">Ver folleto <i class="fa-solid fa-arrow-right"></i></span>
+          <span class="flyer-index-card__badge">Próximamente</span>
+        </a>
       </div>
     </section>
   </main>
 
-  <footer class="footer flyer-footer" role="contentinfo">
-    <p class="footer-text"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> C/ Monasterio de Oseira, 17B · 28049 Madrid</p>
-    <p class="footer-credit"><a href="mailto:innovacion@c.csmb.es">innovacion@c.csmb.es</a> · 917 508 692</p>
+  <footer class="footer" role="contentinfo">
+    <p class="footer-text"><i class="fa-solid fa-school" aria-hidden="true"></i> Sistema EBI · Santa María la Blanca</p>
+    <p class="footer-credit">Departamento de Innovación</p>
   </footer>
 
   <script src="../script.js"></script>
