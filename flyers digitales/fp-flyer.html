@@ -3,21 +3,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FP · Folleto digital | Próximamente</title>
+  <title>Formación Profesional · Folleto digital | Santa María La Blanca</title>
+  <style>html { scroll-padding-top: 80px; }</style>
+  <meta name="description" content="Formación Profesional. Aquí empieza tu camino profesional. Folleto digital del Colegio Santa María la Blanca.">
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <nav class="nav"><a href="../index.html" class="nav__logo"><i class="fa-solid fa-seedling"></i> Sistema EBI</a></nav>
-  <main style="min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem;">
-    <div>
-      <p style="font-size: 3rem; margin-bottom: 1rem;"><i class="fa-solid fa-briefcase" style="color: #8C7CB8;"></i></p>
-      <h1 style="margin: 0 0 0.5rem;">Formación Profesional · Próximamente</h1>
-      <p style="color: #64748b; margin-bottom: 1.5rem;">El folleto digital de FP estará disponible pronto.</p>
-      <a href="index.html" class="btn btn--ghost"><i class="fa-solid fa-arrow-left"></i> Volver a folletos</a>
+<body class="etapa-fp">
+  <a href="#main" class="skip-link">Ir al contenido principal</a>
+
+  <nav class="nav" role="navigation" aria-label="Navegación principal">
+    <a href="../index.html" class="nav__logo" aria-label="Sistema EBI">
+      <i class="fa-solid fa-seedling" aria-hidden="true"></i>
+      Sistema EBI
+    </a>
+    <div class="flyer-closing__actions flyer-closing__actions--nav">
+      <a href="index.html" class="btn btn--ghost btn--back-index"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Volver al índice de flyers</a>
     </div>
+    <button type="button" class="nav__toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu" aria-haspopup="true">
+      <i class="fa-solid fa-bars nav__toggle-icon nav__toggle-icon--open" aria-hidden="true"></i>
+      <i class="fa-solid fa-times nav__toggle-icon nav__toggle-icon--close" aria-hidden="true"></i>
+    </button>
+  </nav>
+  <header class="stage-hero stage-hero--fp flyer-hero" role="banner">
+    <div class="flyer-hero__bg" aria-hidden="true">
+      <img src="img/fp.JPG" alt="">
+    </div>
+    <div class="flyer-hero__overlay" aria-hidden="true"></div>
+    <div class="stage-hero__content">
+      <span class="pill pill--accent">Formación Profesional</span>
+      <h1>Aquí empieza tu camino profesional</h1>
+      <p>Aprender para el mundo real. Acompañamos a cada alumno para que gane competencias profesionales y se prepare para su inserción laboral.</p>
+    </div>
+    <div class="flyer-hero-image">
+      <img src="img/fp.JPG" alt="Alumnos de FP en formación" loading="lazy">
+    </div>
+  </header>
+
+  <main id="main" role="main">
+    <section id="aprenden" class="section section--light" aria-labelledby="aprenden-heading">
+      <div class="section__header">
+        <span class="flyer-section-badge">Aprendizaje</span>
+        <h2 id="aprenden-heading"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> ¿Cómo aprenden nuestros alumnos?</h2>
+        <p>Aprenden desde la práctica real y la experiencia en contextos profesionales.</p>
+      </div>
+      <div class="flyer-cards">
+        <article class="card card--feature">
+          <h3><i class="fa-solid fa-wrench flyer-card__icon" aria-hidden="true"></i> Aprenden con la práctica real</h3>
+          <p>Formación aplicada: aprenden haciendo, en contextos similares a los del sector profesional.</p>
+        </article>
+        <article class="card card--feature">
+          <h3><i class="fa-solid fa-book-open flyer-card__icon" aria-hidden="true"></i> Guías de aprendizaje</h3>
+          <p>Saben qué se espera, cómo avanzar y cómo demostrar evidencias de aprendizaje paso a paso.</p>
+        </article>
+        <article class="card card--feature flyer-card--accent">
+          <h3><i class="fa-solid fa-puzzle-piece flyer-card__icon" aria-hidden="true"></i> Metodologías activas</h3>
+          <p>Retos, proyectos y tareas auténticas conectadas con la realidad profesional.</p>
+        </article>
+        <article class="card card--feature">
+          <h3><i class="fa-solid fa-chart-line flyer-card__icon" aria-hidden="true"></i> Pensamiento orientado a la mejora</h3>
+          <p>Analizan resultados, aprenden del error y toman decisiones para mejorar su desempeño.</p>
+        </article>
+        <article class="card card--feature flyer-card--wide">
+          <h3><i class="fa-solid fa-user-check flyer-card__icon" aria-hidden="true"></i> Autonomía y responsabilidad</h3>
+          <p>Planifican su trabajo, gestionan tiempos y asumen responsabilidades como en un entorno laboral.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="acompanamos" class="section" aria-labelledby="acompanamos-heading">
+      <div class="section__header">
+        <span class="flyer-section-badge">Acompañamiento</span>
+        <h2 id="acompanamos-heading"><i class="fa-solid fa-people-group" aria-hidden="true"></i> ¿Cómo acompañamos a cada alumno?</h2>
+        <p>Acompañamos desde el feedback continuo y el seguimiento individual.</p>
+      </div>
+      <div class="flyer-cards">
+        <article class="card card--feature">
+          <h3><i class="fa-solid fa-comments flyer-card__icon" aria-hidden="true"></i> Feedback continuo</h3>
+          <p>Acompañamos con retroalimentación frecuente para impulsar mejora y confianza.</p>
+        </article>
+        <article class="card card--feature">
+          <h3><i class="fa-solid fa-graduation-cap flyer-card__icon" aria-hidden="true"></i> Orientación académica y vocacional</h3>
+          <p>Acompañamos decisiones y futuro profesional con un departamento de orientación consolidado.</p>
+        </article>
+        <article class="card card--feature flyer-card--accent">
+          <h3><i class="fa-solid fa-seedling flyer-card__icon" aria-hidden="true"></i> Evaluación que acompaña</h3>
+          <p>Evaluación basada en evidencias: práctica, proyectos y verificación teórica para consolidar aprendizaje real.</p>
+        </article>
+        <article class="card card--feature">
+          <h3><i class="fa-solid fa-people-roof flyer-card__icon" aria-hidden="true"></i> Comunidad de aprendizaje</h3>
+          <p>Coordinación continua entre tutor, profesorado y orientación, con comunicación fluida.</p>
+        </article>
+        <article class="card card--feature flyer-card--wide">
+          <h3><i class="fa-solid fa-user-tie flyer-card__icon" aria-hidden="true"></i> Seguimiento individual</h3>
+          <p>Tutorías y seguimiento cercano para ajustar objetivos, ritmo y necesidades.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="inicio" class="section section--light" aria-labelledby="inicio-heading">
+      <div class="section__header">
+        <h2 id="inicio-heading"><i class="fa-solid fa-route" aria-hidden="true"></i> Preparación para el futuro</h2>
+        <p>Acompañamos el acceso a la universidad, la formación profesional o proyectos personales, promoviendo decisiones conscientes y una participación activa en la sociedad.</p>
+      </div>
+      <div class="flyer-closing">
+        <div class="flyer-closing__panel">
+          <div class="flyer-closing__text">
+            <p><strong>Aprender para el mundo real.</strong> Acompañamos a cada alumno para que gane competencias profesionales y se prepare para su inserción laboral.</p>
+            <p><strong>Educamos para la vida.</strong> Valores del alumno CSMB:</p>
+            <div class="flyer-closing__chips" aria-label="Valores del alumno CSMB">
+              <span class="pill">Trascendente</span>
+              <span class="pill">Libre</span>
+              <span class="pill">Autónomo</span>
+              <span class="pill">Resiliente</span>
+              <span class="pill">Crítico</span>
+              <span class="pill">Creativo</span>
+              <span class="pill">Empático</span>
+              <span class="pill">Cooperador</span>
+              <span class="pill">Asertivo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="footer flyer-footer" role="contentinfo">
+    <p class="footer-text"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> C/ Monasterio de Oseira, 17B · 28049 Madrid</p>
+    <p class="footer-credit"><a href="mailto:innovacion@c.csmb.es">innovacion@c.csmb.es</a> · 917 508 692</p>
+  </footer>
+
   <script src="../script.js"></script>
 </body>
 </html>

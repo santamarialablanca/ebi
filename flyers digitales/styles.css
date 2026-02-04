@@ -138,6 +138,7 @@
   transform: scale(1.08);
 }
 
+/* Overlay del hero: color por etapa */
 .flyer-hero__overlay {
   position: absolute;
   inset: 0;
@@ -148,6 +149,22 @@
     rgba(20, 55, 52, 0.85) 40%,
     rgba(11, 18, 32, 0.9) 100%
   );
+}
+
+body.etapa-infantil .flyer-hero__overlay {
+  background: linear-gradient(135deg, rgba(227, 195, 74, 0.7) 0%, rgba(40, 35, 20, 0.85) 40%, rgba(11, 18, 32, 0.9) 100%);
+}
+
+body.etapa-primaria .flyer-hero__overlay {
+  background: linear-gradient(135deg, rgba(110, 143, 175, 0.75) 0%, rgba(30, 45, 65, 0.85) 40%, rgba(11, 18, 32, 0.9) 100%);
+}
+
+body.etapa-secundaria .flyer-hero__overlay {
+  background: linear-gradient(135deg, rgba(225, 122, 85, 0.75) 0%, rgba(55, 30, 25, 0.85) 40%, rgba(11, 18, 32, 0.9) 100%);
+}
+
+body.etapa-fp .flyer-hero__overlay {
+  background: linear-gradient(135deg, rgba(140, 124, 184, 0.75) 0%, rgba(40, 35, 55, 0.85) 40%, rgba(11, 18, 32, 0.9) 100%);
 }
 
 .flyer-hero .stage-hero__content {
@@ -230,8 +247,14 @@
 .flyer-closing__actions {
   margin-top: 28px;
   padding-top: 24px;
-  border-top: 1px solid rgba(95, 175, 168, 0.25);
+  border-top: 1px solid;
 }
+
+body.etapa-escuelita .flyer-closing__actions { border-top-color: rgba(95,175,168,0.25); }
+body.etapa-infantil .flyer-closing__actions { border-top-color: rgba(227,195,74,0.25); }
+body.etapa-primaria .flyer-closing__actions { border-top-color: rgba(110,143,175,0.25); }
+body.etapa-secundaria .flyer-closing__actions { border-top-color: rgba(225,122,85,0.25); }
+body.etapa-fp .flyer-closing__actions { border-top-color: rgba(140,124,184,0.25); }
 
 /* Botón "Volver al índice" en la nav: fondo color de etapa Escuelita (#5FAFA8) */
 .flyer-closing__actions--nav {
@@ -242,57 +265,85 @@
   margin-right: 12px;
 }
 
-/* Botón "Volver al índice": fondo color de etapa Escuelita (#5FAFA8) */
+/* Botón "Volver al índice": fondo color de etapa por body class */
 body.etapa-escuelita .flyer-closing__actions--nav .btn,
-body.etapa-escuelita .btn--back-index,
+body.etapa-escuelita .btn--back-index { background-color: #5FAFA8 !important; background: #5FAFA8 !important; border-color: rgba(255,255,255,0.5) !important; color: #fff !important; box-shadow: 0 4px 16px rgba(95,175,168,0.4); }
+body.etapa-escuelita .flyer-closing__actions--nav .btn:hover,
+body.etapa-escuelita .btn--back-index:hover { background-color: #4d9d96 !important; background: #4d9d96 !important; border-color: #C8E4E2 !important; }
+
+body.etapa-infantil .flyer-closing__actions--nav .btn,
+body.etapa-infantil .btn--back-index { background-color: #E3C34A !important; background: #E3C34A !important; border-color: rgba(255,255,255,0.5) !important; color: #151b26 !important; box-shadow: 0 4px 16px rgba(227,195,74,0.4); }
+body.etapa-infantil .flyer-closing__actions--nav .btn:hover,
+body.etapa-infantil .btn--back-index:hover { background-color: #c9a82a !important; background: #c9a82a !important; border-color: #F7E8B8 !important; color: #151b26 !important; }
+
+body.etapa-primaria .flyer-closing__actions--nav .btn,
+body.etapa-primaria .btn--back-index { background-color: #6E8FAF !important; background: #6E8FAF !important; border-color: rgba(255,255,255,0.5) !important; color: #fff !important; box-shadow: 0 4px 16px rgba(110,143,175,0.4); }
+body.etapa-primaria .flyer-closing__actions--nav .btn:hover,
+body.etapa-primaria .btn--back-index:hover { background-color: #5a7399 !important; background: #5a7399 !important; border-color: #C7D6E2 !important; }
+
+body.etapa-secundaria .flyer-closing__actions--nav .btn,
+body.etapa-secundaria .btn--back-index { background-color: #E17A55 !important; background: #E17A55 !important; border-color: rgba(255,255,255,0.5) !important; color: #fff !important; box-shadow: 0 4px 16px rgba(225,122,85,0.4); }
+body.etapa-secundaria .flyer-closing__actions--nav .btn:hover,
+body.etapa-secundaria .btn--back-index:hover { background-color: #c96844 !important; background: #c96844 !important; border-color: #F3C1AF !important; }
+
+body.etapa-fp .flyer-closing__actions--nav .btn,
+body.etapa-fp .btn--back-index { background-color: #8C7CB8 !important; background: #8C7CB8 !important; border-color: rgba(255,255,255,0.5) !important; color: #fff !important; box-shadow: 0 4px 16px rgba(140,124,184,0.4); }
+body.etapa-fp .flyer-closing__actions--nav .btn:hover,
+body.etapa-fp .btn--back-index:hover { background-color: #6e6096 !important; background: #6e6096 !important; border-color: #D6CCE7 !important; }
+
 .flyer-closing__actions--nav .btn {
-  background-color: #5FAFA8 !important;
-  background: #5FAFA8 !important;
-  border: 2px solid rgba(255, 255, 255, 0.5) !important;
-  color: #fff !important;
   font-size: 0.9rem;
   font-weight: 600;
   padding: 10px 18px;
   border-radius: 14px;
-  box-shadow: 0 4px 16px rgba(95, 175, 168, 0.4);
-}
-
-body.etapa-escuelita .flyer-closing__actions--nav .btn:hover,
-body.etapa-escuelita .btn--back-index:hover,
-.flyer-closing__actions--nav .btn:hover {
-  background-color: #4d9d96 !important;
-  background: #4d9d96 !important;
-  border-color: #C8E4E2 !important;
-  color: #fff !important;
-  box-shadow: 0 6px 20px rgba(95, 175, 168, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
 .flyer-closing__actions .btn {
   border-radius: 14px;
   font-weight: 600;
   background: transparent;
-  border: 2px solid #5FAFA8;
   color: #1a2030;
+  border: 2px solid;
 }
 
-.flyer-closing__actions .btn:hover {
-  background: rgba(95, 175, 168, 0.12);
-  border-color: #4d9d96;
-  color: #0f1419;
-}
+body.etapa-escuelita .flyer-closing__actions .btn { border-color: #5FAFA8; }
+body.etapa-escuelita .flyer-closing__actions .btn:hover { background: rgba(95,175,168,0.12); border-color: #4d9d96; }
 
-/* Footer: enlace de email */
+body.etapa-infantil .flyer-closing__actions .btn { border-color: #E3C34A; }
+body.etapa-infantil .flyer-closing__actions .btn:hover { background: rgba(227,195,74,0.12); border-color: #c9a82a; }
+
+body.etapa-primaria .flyer-closing__actions .btn { border-color: #6E8FAF; }
+body.etapa-primaria .flyer-closing__actions .btn:hover { background: rgba(110,143,175,0.12); border-color: #5a7399; }
+
+body.etapa-secundaria .flyer-closing__actions .btn { border-color: #E17A55; }
+body.etapa-secundaria .flyer-closing__actions .btn:hover { background: rgba(225,122,85,0.12); border-color: #c96844; }
+
+body.etapa-fp .flyer-closing__actions .btn { border-color: #8C7CB8; }
+body.etapa-fp .flyer-closing__actions .btn:hover { background: rgba(140,124,184,0.12); border-color: #6e6096; }
+
+/* Footer: enlace de email por etapa */
 .flyer-footer .footer-credit a {
   color: rgba(250, 250, 247, 0.9);
   text-decoration: none;
-  border-bottom: 1px solid rgba(95, 175, 168, 0.5);
+  border-bottom: 1px solid;
   transition: color 0.2s, border-color 0.2s;
 }
 
-.flyer-footer .footer-credit a:hover {
-  color: #5FAFA8;
-  border-bottom-color: #5FAFA8;
-}
+body.etapa-escuelita .flyer-footer .footer-credit a { border-bottom-color: rgba(95,175,168,0.5); }
+body.etapa-escuelita .flyer-footer .footer-credit a:hover { color: #5FAFA8; border-bottom-color: #5FAFA8; }
+
+body.etapa-infantil .flyer-footer .footer-credit a { border-bottom-color: rgba(227,195,74,0.5); }
+body.etapa-infantil .flyer-footer .footer-credit a:hover { color: #E3C34A; border-bottom-color: #E3C34A; }
+
+body.etapa-primaria .flyer-footer .footer-credit a { border-bottom-color: rgba(110,143,175,0.5); }
+body.etapa-primaria .flyer-footer .footer-credit a:hover { color: #6E8FAF; border-bottom-color: #6E8FAF; }
+
+body.etapa-secundaria .flyer-footer .footer-credit a { border-bottom-color: rgba(225,122,85,0.5); }
+body.etapa-secundaria .flyer-footer .footer-credit a:hover { color: #E17A55; border-bottom-color: #E17A55; }
+
+body.etapa-fp .flyer-footer .footer-credit a { border-bottom-color: rgba(140,124,184,0.5); }
+body.etapa-fp .flyer-footer .footer-credit a:hover { color: #8C7CB8; border-bottom-color: #8C7CB8; }
 
 /* Trozo de imagen nítida que sobresale del hero (integración visual) */
 .flyer-hero-image {
@@ -330,89 +381,121 @@ body.etapa-escuelita .btn--back-index:hover,
   width: 100%;
 }
 
-/* Cards destacadas con color de etapa (pero suaves, con algo de opacidad) */
-.section--light .flyer-card--accent,
+/* Cards destacadas (flyer-card--accent): color por etapa */
 .flyer-card--accent {
-  background: rgba(200, 228, 226, 0.9);
-  border-color: #5FAFA8;
   box-shadow: 0 10px 28px rgba(15, 23, 42, 0.18);
 }
+.flyer-card--accent h3, .flyer-card--accent p { color: #1a2030; }
 
-.section--light .flyer-card--accent h3,
-.section--light .flyer-card--accent p,
-.flyer-card--accent h3,
-.flyer-card--accent p {
-  color: #1a2030;
-}
+body.etapa-escuelita .flyer-card--accent { background: rgba(200, 228, 226, 0.9); border-color: #5FAFA8; }
+body.etapa-escuelita .flyer-card--accent .flyer-card__icon { color: #5FAFA8; }
 
-.section--light .flyer-card--accent .flyer-card__icon,
-.flyer-card--accent .flyer-card__icon {
-  color: #5FAFA8;
-}
+body.etapa-infantil .flyer-card--accent { background: rgba(247, 232, 184, 0.9); border-color: #E3C34A; }
+body.etapa-infantil .flyer-card--accent .flyer-card__icon { color: #E3C34A; }
 
-/* Sección de Acompañamiento con paleta Escuelita (fondo y bordes) */
+body.etapa-primaria .flyer-card--accent { background: rgba(199, 214, 226, 0.9); border-color: #6E8FAF; }
+body.etapa-primaria .flyer-card--accent .flyer-card__icon { color: #6E8FAF; }
+
+body.etapa-secundaria .flyer-card--accent { background: rgba(243, 193, 175, 0.9); border-color: #E17A55; }
+body.etapa-secundaria .flyer-card--accent .flyer-card__icon { color: #E17A55; }
+
+body.etapa-fp .flyer-card--accent { background: rgba(214, 204, 231, 0.9); border-color: #8C7CB8; }
+body.etapa-fp .flyer-card--accent .flyer-card__icon { color: #8C7CB8; }
+
+/* Sección #acompanamos: fondo y bordes por etapa */
 body.etapa-escuelita #acompanamos.section {
-  background:
-    radial-gradient(circle at top center, rgba(95, 175, 168, 0.45), transparent 55%),
-    radial-gradient(circle at bottom center, rgba(11, 18, 32, 0.9), #0b1220);
+  background: radial-gradient(circle at top center, rgba(95, 175, 168, 0.45), transparent 55%), radial-gradient(circle at bottom center, rgba(11, 18, 32, 0.9), #0b1220);
+}
+body.etapa-infantil #acompanamos.section {
+  background: radial-gradient(circle at top center, rgba(227, 195, 74, 0.45), transparent 55%), radial-gradient(circle at bottom center, rgba(11, 18, 32, 0.9), #0b1220);
+}
+body.etapa-primaria #acompanamos.section {
+  background: radial-gradient(circle at top center, rgba(110, 143, 175, 0.45), transparent 55%), radial-gradient(circle at bottom center, rgba(11, 18, 32, 0.9), #0b1220);
+}
+body.etapa-secundaria #acompanamos.section {
+  background: radial-gradient(circle at top center, rgba(225, 122, 85, 0.45), transparent 55%), radial-gradient(circle at bottom center, rgba(11, 18, 32, 0.9), #0b1220);
+}
+body.etapa-fp #acompanamos.section {
+  background: radial-gradient(circle at top center, rgba(140, 124, 184, 0.45), transparent 55%), radial-gradient(circle at bottom center, rgba(11, 18, 32, 0.9), #0b1220);
 }
 
 body.etapa-escuelita #acompanamos .section__header h2,
-body.etapa-escuelita #acompanamos .section__header p {
-  color: #e5f5f3;
-}
+body.etapa-escuelita #acompanamos .section__header p { color: #e5f5f3; }
+body.etapa-escuelita #acompanamos .section__header h2 i,
+body.etapa-escuelita #acompanamos .card h3 i { color: #5FAFA8; }
+body.etapa-escuelita #acompanamos .card { border-color: rgba(95, 175, 168, 0.45); }
+body.etapa-escuelita #acompanamos .card--feature { border-top-color: #5FAFA8; }
 
-body.etapa-escuelita #acompanamos .section__header h2 i {
-  color: #5FAFA8;
-}
+body.etapa-infantil #acompanamos .section__header h2,
+body.etapa-infantil #acompanamos .section__header p { color: #f5f0e5; }
+body.etapa-infantil #acompanamos .section__header h2 i,
+body.etapa-infantil #acompanamos .card h3 i { color: #E3C34A; }
+body.etapa-infantil #acompanamos .card { border-color: rgba(227, 195, 74, 0.45); }
+body.etapa-infantil #acompanamos .card--feature { border-top-color: #E3C34A; }
 
-body.etapa-escuelita #acompanamos .card {
-  border-color: rgba(95, 175, 168, 0.45);
-}
+body.etapa-primaria #acompanamos .section__header h2,
+body.etapa-primaria #acompanamos .section__header p { color: #e8eef5; }
+body.etapa-primaria #acompanamos .section__header h2 i,
+body.etapa-primaria #acompanamos .card h3 i { color: #6E8FAF; }
+body.etapa-primaria #acompanamos .card { border-color: rgba(110, 143, 175, 0.45); }
+body.etapa-primaria #acompanamos .card--feature { border-top-color: #6E8FAF; }
 
-body.etapa-escuelita #acompanamos .card--feature {
-  border-top-color: #5FAFA8;
-}
+body.etapa-secundaria #acompanamos .section__header h2,
+body.etapa-secundaria #acompanamos .section__header p { color: #f5eae5; }
+body.etapa-secundaria #acompanamos .section__header h2 i,
+body.etapa-secundaria #acompanamos .card h3 i { color: #E17A55; }
+body.etapa-secundaria #acompanamos .card { border-color: rgba(225, 122, 85, 0.45); }
+body.etapa-secundaria #acompanamos .card--feature { border-top-color: #E17A55; }
 
-body.etapa-escuelita #acompanamos .card h3 i {
-  color: #5FAFA8;
-}
+body.etapa-fp #acompanamos .section__header h2,
+body.etapa-fp #acompanamos .section__header p { color: #efeef5; }
+body.etapa-fp #acompanamos .section__header h2 i,
+body.etapa-fp #acompanamos .card h3 i { color: #8C7CB8; }
+body.etapa-fp #acompanamos .card { border-color: rgba(140, 124, 184, 0.45); }
+body.etapa-fp #acompanamos .card--feature { border-top-color: #8C7CB8; }
 
-/* Hover de cards del flyer: color de etapa Escuelita, sin negro/azul marino */
-body.etapa-escuelita .section--light .flyer-cards .card--feature:hover {
-  border-color: #5FAFA8;
-  background: radial-gradient(circle at top left, rgba(95, 175, 168, 0.2), rgba(255, 255, 255, 0.98));
-}
+/* Hover de cards del flyer: color de etapa */
+body.etapa-escuelita .section--light .flyer-cards .card--feature:hover { border-color: #5FAFA8; background: radial-gradient(circle at top left, rgba(95,175,168,0.2), rgba(255,255,255,0.98)); }
+body.etapa-escuelita #acompanamos .flyer-cards .card--feature:hover { border-color: #5FAFA8; background: radial-gradient(circle at top left, rgba(95,175,168,0.35), rgba(30,55,52,0.95)); }
+body.etapa-escuelita .flyer-cards .card--feature:hover h3, body.etapa-escuelita .flyer-cards .card--feature:hover p { color: #1a2030; }
+body.etapa-escuelita #acompanamos .flyer-cards .card--feature:hover h3, body.etapa-escuelita #acompanamos .flyer-cards .card--feature:hover p { color: #e5f5f3; }
+body.etapa-escuelita .flyer-cards .card--feature:hover .flyer-card__icon { color: #5FAFA8; }
 
-body.etapa-escuelita #acompanamos .flyer-cards .card--feature:hover {
-  border-color: #5FAFA8;
-  background: radial-gradient(circle at top left, rgba(95, 175, 168, 0.35), rgba(30, 55, 52, 0.95));
-}
+body.etapa-infantil .section--light .flyer-cards .card--feature:hover { border-color: #E3C34A; background: radial-gradient(circle at top left, rgba(227,195,74,0.2), rgba(255,255,255,0.98)); }
+body.etapa-infantil #acompanamos .flyer-cards .card--feature:hover { border-color: #E3C34A; background: radial-gradient(circle at top left, rgba(227,195,74,0.35), rgba(30,28,20,0.95)); }
+body.etapa-infantil .flyer-cards .card--feature:hover h3, body.etapa-infantil .flyer-cards .card--feature:hover p { color: #1a2030; }
+body.etapa-infantil #acompanamos .flyer-cards .card--feature:hover h3, body.etapa-infantil #acompanamos .flyer-cards .card--feature:hover p { color: #f5f0e5; }
+body.etapa-infantil .flyer-cards .card--feature:hover .flyer-card__icon { color: #E3C34A; }
 
-body.etapa-escuelita .flyer-cards .card--feature:hover h3,
-body.etapa-escuelita .flyer-cards .card--feature:hover p {
-  color: #1a2030;
-}
+body.etapa-primaria .section--light .flyer-cards .card--feature:hover { border-color: #6E8FAF; background: radial-gradient(circle at top left, rgba(110,143,175,0.2), rgba(255,255,255,0.98)); }
+body.etapa-primaria #acompanamos .flyer-cards .card--feature:hover { border-color: #6E8FAF; background: radial-gradient(circle at top left, rgba(110,143,175,0.35), rgba(25,35,50,0.95)); }
+body.etapa-primaria .flyer-cards .card--feature:hover h3, body.etapa-primaria .flyer-cards .card--feature:hover p { color: #1a2030; }
+body.etapa-primaria #acompanamos .flyer-cards .card--feature:hover h3, body.etapa-primaria #acompanamos .flyer-cards .card--feature:hover p { color: #e8eef5; }
+body.etapa-primaria .flyer-cards .card--feature:hover .flyer-card__icon { color: #6E8FAF; }
 
-body.etapa-escuelita #acompanamos .flyer-cards .card--feature:hover h3,
-body.etapa-escuelita #acompanamos .flyer-cards .card--feature:hover p {
-  color: #e5f5f3;
-}
+body.etapa-secundaria .section--light .flyer-cards .card--feature:hover { border-color: #E17A55; background: radial-gradient(circle at top left, rgba(225,122,85,0.2), rgba(255,255,255,0.98)); }
+body.etapa-secundaria #acompanamos .flyer-cards .card--feature:hover { border-color: #E17A55; background: radial-gradient(circle at top left, rgba(225,122,85,0.35), rgba(40,25,22,0.95)); }
+body.etapa-secundaria .flyer-cards .card--feature:hover h3, body.etapa-secundaria .flyer-cards .card--feature:hover p { color: #1a2030; }
+body.etapa-secundaria #acompanamos .flyer-cards .card--feature:hover h3, body.etapa-secundaria #acompanamos .flyer-cards .card--feature:hover p { color: #f5eae5; }
+body.etapa-secundaria .flyer-cards .card--feature:hover .flyer-card__icon { color: #E17A55; }
 
-body.etapa-escuelita .flyer-cards .card--feature:hover .flyer-card__icon {
-  color: #5FAFA8;
-}
+body.etapa-fp .section--light .flyer-cards .card--feature:hover { border-color: #8C7CB8; background: radial-gradient(circle at top left, rgba(140,124,184,0.2), rgba(255,255,255,0.98)); }
+body.etapa-fp #acompanamos .flyer-cards .card--feature:hover { border-color: #8C7CB8; background: radial-gradient(circle at top left, rgba(140,124,184,0.35), rgba(35,30,50,0.95)); }
+body.etapa-fp .flyer-cards .card--feature:hover h3, body.etapa-fp .flyer-cards .card--feature:hover p { color: #1a2030; }
+body.etapa-fp #acompanamos .flyer-cards .card--feature:hover h3, body.etapa-fp #acompanamos .flyer-cards .card--feature:hover p { color: #efeef5; }
+body.etapa-fp .flyer-cards .card--feature:hover .flyer-card__icon { color: #8C7CB8; }
 
-/* Iconos en las cards del flyer (color Escuelita) */
+/* Iconos en las cards del flyer: color por etapa */
 .flyer-card__icon {
   font-size: 1.35rem;
-  color: #5FAFA8;
   margin-right: 4px;
 }
 
-.section--light .flyer-card__icon {
-  color: #5FAFA8;
-}
+body.etapa-escuelita .flyer-card__icon { color: #5FAFA8; }
+body.etapa-infantil .flyer-card__icon { color: #E3C34A; }
+body.etapa-primaria .flyer-card__icon { color: #6E8FAF; }
+body.etapa-secundaria .flyer-card__icon { color: #E17A55; }
+body.etapa-fp .flyer-card__icon { color: #8C7CB8; }
 
 /* Responsive: una columna en móvil */
 @media (max-width: 720px) {
@@ -493,21 +576,58 @@ body.etapa-escuelita .flyer-cards .card--feature:hover .flyer-card__icon {
 }
 
 .flyer-closing__chips .pill {
-  background: rgba(95, 175, 168, 0.2);
-  border-color: rgba(95, 175, 168, 0.5);
   color: #1a2030;
   font-weight: 600;
   font-size: 0.85rem;
+  border: 1px solid;
 }
 
-/* Los 2 cuadros en verde que destacan: pill Escuelita + badges de sección */
+body.etapa-escuelita .flyer-closing__chips .pill { background: rgba(95,175,168,0.2); border-color: rgba(95,175,168,0.5); }
+body.etapa-infantil .flyer-closing__chips .pill { background: rgba(227,195,74,0.2); border-color: rgba(227,195,74,0.5); }
+body.etapa-primaria .flyer-closing__chips .pill { background: rgba(110,143,175,0.2); border-color: rgba(110,143,175,0.5); }
+body.etapa-secundaria .flyer-closing__chips .pill { background: rgba(225,122,85,0.2); border-color: rgba(225,122,85,0.5); }
+body.etapa-fp .flyer-closing__chips .pill { background: rgba(140,124,184,0.2); border-color: rgba(140,124,184,0.5); }
+
+/* Pill y badges por etapa */
 .flyer-hero .pill--accent {
-  background: #5FAFA8 !important;
-  border: 2px solid #C8E4E2;
-  color: #fff !important;
   font-weight: 700;
   padding: 8px 16px;
+  border: 2px solid;
+}
+
+body.etapa-escuelita .flyer-hero .pill--accent {
+  background: #5FAFA8 !important;
+  border-color: #C8E4E2;
+  color: #fff !important;
   box-shadow: 0 2px 12px rgba(95, 175, 168, 0.4);
+}
+
+body.etapa-infantil .flyer-hero .pill--accent {
+  background: #E3C34A !important;
+  border-color: #F7E8B8;
+  color: #151b26 !important;
+  box-shadow: 0 2px 12px rgba(227, 195, 74, 0.4);
+}
+
+body.etapa-primaria .flyer-hero .pill--accent {
+  background: #6E8FAF !important;
+  border-color: #C7D6E2;
+  color: #fff !important;
+  box-shadow: 0 2px 12px rgba(110, 143, 175, 0.4);
+}
+
+body.etapa-secundaria .flyer-hero .pill--accent {
+  background: #E17A55 !important;
+  border-color: #F3C1AF;
+  color: #fff !important;
+  box-shadow: 0 2px 12px rgba(225, 122, 85, 0.4);
+}
+
+body.etapa-fp .flyer-hero .pill--accent {
+  background: #8C7CB8 !important;
+  border-color: #D6CCE7;
+  color: #fff !important;
+  box-shadow: 0 2px 12px rgba(140, 124, 184, 0.4);
 }
 
 /* Section header con badge: columna para que el badge quede arriba */
@@ -521,30 +641,21 @@ body.etapa-escuelita .flyer-cards .card--feature:hover .flyer-card__icon {
 
 .flyer-section-badge {
   display: inline-block;
-  background: #C8E4E2;
-  color: #1a2030;
   font-weight: 700;
   font-size: 0.8rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 10px 18px;
   border-radius: 12px;
-  border: 2px solid #5FAFA8;
+  border: 2px solid;
   margin-bottom: 16px;
-  box-shadow: 0 2px 12px rgba(95, 175, 168, 0.25);
 }
 
-.section--light .flyer-section-badge {
-  background: #C8E4E2;
-  border-color: #5FAFA8;
-  color: #1a2030;
-}
-
-.section:not(.section--light) .flyer-section-badge {
-  background: rgba(200, 228, 226, 0.95);
-  border-color: #5FAFA8;
-  color: #1a2030;
-}
+body.etapa-escuelita .flyer-section-badge { background: #C8E4E2; border-color: #5FAFA8; color: #1a2030; box-shadow: 0 2px 12px rgba(95,175,168,0.25); }
+body.etapa-infantil .flyer-section-badge { background: #F7E8B8; border-color: #E3C34A; color: #1a2030; box-shadow: 0 2px 12px rgba(227,195,74,0.25); }
+body.etapa-primaria .flyer-section-badge { background: #C7D6E2; border-color: #6E8FAF; color: #1a2030; box-shadow: 0 2px 12px rgba(110,143,175,0.25); }
+body.etapa-secundaria .flyer-section-badge { background: #F3C1AF; border-color: #E17A55; color: #1a2030; box-shadow: 0 2px 12px rgba(225,122,85,0.25); }
+body.etapa-fp .flyer-section-badge { background: #D6CCE7; border-color: #8C7CB8; color: #1a2030; box-shadow: 0 2px 12px rgba(140,124,184,0.25); }
 
 @media (max-width: 720px) {
   .flyer-closing__panel {

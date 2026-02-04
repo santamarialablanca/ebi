@@ -3,21 +3,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Infantil · Folleto digital | Próximamente</title>
+  <title>Infantil · Folleto digital | Santa María La Blanca</title>
+  <style>html { scroll-padding-top: 80px; }</style>
+  <meta name="description" content="Educación Infantil (3-6 años). Aprender con ilusión y confianza. Folleto digital del Colegio Santa María la Blanca.">
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <nav class="nav"><a href="../index.html" class="nav__logo"><i class="fa-solid fa-seedling"></i> Sistema EBI</a></nav>
-  <main style="min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem;">
-    <div>
-      <p style="font-size: 3rem; margin-bottom: 1rem;"><i class="fa-solid fa-child" style="color: #E3C34A;"></i></p>
-      <h1 style="margin: 0 0 0.5rem;">Infantil · Próximamente</h1>
-      <p style="color: #64748b; margin-bottom: 1.5rem;">El folleto digital de Infantil estará disponible pronto.</p>
-      <a href="index.html" class="btn btn--ghost"><i class="fa-solid fa-arrow-left"></i> Volver a folletos</a>
+<body class="etapa-infantil">
+  <a href="#main" class="skip-link">Ir al contenido principal</a>
+
+  <nav class="nav" role="navigation" aria-label="Navegación principal">
+    <a href="../index.html" class="nav__logo" aria-label="Sistema EBI">
+      <i class="fa-solid fa-seedling" aria-hidden="true"></i>
+      Sistema EBI
+    </a>
+    <div class="flyer-closing__actions flyer-closing__actions--nav">
+      <a href="index.html" class="btn btn--ghost btn--back-index"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Volver al índice de flyers</a>
     </div>
+    <button type="button" class="nav__toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu" aria-haspopup="true">
+      <i class="fa-solid fa-bars nav__toggle-icon nav__toggle-icon--open" aria-hidden="true"></i>
+      <i class="fa-solid fa-times nav__toggle-icon nav__toggle-icon--close" aria-hidden="true"></i>
+    </button>
+  </nav>
+  <header class="stage-hero stage-hero--infantil flyer-hero" role="banner">
+    <div class="flyer-hero__bg" aria-hidden="true">
+      <img src="img/infantil.JPG" alt="">
+    </div>
+    <div class="flyer-hero__overlay" aria-hidden="true"></div>
+    <div class="stage-hero__content">
+      <span class="pill pill--accent">Infantil</span>
+      <h1>Aprender con ilusión y confianza</h1>
+      <p>Descubrir, sentir y crecer. Acompañamos a los niños en sus primeros años para que se sientan seguros, queridos y capaces.</p>
+    </div>
+    <div class="flyer-hero-image">
+      <img src="img/infantil.JPG" alt="Alumnos de Infantil en el aula" loading="lazy">
+    </div>
+  </header>
+
+  <main id="main" role="main">
+    <section id="aprenden" class="section section--light" aria-labelledby="aprenden-heading">
+      <div class="section__header">
+        <span class="flyer-section-badge">Aprendizaje</span>
+        <h2 id="aprenden-heading"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> ¿Cómo aprenden nuestros alumnos?</h2>
+        <p>Aprenden desde la curiosidad, el juego y la experiencia, con una progresión de autonomía adaptada a su edad.</p>
+      </div>
+      <div class="flyer-cards">
+        <article class="card card--feature">
+          <h3><i class="fa-solid fa-bullseye flyer-card__icon" aria-hidden="true"></i> Aprender con sentido</h3>
+          <p>Exploran y descubren el mundo desde la curiosidad y el juego, aprendiendo a su propio ritmo y atendiendo a sus intereses, necesidades y momento de desarrollo.</p>
+        </article>
+        <article class="card card--feature">
+          <h3><i class="fa-solid fa-book-open flyer-card__icon" aria-hidden="true"></i> Guías de aprendizaje</h3>
+          <p>Diseñamos nuestros propios proyectos siguiendo un camino de aprendizaje que ofrece rutinas, propuestas y entornos seguros para anticiparse, comprender qué hacer y ganar confianza.</p>
+        </article>
+        <article class="card card--feature flyer-card--accent">
+          <h3><i class="fa-solid fa-puzzle-piece flyer-card__icon" aria-hidden="true"></i> Metodologías activas</h3>
+          <p>Aprenden haciendo, jugando y experimentando mediante práctica guiada, rincones de aprendizaje y espacios de diálogo y experiencias compartidas.</p>
+        </article>
+        <article class="card card--feature">
+          <h3><i class="fa-solid fa-wand-magic-sparkles flyer-card__icon" aria-hidden="true"></i> Pensamiento creativo</h3>
+          <p>Expresan lo que hacen, sienten y descubren mediante preguntas, juego simbólico y ensayo-error, desarrollando la imaginación y la expresión.</p>
+        </article>
+        <article class="card card--feature flyer-card--wide">
+          <h3><i class="fa-solid fa-user-check flyer-card__icon" aria-hidden="true"></i> Autonomía progresiva</h3>
+          <p>Avanzan poco a poco en la toma de pequeñas decisiones, desarrollando el autocuidado y la responsabilidad a través de rutinas, encargos y apoyos visuales.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="acompanamos" class="section" aria-labelledby="acompanamos-heading">
+      <div class="section__header">
+        <span class="flyer-section-badge">Acompañamiento</span>
+        <h2 id="acompanamos-heading"><i class="fa-solid fa-people-group" aria-hidden="true"></i> ¿Cómo acompañamos a cada alumno?</h2>
+        <p>Acompañamos desde el vínculo, la mirada atenta y una evaluación que acompaña el proceso evolutivo.</p>
+      </div>
+      <div class="flyer-cards">
+        <article class="card card--feature">
+          <h3><i class="fa-solid fa-user flyer-card__icon" aria-hidden="true"></i> Aprender a conocerse</h3>
+          <p>Les ayudamos a descubrir quiénes son, qué sienten, cómo se relacionan y a expresar sus preferencias mediante conversaciones guiadas y el reconocimiento de logros.</p>
+        </article>
+        <article class="card card--feature">
+          <h3><i class="fa-solid fa-heart flyer-card__icon" aria-hidden="true"></i> Educación emocional</h3>
+          <p>Identifican y expresan emociones, aprenden a gestionarlas y a relacionarse con los demás desde el respeto y la empatía.</p>
+        </article>
+        <article class="card card--feature flyer-card--accent">
+          <h3><i class="fa-solid fa-seedling flyer-card__icon" aria-hidden="true"></i> Evaluación que acompaña</h3>
+          <p>Conocemos a cada niño a través de una evaluación formativa y continua, basada en la observación atenta y en evidencias del aula, que nos permite valorar su progreso y acompañar su aprendizaje.</p>
+        </article>
+        <article class="card card--feature">
+          <h3><i class="fa-solid fa-people-roof flyer-card__icon" aria-hidden="true"></i> Comunidad de aprendizaje</h3>
+          <p>Cuidamos lo emocional, lo social y el aprendizaje diario en un entorno cercano y compartido, fomentando la ayuda entre iguales, la escucha, el respeto y la resolución de conflictos.</p>
+        </article>
+        <article class="card card--feature flyer-card--wide">
+          <h3><i class="fa-solid fa-hand-holding-hand flyer-card__icon" aria-hidden="true"></i> Acompañamiento integral</h3>
+          <p>Trabajamos de forma coordinada entre docentes, orientación y familias para acompañar juntos su crecimiento.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="inicio" class="section section--light" aria-labelledby="inicio-heading">
+      <div class="section__header">
+        <h2 id="inicio-heading"><i class="fa-solid fa-route" aria-hidden="true"></i> El inicio del camino</h2>
+        <p>Sentamos las bases emocionales, sociales y de autonomía para Primaria.</p>
+      </div>
+      <div class="flyer-closing">
+        <div class="flyer-closing__panel">
+          <div class="flyer-closing__text">
+            <p><strong>Descubrir, sentir y crecer.</strong> Acompañamos a los niños en sus primeros años para que se sientan seguros, queridos y capaces.</p>
+            <p><strong>Educamos para la vida.</strong> Valores del alumno CSMB:</p>
+            <div class="flyer-closing__chips" aria-label="Valores del alumno CSMB">
+              <span class="pill">Trascendente</span>
+              <span class="pill">Libre</span>
+              <span class="pill">Autónomo</span>
+              <span class="pill">Resiliente</span>
+              <span class="pill">Crítico</span>
+              <span class="pill">Creativo</span>
+              <span class="pill">Empático</span>
+              <span class="pill">Cooperador</span>
+              <span class="pill">Asertivo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="footer flyer-footer" role="contentinfo">
+    <p class="footer-text"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> C/ Monasterio de Oseira, 17B · 28049 Madrid</p>
+    <p class="footer-credit"><a href="mailto:innovacion@c.csmb.es">innovacion@c.csmb.es</a> · 917 508 692</p>
+  </footer>
+
   <script src="../script.js"></script>
 </body>
 </html>
