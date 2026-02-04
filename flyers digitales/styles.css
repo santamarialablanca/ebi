@@ -296,21 +296,52 @@
   width: 100%;
 }
 
-/* Cards destacadas con color de etapa */
+/* Cards destacadas con color de etapa (pero suaves, con algo de opacidad) */
+.section--light .flyer-card--accent,
 .flyer-card--accent {
-  background: linear-gradient(135deg, #5FAFA8, #4a8f89);
-  border-color: transparent;
-  color: #f9fafb;
-  box-shadow: 0 14px 40px rgba(11, 18, 32, 0.45);
+  background: rgba(200, 228, 226, 0.9);
+  border-color: #5FAFA8;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.18);
 }
 
+.section--light .flyer-card--accent h3,
+.section--light .flyer-card--accent p,
 .flyer-card--accent h3,
 .flyer-card--accent p {
-  color: #f9fafb;
+  color: #1a2030;
 }
 
+.section--light .flyer-card--accent .flyer-card__icon,
 .flyer-card--accent .flyer-card__icon {
-  color: #f9fafb;
+  color: #5FAFA8;
+}
+
+/* Sección de Acompañamiento con paleta Escuelita (fondo y bordes) */
+body.etapa-escuelita #acompanamos.section {
+  background:
+    radial-gradient(circle at top center, rgba(95, 175, 168, 0.45), transparent 55%),
+    radial-gradient(circle at bottom center, rgba(11, 18, 32, 0.9), #0b1220);
+}
+
+body.etapa-escuelita #acompanamos .section__header h2,
+body.etapa-escuelita #acompanamos .section__header p {
+  color: #e5f5f3;
+}
+
+body.etapa-escuelita #acompanamos .section__header h2 i {
+  color: #5FAFA8;
+}
+
+body.etapa-escuelita #acompanamos .card {
+  border-color: rgba(95, 175, 168, 0.45);
+}
+
+body.etapa-escuelita #acompanamos .card--feature {
+  border-top-color: #5FAFA8;
+}
+
+body.etapa-escuelita #acompanamos .card h3 i {
+  color: #5FAFA8;
 }
 
 /* Iconos en las cards del flyer (color Escuelita) */
