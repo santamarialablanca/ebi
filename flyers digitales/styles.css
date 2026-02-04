@@ -153,7 +153,6 @@
 .flyer-hero .stage-hero__content {
   position: relative;
   z-index: 2;
-  /* En el flyer usamos una sola columna, no la rejilla por defecto */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -165,7 +164,7 @@
    ============================================ */
 
 .flyer-hero__cta {
-  margin-top: 20px;
+  margin-top: 16px;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -210,39 +209,21 @@
   color: #fff;
 }
 
+.flyer-hero__cta .btn--index {
+  background: transparent;
+  color: rgba(248, 250, 252, 0.95);
+  border-color: rgba(200, 228, 226, 0.9);
+}
+
+.flyer-hero__cta .btn--index:hover {
+  background: rgba(200, 228, 226, 0.16);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
 .flyer-hero__cta .btn:focus-visible {
   outline: 3px solid #5FAFA8;
   outline-offset: 2px;
-}
-
-/* Enlace de vuelta al índice: estilo más ligero, tipo breadcrumb */
-.stage-hero__content .flyer-back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 6px;
-  font-size: 0.9rem;
-  color: rgba(248, 250, 252, 0.9);
-  text-decoration: none;
-  opacity: 0.9;
-  align-self: flex-end;
-}
-
-.stage-hero__content .flyer-back-link i {
-  font-size: 0.85rem;
-}
-
-.stage-hero__content .flyer-back-link:hover {
-  color: #ffffff;
-  opacity: 1;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.stage-hero__content .flyer-back-link:focus-visible {
-  outline: 2px solid #5FAFA8;
-  outline-offset: 2px;
-  border-radius: 999px;
 }
 
 /* Acciones al final del folleto */
@@ -284,7 +265,7 @@
   position: relative;
   z-index: 2;
   max-width: 880px;
-  margin: -32px auto 0;
+  margin: 24px auto 0;
   padding: 0 20px;
 }
 
@@ -346,7 +327,7 @@
   }
 
   .flyer-hero-image {
-    margin: -24px 16px 0;
+    margin: 12px 16px 0;
     padding: 0;
   }
 
