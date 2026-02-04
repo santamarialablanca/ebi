@@ -555,7 +555,7 @@ body.etapa-fp .flyer-card__icon { color: #8C7CB8; }
   }
 }
 
-/* Cierre del folleto: panel texto + QR */
+/* Cierre del folleto: panel estético tipo flyer */
 .flyer-closing {
   max-width: 900px;
   margin: 0 auto;
@@ -563,50 +563,132 @@ body.etapa-fp .flyer-card__icon { color: #8C7CB8; }
 
 .flyer-closing__panel {
   display: block;
-  background: rgba(41, 51, 69, 0.08);
-  border: 1px solid rgba(41, 51, 69, 0.15);
-  border-radius: 20px;
-  padding: 32px 28px;
+  border-radius: 24px;
+  padding: 40px 36px;
+  border: 2px solid;
+  position: relative;
+  overflow: hidden;
 }
 
-.section--light .flyer-closing__panel {
-  background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(41, 51, 69, 0.12);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+.flyer-closing__panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  opacity: 0.6;
 }
+
+body.etapa-escuelita .flyer-closing__panel {
+  background: linear-gradient(180deg, rgba(200,228,226,0.15) 0%, rgba(255,255,255,0.98) 20%);
+  border-color: rgba(95,175,168,0.4);
+  box-shadow: 0 8px 32px rgba(95,175,168,0.12), inset 0 1px 0 rgba(255,255,255,0.8);
+}
+body.etapa-escuelita .flyer-closing__panel::before { background: linear-gradient(90deg, #5FAFA8, #C8E4E2); }
+
+body.etapa-infantil .flyer-closing__panel {
+  background: linear-gradient(180deg, rgba(247,232,184,0.2) 0%, rgba(255,255,255,0.98) 20%);
+  border-color: rgba(227,195,74,0.4);
+  box-shadow: 0 8px 32px rgba(227,195,74,0.12), inset 0 1px 0 rgba(255,255,255,0.8);
+}
+body.etapa-infantil .flyer-closing__panel::before { background: linear-gradient(90deg, #E3C34A, #F7E8B8); }
+
+body.etapa-primaria .flyer-closing__panel {
+  background: linear-gradient(180deg, rgba(199,214,226,0.15) 0%, rgba(255,255,255,0.98) 20%);
+  border-color: rgba(110,143,175,0.4);
+  box-shadow: 0 8px 32px rgba(110,143,175,0.12), inset 0 1px 0 rgba(255,255,255,0.8);
+}
+body.etapa-primaria .flyer-closing__panel::before { background: linear-gradient(90deg, #6E8FAF, #C7D6E2); }
+
+body.etapa-secundaria .flyer-closing__panel {
+  background: linear-gradient(180deg, rgba(243,193,175,0.15) 0%, rgba(255,255,255,0.98) 20%);
+  border-color: rgba(225,122,85,0.4);
+  box-shadow: 0 8px 32px rgba(225,122,85,0.12), inset 0 1px 0 rgba(255,255,255,0.8);
+}
+body.etapa-secundaria .flyer-closing__panel::before { background: linear-gradient(90deg, #E17A55, #F3C1AF); }
+
+body.etapa-fp .flyer-closing__panel {
+  background: linear-gradient(180deg, rgba(214,204,231,0.15) 0%, rgba(255,255,255,0.98) 20%);
+  border-color: rgba(140,124,184,0.4);
+  box-shadow: 0 8px 32px rgba(140,124,184,0.12), inset 0 1px 0 rgba(255,255,255,0.8);
+}
+body.etapa-fp .flyer-closing__panel::before { background: linear-gradient(90deg, #8C7CB8, #D6CCE7); }
 
 .flyer-closing__text {
   min-width: 0;
 }
 
 .flyer-closing__text p {
-  margin: 0 0 1em;
-  line-height: 1.6;
+  margin: 0 0 1.1em;
+  line-height: 1.7;
   color: #334155;
+  font-size: 1.05rem;
 }
 
 .flyer-closing__text p:last-of-type {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+}
+
+.flyer-closing__text strong {
+  color: #1a2030;
+  font-weight: 700;
 }
 
 .flyer-closing__chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  display: grid;
+  /* 20 columnas: 4 arriba (5 cols c/u), 5 abajo encajando en los huecos */
+  grid-template-columns: repeat(20, 1fr);
+  gap: 12px 8px;
+  align-items: center;
 }
+
+/* 4 arriba: cada uno ocupa 5 columnas */
+.flyer-closing__chips .pill:nth-child(1) { grid-column: 1 / 6; grid-row: 1; }
+.flyer-closing__chips .pill:nth-child(2) { grid-column: 6 / 11; grid-row: 1; }
+.flyer-closing__chips .pill:nth-child(3) { grid-column: 11 / 16; grid-row: 1; }
+.flyer-closing__chips .pill:nth-child(4) { grid-column: 16 / 21; grid-row: 1; }
+
+/* 5 abajo: encajados en los huecos entre los de arriba */
+.flyer-closing__chips .pill:nth-child(5) { grid-column: 1 / 5; grid-row: 2; }
+.flyer-closing__chips .pill:nth-child(6) { grid-column: 5 / 9; grid-row: 2; }
+.flyer-closing__chips .pill:nth-child(7) { grid-column: 9 / 13; grid-row: 2; }
+.flyer-closing__chips .pill:nth-child(8) { grid-column: 13 / 17; grid-row: 2; }
+.flyer-closing__chips .pill:nth-child(9) { grid-column: 17 / 21; grid-row: 2; }
 
 .flyer-closing__chips .pill {
   color: #1a2030;
   font-weight: 600;
-  font-size: 0.85rem;
-  border: 1px solid;
+  font-size: 0.9rem;
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: 2px solid;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+  justify-self: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
-body.etapa-escuelita .flyer-closing__chips .pill { background: rgba(95,175,168,0.2); border-color: rgba(95,175,168,0.5); }
-body.etapa-infantil .flyer-closing__chips .pill { background: rgba(227,195,74,0.2); border-color: rgba(227,195,74,0.5); }
-body.etapa-primaria .flyer-closing__chips .pill { background: rgba(110,143,175,0.2); border-color: rgba(110,143,175,0.5); }
-body.etapa-secundaria .flyer-closing__chips .pill { background: rgba(225,122,85,0.2); border-color: rgba(225,122,85,0.5); }
-body.etapa-fp .flyer-closing__chips .pill { background: rgba(140,124,184,0.2); border-color: rgba(140,124,184,0.5); }
+.flyer-closing__chips .pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+/* Pills desarrollados (color de etapa) */
+body.etapa-escuelita .flyer-closing__chips .pill { background: rgba(95,175,168,0.25); border-color: rgba(95,175,168,0.6); }
+body.etapa-infantil .flyer-closing__chips .pill { background: rgba(227,195,74,0.25); border-color: rgba(227,195,74,0.6); }
+body.etapa-primaria .flyer-closing__chips .pill { background: rgba(110,143,175,0.25); border-color: rgba(110,143,175,0.6); }
+body.etapa-secundaria .flyer-closing__chips .pill { background: rgba(225,122,85,0.25); border-color: rgba(225,122,85,0.6); }
+body.etapa-fp .flyer-closing__chips .pill { background: rgba(140,124,184,0.25); border-color: rgba(140,124,184,0.6); }
+
+/* Pills más claros: valores no desarrollados aún en esa etapa */
+.flyer-closing__chips .pill--faint {
+  opacity: 0.55;
+  background: rgba(150, 160, 175, 0.12) !important;
+  border-color: rgba(100, 116, 139, 0.25) !important;
+  color: #64748b !important;
+  font-weight: 500;
+}
 
 /* Pill y badges por etapa */
 .flyer-hero .pill--accent {
@@ -680,5 +762,25 @@ body.etapa-fp .flyer-section-badge { background: #D6CCE7; border-color: #8C7CB8;
 @media (max-width: 720px) {
   .flyer-closing__panel {
     padding: 24px 20px;
+  }
+  .flyer-closing__chips {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px 12px;
+  }
+  .flyer-closing__chips .pill:nth-child(1),
+  .flyer-closing__chips .pill:nth-child(2),
+  .flyer-closing__chips .pill:nth-child(3),
+  .flyer-closing__chips .pill:nth-child(4),
+  .flyer-closing__chips .pill:nth-child(5),
+  .flyer-closing__chips .pill:nth-child(6),
+  .flyer-closing__chips .pill:nth-child(7),
+  .flyer-closing__chips .pill:nth-child(8),
+  .flyer-closing__chips .pill:nth-child(9) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .flyer-closing__chips .pill {
+    padding: 10px 14px;
+    font-size: 0.85rem;
   }
 }
