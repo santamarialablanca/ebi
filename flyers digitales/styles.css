@@ -233,6 +233,31 @@
   border-top: 1px solid rgba(95, 175, 168, 0.25);
 }
 
+/* Botón "Volver al índice" en la nav: mismo estilo que hero, bien visible */
+.flyer-closing__actions--nav {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+  margin-left: auto;
+  margin-right: 12px;
+}
+
+.flyer-closing__actions--nav .btn {
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: #fafaf7;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 14px;
+}
+
+.flyer-closing__actions--nav .btn:hover {
+  background: rgba(95, 175, 168, 0.4);
+  border-color: #5FAFA8;
+  color: #fff;
+}
+
 .flyer-closing__actions .btn {
   border-radius: 14px;
   font-weight: 600;
@@ -341,6 +366,31 @@ body.etapa-escuelita #acompanamos .card--feature {
 }
 
 body.etapa-escuelita #acompanamos .card h3 i {
+  color: #5FAFA8;
+}
+
+/* Hover de cards del flyer: color de etapa Escuelita, sin negro/azul marino */
+body.etapa-escuelita .section--light .flyer-cards .card--feature:hover {
+  border-color: #5FAFA8;
+  background: radial-gradient(circle at top left, rgba(95, 175, 168, 0.2), rgba(255, 255, 255, 0.98));
+}
+
+body.etapa-escuelita #acompanamos .flyer-cards .card--feature:hover {
+  border-color: #5FAFA8;
+  background: radial-gradient(circle at top left, rgba(95, 175, 168, 0.35), rgba(30, 55, 52, 0.95));
+}
+
+body.etapa-escuelita .flyer-cards .card--feature:hover h3,
+body.etapa-escuelita .flyer-cards .card--feature:hover p {
+  color: #1a2030;
+}
+
+body.etapa-escuelita #acompanamos .flyer-cards .card--feature:hover h3,
+body.etapa-escuelita #acompanamos .flyer-cards .card--feature:hover p {
+  color: #e5f5f3;
+}
+
+body.etapa-escuelita .flyer-cards .card--feature:hover .flyer-card__icon {
   color: #5FAFA8;
 }
 
