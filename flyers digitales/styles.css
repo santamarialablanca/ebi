@@ -233,7 +233,7 @@
   border-top: 1px solid rgba(95, 175, 168, 0.25);
 }
 
-/* Botón "Volver al índice" en la nav: mismo estilo que hero, bien visible */
+/* Botón "Volver al índice" en la nav: fondo color de etapa Escuelita (#5FAFA8) */
 .flyer-closing__actions--nav {
   margin-top: 0;
   padding-top: 0;
@@ -242,20 +242,29 @@
   margin-right: 12px;
 }
 
+/* Botón "Volver al índice": fondo color de etapa Escuelita (#5FAFA8) */
+body.etapa-escuelita .flyer-closing__actions--nav .btn,
+body.etapa-escuelita .btn--back-index,
 .flyer-closing__actions--nav .btn {
-  background: rgba(255, 255, 255, 0.12);
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  color: #fafaf7;
+  background-color: #5FAFA8 !important;
+  background: #5FAFA8 !important;
+  border: 2px solid rgba(255, 255, 255, 0.5) !important;
+  color: #fff !important;
   font-size: 0.9rem;
   font-weight: 600;
   padding: 10px 18px;
   border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(95, 175, 168, 0.4);
 }
 
+body.etapa-escuelita .flyer-closing__actions--nav .btn:hover,
+body.etapa-escuelita .btn--back-index:hover,
 .flyer-closing__actions--nav .btn:hover {
-  background: rgba(95, 175, 168, 0.4);
-  border-color: #5FAFA8;
-  color: #fff;
+  background-color: #4d9d96 !important;
+  background: #4d9d96 !important;
+  border-color: #C8E4E2 !important;
+  color: #fff !important;
+  box-shadow: 0 6px 20px rgba(95, 175, 168, 0.5);
 }
 
 .flyer-closing__actions .btn {
