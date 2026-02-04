@@ -153,6 +153,11 @@
 .flyer-hero .stage-hero__content {
   position: relative;
   z-index: 2;
+  /* En el flyer usamos una sola columna, no la rejilla por defecto */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
 }
 
 /* ============================================
@@ -215,11 +220,12 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: 10px;
+  margin-top: 6px;
   font-size: 0.9rem;
   color: rgba(248, 250, 252, 0.9);
   text-decoration: none;
   opacity: 0.9;
+  align-self: flex-end;
 }
 
 .stage-hero__content .flyer-back-link i {
@@ -325,6 +331,10 @@
   .flyer-hero__cta {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .stage-hero__content .flyer-back-link {
+    align-self: flex-start;
   }
 
   .flyer-hero__cta .btn {
