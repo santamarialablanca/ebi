@@ -296,6 +296,23 @@
   width: 100%;
 }
 
+/* Cards destacadas con color de etapa */
+.flyer-card--accent {
+  background: linear-gradient(135deg, #5FAFA8, #4a8f89);
+  border-color: transparent;
+  color: #f9fafb;
+  box-shadow: 0 14px 40px rgba(11, 18, 32, 0.45);
+}
+
+.flyer-card--accent h3,
+.flyer-card--accent p {
+  color: #f9fafb;
+}
+
+.flyer-card--accent .flyer-card__icon {
+  color: #f9fafb;
+}
+
 /* Iconos en las cards del flyer (color Escuelita) */
 .flyer-card__icon {
   font-size: 1.35rem;
